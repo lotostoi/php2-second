@@ -1,40 +1,78 @@
 <?php
+
 namespace app\engine;
 
-include_once "../config/config.php";
+use app\config\Config;
+use app\traits\TSingletone;
 
 class Db
 {
-    public static $db =  null;
+    protected $connection =  null;
+    private $config = null;
+    private static $instance = null;
 
-    public function __construct()
+    use TSingletone;
+
+    public function getConnection()
     {
-        if (is_null($this->db)) {
-            $this->db = new \mysqli(HOST, USER, PASS, DB_NAME) or die("Connection's error" . mysqli_connect_error());
+        if (is_null($this->connection)) {
+            $this->config = (new Config)->db;
+            $this->connection = new \PDO(
+                $this->prepareDsnString(),
+                $this->config['user'],
+                $this->config['password']
+            );
+            $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+        }
+        return $this->connection;
+    }
+
+    private function prepareDsnString()
+    {
+        return sprintf(
+            "%s:host=%s;dbname=%s",
+            $this->config['driver'],
+            $this->config['host'],
+            $this->config['dbname']
+        );
+    }
+
+    protected function query($sql, $params)
+    {
+        $stmt = $this->getConnection()->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
+
+
+    public function queryOne($sql, $params, $class = null)
+    {
+        if (!$class) {
+            return $this->query($sql, $params)->fetch();
+        } else {
+            $stmt = $this->query($sql, $params);
+            $stmt->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, $class);
+            return $stmt->fetch();
         }
     }
 
-    public function queryAll($request)
+    public function queryAll($sql, $params = [])
     {
-        $result = $this->db->query($request) or $this->db->connect_error;
-        $array_result = [];
-        while ($row = mysqli_fetch_assoc($result)) {
-            $array_result[] = $row;
-        }
-        return $array_result;
+        return $this->query($sql, $params)->fetchAll();
     }
 
-    public function execute($request)
+    public function execute($sql, $params)
     {
-        $this->db->query($request) or $this->db->connect_error;
-        return mysqli_affected_rows($this->link);
+        $stmt = $this->getConnection()->prepare($sql);
+        $stmt->execute($params);
     }
 
-    public function queryOne($request)
+    public function getLastId()
     {
-        $result = $this->db->query($request)[0] or $this->db->connect_error;
-        return $result;
+        return $this->getConnection()->lastInsertId();
     }
+
+
 
     function protect($val)
     {

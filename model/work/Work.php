@@ -1,22 +1,22 @@
 <?php
 
 namespace app\model\work;
+
 use app\model\Model;
 use app\engine\Db;
 
 class Work extends Model
 {
-    public $id;
-    public $title;
-    public $img;
-    public $git;
-    public $project;
-    public $description;
-    public $tags; // сдесь должен быть набор тегов из таблици тегов у которых id работы совподает с этой и пока непонимаю как используя паттерн АктивРекорд сделать это правильно
+    public $id = null;
+    public $title = null;
+    public $img = null;
+    public $git = null;
+    public $project = null;
+    public $description = null;
+    public $tags = null;
 
-    public function __construct($id = null, $title = null, $img = null, $git = null, $project = null, $description = null, $tags = null, Db $db)
-    {   parent::__construct($db); 
-        $this->$id = $id;
+    public function __construct($title = null, $img = null, $git = null, $project = null, $description = null, $tags = null)
+    {
         $this->title = $title;
         $this->img = $img;
         $this->git = $git;
@@ -25,20 +25,20 @@ class Work extends Model
         $this->tags = $tags;
     }
 
-    public function getTableName()
+    public static function getOne($id)
+    {
+        $obj = parent::getOne($id);
+        $obj->tags = static::getTags($id);
+        return $obj;
+    }
+    public static function getTableName()
     {
         return 'works';
     }
-    public function create()
+    private static function getTags($id)
     {
-    }
-    public function read()
-    {
-    }
-    public function update()
-    {
-    }
-    public function delete()
-    {
+        $obj = parent::getOne($id);
+        $workToTags = WorkToTags::getColumn('id_tag', 'id_work', $obj->id);
+        return Tags::getColumnIn('name', 'id', $workToTags);
     }
 }

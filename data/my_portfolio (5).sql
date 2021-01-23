@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 18, 2021 at 06:55 PM
+-- Generation Time: Jan 23, 2021 at 05:54 AM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.5
 
@@ -194,7 +194,15 @@ INSERT INTO `hashes` (`id`, `id_user`, `hash`) VALUES
 (154, 8, '10933302495ff866c742e861.92441311'),
 (155, 8, '21443976705ff866f387ca21.77191356'),
 (156, 2, '18334956646003027ea3adc8.82261997'),
-(157, 2, '1130904536600303d03c8388.17524280');
+(157, 2, '1130904536600303d03c8388.17524280'),
+(158, 2, '1618908932600635e310c8d7.68739601'),
+(159, 19, '1970185464600638143a8ae2.48878842'),
+(160, 19, '37602536660063821b1c0d4.80825151'),
+(161, 20, '13034808156006384ae2a967.62130903'),
+(162, 13, '199598398260063918c547b4.07329773'),
+(163, 14, '151140099600639c26c4b21.58036618'),
+(164, 20, '76530561760063d093aad27.65852795'),
+(165, 21, '120700343160063e67b9e418.50213802');
 
 -- --------------------------------------------------------
 
@@ -252,7 +260,8 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`id`, `user`, `link_to_sosial_network`, `review`, `img_small`, `admin`) VALUES
 (36, 'Alexander', 'https://vk.com/id631958029', '  Проверка!\n  ', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 1),
 (41, 'Марина', 'https://facebook.com/3435303603361672', 'Все отлично!', 'https://graph.facebook.com/3435303603361672/picture?width=100', 0),
-(74, 'Ember', 'https://vk.com/id118736477', 'Rere', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=100x0&quality=96&crop=53,53,427,427&sign=1907f867a8aaa807696231215763963b&c_uniq_tag=9kpdmsmL5dkL72vM5mQRy3UaZCQm4bGaXzuThXw5pEY&ava=1', 0);
+(74, 'Ember', 'https://vk.com/id118736477', 'Rere', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=100x0&quality=96&crop=53,53,427,427&sign=1907f867a8aaa807696231215763963b&c_uniq_tag=9kpdmsmL5dkL72vM5mQRy3UaZCQm4bGaXzuThXw5pEY&ava=1', 0),
+(75, 'Иван', 'https://some-link', 'good', 'imglink', 0);
 
 -- --------------------------------------------------------
 
@@ -277,7 +286,11 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 (45, 'Vue.js'),
 (46, 'React.js'),
 (47, 'node.js'),
-(49, 'php');
+(49, 'php'),
+(68, 'tets'),
+(69, 'tets'),
+(70, 'tets'),
+(71, 'tets');
 
 -- --------------------------------------------------------
 
@@ -305,13 +318,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `first_name`, `last_name`, `img_small`, `img_big`, `sosial_network`, `id_in_sosial_network`, `link_to_sosial_network`, `email`, `password`, `admin`) VALUES
-(2, 'Alexander', 'Alexander', 'Plotnikov', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=400x0&quality=96&crop=21,21,598,598&sign=2c46ad8d64911277cf9645740109cea3&c_uniq_tag=grwze31xC46FfvzlVogDLQ3RGb-SVR-mZBQoo8iSh6E&ava=1', 'vk', 631958029, 'https://vk.com/id631958029', 'не указан...', '', 1),
 (8, 'lotos', 'Alexander', 'Plotnikov', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=400x0&quality=96&crop=21,21,598,598&sign=2c46ad8d64911277cf9645740109cea3&c_uniq_tag=grwze31xC46FfvzlVogDLQ3RGb-SVR-mZBQoo8iSh6E&ava=1', 'site', 0, '\'\'', 'lotos_toi@mail.ru', '$2y$10$jJv4zl2Z2XPx01n86ABM.e4SiBs6uzH7fefZNCFrk9atFlpz26/Ne', 1),
 (11, 'Марина', 'Марина', 'Чуносова', 'https://graph.facebook.com/3435303603361672/picture?width=100', 'https://graph.facebook.com/3435303603361672/picture?width=300', 'fb', 3435303603361672, 'https://facebook.com/3435303603361672', 'sibysi@mail.ru', '', 0),
 (12, 'Александр', 'Александр', 'Плотников', 'https://graph.facebook.com/2768117680107010/picture?width=100', 'https://graph.facebook.com/2768117680107010/picture?width=300', 'fb', 2768117680107010, 'https://facebook.com/2768117680107010', 'lotos_toi@mail.ru', '', 0),
-(13, 'Igor', 'Igor', 'Lebedev', 'https://vk.com/images/camera_100.png?ava=1', 'https://vk.com/images/camera_400.png?ava=1', 'vk', 356629958, 'https://vk.com/id356629958', 'не указан', '', 0),
-(14, 'Елена', 'Елена', 'Клинникова', 'https://sun1-18.userapi.com/impg/ING-ntNiTRqECYuHgugqOdzpcUbz-a2o2u6iQg/qKyqygNBLcY.jpg?size=100x0&quality=96&crop=0,185,1125,1125&sign=1c9b06ee7afd6bcaf1bc079e0f074dd8&c_uniq_tag=kwaoyaqiozMX2NN_jPh3SB_S3SKtAPeKZJ3qsD4cdKM&ava=1', 'https://sun1-18.userapi.com/impg/ING-ntNiTRqECYuHgugqOdzpcUbz-a2o2u6iQg/qKyqygNBLcY.jpg?size=400x0&quality=96&crop=0,185,1125,1125&sign=064fde1d7fbc17202a4bd5f7d910fac4&c_uniq_tag=Y_HuOdQLCn3TKjK4Tg-BFGVX-Qi_aBCQVcwrcerGswo&ava=1', 'vk', 632528908, 'https://vk.com/id632528908', 'не указан', '', 0),
-(15, 'Ember', 'Ember', 'Songs', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=100x0&quality=96&crop=53,53,427,427&sign=1907f867a8aaa807696231215763963b&c_uniq_tag=9kpdmsmL5dkL72vM5mQRy3UaZCQm4bGaXzuThXw5pEY&ava=1', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=400x0&quality=96&crop=0,0,534,807&sign=c7c0c0e2cce605018a11d61bcd8dc54b&c_uniq_tag=pd2u6o8R_waJRGSzZ7xqg3fC-5G4y7mDjNBeI9ij1VE&ava=1', 'vk', 118736477, 'https://vk.com/id118736477', 'Ð½Ðµ ÑƒÐºÐ°Ð·Ð°Ð½', '', 0);
+(21, 'Alexander', 'Alexander', 'Plotnikov', 'https://sun1-83.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 'https://sun1-83.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=400x0&quality=96&crop=21,21,598,598&sign=2c46ad8d64911277cf9645740109cea3&c_uniq_tag=grwze31xC46FfvzlVogDLQ3RGb-SVR-mZBQoo8iSh6E&ava=1', 'vk', 631958029, 'https://vk.com/id631958029', 'не указан', '', 0);
 
 -- --------------------------------------------------------
 
@@ -429,7 +439,7 @@ ALTER TABLE `works_to_tags`
 -- AUTO_INCREMENT for table `hashes`
 --
 ALTER TABLE `hashes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT for table `pictures`
@@ -441,19 +451,19 @@ ALTER TABLE `pictures`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `works`
