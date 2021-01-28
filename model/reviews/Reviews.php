@@ -14,7 +14,7 @@ class Reviews extends Model
     public $admin = null;
 
 
-    public function __construct($user = null, $link_to_sosial_network = null, $review = null, $img_small = null, $admin = null, $tags = null)
+    public function __construct($user = null, $link_to_sosial_network = null, $review = null, $img_small = null, $admin = null)
     {
         $this->user = $user;
         $this->link_to_sosial_network = $link_to_sosial_network;

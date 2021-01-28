@@ -73,9 +73,4 @@ class Db
     }
 
 
-
-    function protect($val)
-    {
-        return strip_tags(htmlspecialchars(mysqli_real_escape_string($this->db, $val)));
-    }
 }

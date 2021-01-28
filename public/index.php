@@ -1,22 +1,23 @@
 <?php
 include "../engine/Autoload.php";
 
-use app\model\work\{Work, Tags};
-use app\model\reviews\Reviews;
+
+use app\config\Config;
 
 
 spl_autoload_register([new Autoload(), 'loadClass']);
 
-var_dump(Work::getOne(9));
-var_dump(Reviews::getOne(41));
+$controllerName = $_GET['c'] ? $_GET['c'] : 'index';
+$actionName = $_GET['a'];
 
-$tag = new Tags('tets');
-$review = new Reviews('Иван', 'https://some-link', 'good', 'imglink', '0');
-var_dump($tag);
-var_dump($review);
 
-$tag->insert();
-$review->insert();
+$controllerClass = (new Config)->namespaces['controllers'] . ucfirst($controllerName) . "Controller";
 
-var_dump($tag);
-var_dump($review);
+if (class_exists($controllerClass)) {
+    $controller = new $controllerClass();
+    $controller->runAction($actionName);
+} else {
+    echo "$controllerClass isn't";
+}
+
+

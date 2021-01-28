@@ -6,13 +6,11 @@ trait GetterAndSetter
 {
     public function __get($name)
     {
-        extract(get_object_vars($this));
-        return $$name ? $this->$name :  "This object doesn't has property - {$name}";
+        return property_exists($this,$name) ? $this->$name :  "This object doesn't has property - {$name}";
     }
     public function __set($name, $values)
     {
-        extract(get_object_vars($this));
-        if ($$name) {
+        if (property_exists($this,$name)) {
             $this->$name = $values;
         } else {
             return "This object doesn't has property - {$name}";
