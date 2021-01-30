@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 23, 2021 at 05:54 AM
+-- Generation Time: Jan 30, 2021 at 04:56 AM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.5
 
@@ -202,7 +202,21 @@ INSERT INTO `hashes` (`id`, `id_user`, `hash`) VALUES
 (162, 13, '199598398260063918c547b4.07329773'),
 (163, 14, '151140099600639c26c4b21.58036618'),
 (164, 20, '76530561760063d093aad27.65852795'),
-(165, 21, '120700343160063e67b9e418.50213802');
+(165, 21, '120700343160063e67b9e418.50213802'),
+(166, 8, '76193474460141f0200c541.56442493'),
+(167, 8, '43265037860141fdfe7a373.18412739'),
+(168, 8, '1424308809601423a0103004.39464713'),
+(169, 8, '2357872366014245087f7e1.59950404'),
+(170, 8, '124508105601424b479e580.82135045'),
+(171, 8, '147291280260142613410186.20920632'),
+(172, 8, '203971507060142c72abb470.17602079'),
+(173, 8, '9868437036014339813d4c8.57147636'),
+(174, 8, '5569551426014afb5e18b76.54088405'),
+(175, 8, '19918146906014b0580e27f9.67144140'),
+(176, 8, '18569847966014b06581b3a1.03749608'),
+(177, 8, '2844808476014b2d9e38f72.48701139'),
+(178, 8, '10873132006014b37425abe4.93199329'),
+(179, 8, '15268107376014b9db192311.20811252');
 
 -- --------------------------------------------------------
 
@@ -261,7 +275,10 @@ INSERT INTO `reviews` (`id`, `user`, `link_to_sosial_network`, `review`, `img_sm
 (36, 'Alexander', 'https://vk.com/id631958029', '  Проверка!\n  ', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 1),
 (41, 'Марина', 'https://facebook.com/3435303603361672', 'Все отлично!', 'https://graph.facebook.com/3435303603361672/picture?width=100', 0),
 (74, 'Ember', 'https://vk.com/id118736477', 'Rere', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=100x0&quality=96&crop=53,53,427,427&sign=1907f867a8aaa807696231215763963b&c_uniq_tag=9kpdmsmL5dkL72vM5mQRy3UaZCQm4bGaXzuThXw5pEY&ava=1', 0),
-(75, 'Иван', 'https://some-link', 'good', 'imglink', 0);
+(75, 'Иван', 'https://some-link', 'good', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 0),
+(76, 'Иван', 'https://some-link', 'It\'s good ', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 0),
+(77, 'Petr', 'https://some-link', 'Вместо использования array_push() для добавления одного элемента в массив, лучше использовать $array[] = , потому что в этом случае не происходит затрат на вызов функции.', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 0),
+(78, 'Макс', 'https://some-link', 'good  good good', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 0);
 
 -- --------------------------------------------------------
 
@@ -286,11 +303,7 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 (45, 'Vue.js'),
 (46, 'React.js'),
 (47, 'node.js'),
-(49, 'php'),
-(68, 'tets'),
-(69, 'tets'),
-(70, 'tets'),
-(71, 'tets');
+(49, 'php');
 
 -- --------------------------------------------------------
 
@@ -439,7 +452,7 @@ ALTER TABLE `works_to_tags`
 -- AUTO_INCREMENT for table `hashes`
 --
 ALTER TABLE `hashes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- AUTO_INCREMENT for table `pictures`
@@ -451,13 +464,13 @@ ALTER TABLE `pictures`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `users`
