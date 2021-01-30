@@ -56,6 +56,14 @@ class Db
         }
     }
 
+    public function queryLimit($sql, $from, $to) {
+        $stmt = $this->getConnection()->prepare($sql);
+        $stmt->bindParam(1, $from, \PDO::PARAM_INT); 
+        $stmt->bindParam(2, $to, \PDO::PARAM_INT); 
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function queryAll($sql, $params = [])
     {
         return $this->query($sql, $params)->fetchAll();
@@ -71,6 +79,4 @@ class Db
     {
         return $this->getConnection()->lastInsertId();
     }
-
-
 }

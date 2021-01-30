@@ -6,9 +6,9 @@
             </div>
             <div class="menu">
                 <a href="/" class="modif">Главная</a>
-                <a href="/?c=resume" class="modif">Резюме</a>
-                <a href="/?c=work" class="modif">Портфолио</a>
-                <a href="/?c=reviews" class="modif">Отзывы</a>
+                <a href="/resume" class="modif">Резюме</a>
+                <a href="/work" class="modif">Портфолио</a>
+                <a href="/reviews" class="modif">Отзывы</a>
                 <a href="#contacts" class="modif">Контакты</a>
             </div>
         </nav>

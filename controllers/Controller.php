@@ -1,21 +1,21 @@
 <?php
-namespace app\controllers;
-use app\config\Config;
-class Controller {
 
-    private $action;
-    private $defaultAction = 'main';
+namespace app\controllers;
+
+use app\config\Config;
+
+class Controller extends ApiController
+{
     private $defaultLayout = 'main';
     private $useLayout = true;
 
-    public function runAction($acton = null)
+
+    public function __construct()
     {
-        $this->action = $acton ?: $this->defaultAction;
-        $method = "action" . ucfirst($this->action);
-        if (method_exists($this, $method)) {
-            $this->$method();
-        }
+        parent::__construct();
+        $this->defaultAction = 'main';
     }
+
 
     public function render($template, $params = [])
     {

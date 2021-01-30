@@ -6,21 +6,22 @@ use app\model\work\{Work, Tags, WorkToTags};
 
 class WorkController extends Controller
 {
-  
+
     public function actionIndex()
     {
         echo 'index';
     }
     public function actionMain()
     {
-        echo $this->render('portfolio/portfolio', ['tags' => Tags::getAll(), 'catalog' => $this->getCatalog()]);
+        $this->params['tags'] = Tags::getAll();
+        $this->params['catalog'] = $this->getCatalog();
+        echo $this->render('portfolio/portfolio', $this->params);
     }
 
     public function actionWork()
     {
         echo 'work';
     }
-
 
     private function getCatalog()
     {
@@ -29,7 +30,7 @@ class WorkController extends Controller
         $works_to_tags = WorkToTags::getAll();
 
         $catalog = [];
-
+        // Олег подскажи куда можно вынести эту часть кода?
         foreach ($allWorks as $work) {
             $id = $work['id'];
             $tags = [];

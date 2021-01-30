@@ -73,11 +73,13 @@
             <?php endif; ?>
           </form>
         <?php endforeach; ?>
+
       </div>
+      <button class="loadMore">Load more</button>
     </div>
   </div>
-  <!-- <script>
-     class Server {
+  <script>
+    class Server {
       constructor(baseURL, options) {
         this.baseURL = baseURL
         this.options = options
@@ -129,6 +131,21 @@
     })
     const reviews = document.querySelector('#reviews')
     const wrapperForReviews = document.querySelector('.reviews-body__wrapper')
+    const loadMore = document.querySelector('.loadMore')
+
+    let amountReviews = 0
+    let step = 2
+    loadMore.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const review = await http.get(`apiReviews/limit?limit=${amountReviews += step}`)
+      review.forEach(rev => {
+        const _review = renderReview(rev)
+        insertReviewInEnd(wrapperForReviews, _review)
+      })
+
+    })
+
+
     reviews.addEventListener('click', async (e) => {
       if (e.target.id) {
         e.preventDefault()
@@ -186,7 +203,7 @@
         body.append('operation', 'delete')
         body.append('id', id)
         try {
-          const  result = await http.post('api-reviews', body)
+          const result = await http.post('api-reviews', body)
           reviews.querySelector(`form[data-form="${id}"]`).classList.toggle('hiden')
         } catch (e) {
           console.log(e)
@@ -199,13 +216,28 @@
       container.insertAdjacentHTML('afterbegin', review)
     }
 
+    function insertReviewInEnd(container, review) {
+      container.insertAdjacentHTML('beforeEnd', review)
+    }
+
     function renderReview({
       img_small,
       link_network,
       user,
       review,
-      id
+      id,
+      accessForEdit,
+      admin
     }) {
+      const edit = accessForEdit || admin ?
+        ` 
+        <div class="edit" data-parent="${id}">
+            <button class="review_edit" data-edit="${id}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            <button class="hiden review_save" data-save="${id}"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+            <button class="review_del" data-del="${id}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </div>
+      ` :
+        ''
       return `
       <form class="reviews-body__review" data-form="${id}">
               <div class="user">
@@ -216,13 +248,9 @@
                 <p data-rev="${id}" class="review">${review}w</p>
                 <textarea class="edit_review hiden" type="text" name="edit_review"data-text="${id}"> ${review}</textarea>
               </div>        
-              <div class="edit" data-parent="${id}">
-                <button class="review_edit" data-edit="${id}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                <button class="hiden review_save" data-save="${id}"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-                <button class="review_del" data-del="${id}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-              </div>
+              ${edit}
           </form>
       `
     }
-  </script>-->
+  </script>
 </section>

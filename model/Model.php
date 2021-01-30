@@ -20,6 +20,14 @@ abstract  class Model implements IModel
         return Db::getInstance()->queryOne($sql, ['id' => $id], static::class);
     }
 
+    public static function getOneByField($field, $value)
+    {
+        $tableName = static::getTableName();
+        $sql = "SELECT * FROM {$tableName} WHERE {$field} = :{$field}";
+       // echo "SELECT * FROM {$tableName} WHERE {$field} = :value";
+        return Db::getInstance()->queryOne($sql, ["{$field}" => $value], static::class);
+    }
+
     public static function getAll($fieldName = null, $value = null)
     {
         $tableName = static::getTableName();
@@ -27,11 +35,11 @@ abstract  class Model implements IModel
         return Db::getInstance()->queryAll($sql);
     }
 
-    public static function getLimit($fieldName = null, $value = null)
+    public static function getLimit($from, $to)
     {
         $tableName = static::getTableName();
-        $sql = $fieldName && $value ? "SELECT * FROM {$tableName} WHERE `{$fieldName}`={$value}" : "SELECT * FROM {$tableName}";
-        return Db::getInstance()->queryAll($sql);
+        $sql = "SELECT * FROM {$tableName} LIMIT ?, ?";
+        return Db::getInstance()->queryLimit($sql, $from, $to);
     }
 
     public function insert()

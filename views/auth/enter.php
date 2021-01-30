@@ -33,7 +33,7 @@
                     <input type="checkbox" name="save_sn" checked id="checked_network" />
                 </label>
                 <hr />
-                <form action="../api/auth" class="site" method="POST">
+                <form action="/authorization/auth" class="site" method="POST">
                     <p class="title">Вход через сайт:</p>
                     <label class="login">
                         <p class="title-small">Введите логин или email_</p>

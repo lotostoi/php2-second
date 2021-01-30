@@ -26,8 +26,8 @@
                     <span class="title">Email:</span>
                     <span class="value"><?= $full_user['email'] ?></span>
                 </div>
-                <input type="hidden" name="action" value="logout">
-                <button class="exit">Выйти</button>
+                <input type="hidden" name="action" value="exit">
+                <a href="/authorization/exit" class="exit">Выйти</a>
             </form>
         </div>
     </div>
