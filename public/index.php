@@ -1,13 +1,10 @@
 <?php
 include "../engine/Autoload.php";
 
-
 use app\config\Config;
-
+use app\engine\TwigRender;
 
 spl_autoload_register([new Autoload(), 'loadClass']);
-
-
 
 $url_array = explode('/', $_SERVER['REQUEST_URI']);
 
@@ -20,8 +17,8 @@ if (strstr($controllerName, '?')) {
 $controllerClass = (new Config)->namespaces['controllers'] . ucfirst($controllerName) . "Controller";
 
 if (class_exists($controllerClass)) {
-    $controller = new $controllerClass();
-    $controller->runAction($actionName);
+    $controller = new $controllerClass(new TwigRender());
+    $controller->runAction($actionName);  
 } else {
     echo "$controllerClass isn't";
 }

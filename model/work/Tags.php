@@ -7,11 +7,12 @@ use app\engine\Db;
 
 class Tags extends Model
 {
-    public $id;
-    public $name;
+    protected $id;
+    protected $name;
 
     public function __construct($name = null)
     {
+        parent::__construct();
        $this->name=$name; 
     }
 

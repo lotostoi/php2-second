@@ -39,15 +39,18 @@ class Db
 
     protected function query($sql, $params)
     {
+        
         $stmt = $this->getConnection()->prepare($sql);
         $stmt->execute($params);
         return $stmt;
     }
 
 
+
     public function queryOne($sql, $params, $class = null)
     {
         if (!$class) {
+
             return $this->query($sql, $params)->fetch();
         } else {
             $stmt = $this->query($sql, $params);
@@ -56,10 +59,11 @@ class Db
         }
     }
 
-    public function queryLimit($sql, $from, $to) {
+    public function queryLimit($sql, $from, $to)
+    {
         $stmt = $this->getConnection()->prepare($sql);
-        $stmt->bindParam(1, $from, \PDO::PARAM_INT); 
-        $stmt->bindParam(2, $to, \PDO::PARAM_INT); 
+        $stmt->bindParam(1, $from, \PDO::PARAM_INT);
+        $stmt->bindParam(2, $to, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt;
     }
@@ -69,10 +73,11 @@ class Db
         return $this->query($sql, $params)->fetchAll();
     }
 
-    public function execute($sql, $params)
+
+
+    public function execute($sql, $params = [])
     {
-        $stmt = $this->getConnection()->prepare($sql);
-        $stmt->execute($params);
+        return $this->query($sql, $params)->rowCount();
     }
 
     public function getLastId()

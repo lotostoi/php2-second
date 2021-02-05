@@ -14,10 +14,13 @@ class AuthorizationModel
                 $save = $_POST['save'] ? true : "false";
                 $user = Users::getOneByField('login', $login);
                 $user = $user ? $user : Users::getOneByField('email', $login);
-                $user = (array) $user;
+                $user = $user->showEverything();
+
                 if ($user['id']) {
+                   
                     if (password_verify($password, $user['password'])) {
                         $this->setCook($user, $save);
+                       
                         header("Location: /$redirect");
                         die();
                     } else {
@@ -27,7 +30,6 @@ class AuthorizationModel
                         die();
                     }
                 } else {
-
                     session_start();
                     $_SESSION['auth_error'] = "Неверный логин или пароль";
                     header("Location: /authorization/enter");

@@ -2,9 +2,6 @@
     <div class="common-header__fone">
         <div class="common-header__cont">
             <h1 class="common-header__h1">Резюме_</h1>
-  <!--           <div class="common-header__description">
-               В данном разделе вы сможете найти информацию обо мне...
-            </div> -->
         </div>
     </div>
     <div class="common-body">

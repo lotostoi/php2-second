@@ -1,0 +1,60 @@
+{% extends "mainLayuot.twig" %}
+{% block content %}
+	<section class="common wrapper">
+		<div class="common-header__fone">
+			<div class="common-header__cont">
+				<h1 class="common-header__h1">Мои работы_</h1>
+				<div class="common-header__description">
+					В этома разделе вы можете посомтреть некоторые мои работы_
+				</div>
+			</div>
+		</div>
+		<div class="portfolio-header__body">
+			<div class="filters" id="pf_tags">
+
+				<label class="filter" data-name="all">
+					<span class="title" data-name="all">Все работы:
+					</span>
+					<input type="checkbox" name="all" data-name="all" checked="checked"/>
+				</label>
+				<?php foreach ($tags as $tag) : ?>
+				{% for tag in tags %}
+					<label class="filter">
+						<span class="title">{{tag.name}}:
+						</span>
+						<input type="checkbox" name="{{tag.name}}"/>
+					</label>
+				{% endfor %}
+				<button id="pf_filter">Применить</button>
+			</div>
+		</div>
+		<div class="portfolio-catalog">
+			{% if admin and del == 'ok' %}
+				<p class="result_loader">Работа была удалена успешно...</p>
+			{% endif %}
+			{% if admin %}
+				<a href="/portfolio/add" class="portfolio-catalog__outside-work">Add work</a>
+				<a href="/filters" class="portfolio-catalog__outside-filters">Edit filters</a>
+			{% endif %}
+			<div class="portfolio-catalog__cont">
+				{% for work in catalog %}
+					<div class="product">
+						<div class="img">
+							<img src="/src/smallimages/{{work.img}}" alt="{{work.title}}" width="417" height="292">
+						</div>
+						<p class="title">
+							{{work.title}}</p>
+						<div class="tags">
+							<span class="title">Tехнологии:
+							</span>
+							{% for tag in work.tags %}
+								<span>{{tag}}</span>
+							{% endfor %}
+						</div>
+						<a href="/work?id=<?= $work['id'] ?>" class="link">Подробнее...</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

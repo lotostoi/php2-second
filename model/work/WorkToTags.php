@@ -7,12 +7,13 @@ use app\engine\Db;
 
 class WorkToTags extends Model
 {
-    public $id;
-    public $id_work;
-    public $id_tag;
+    protected $id;
+    protected $id_work;
+    protected $id_tag;
 
     public function __construct($id_work = null, $id_tag = null)
     {
+        parent::__construct();
         $this->id_work = $id_work;
         $this->id_tag = $id_tag;
     }
@@ -21,4 +22,11 @@ class WorkToTags extends Model
     {
         return 'works_to_tags';
     }
+
+/*     public static function getAll()
+    {
+        $tableName = static::getTableName();
+        $sql = $fieldName && $value ? "SELECT * FROM {$tableName} WHERE `{$fieldName}`={$value}" : "SELECT * FROM {$tableName}";
+        return Db::getInstance()->queryAll($sql);
+    } */
 }

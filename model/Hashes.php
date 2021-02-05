@@ -6,12 +6,12 @@ use app\model\Model;
 
 class Hashes extends Model
 {
-    public $id;
-    public $id_user;
-    public $hash;
+    protected $id;
+    protected $id_user;
+    protected $hash;
 
     public function __construct($id_user = null, $hash = null)
-    {
+    {   parent::__construct();
         $this->id_user = $id_user;
         $this->hash = $hash;
     }

@@ -2,44 +2,43 @@
 
 namespace app\controllers;
 
-use app\config\Config;
+
+use app\interfaces\Irender;
+use app\engine\Render;
 
 class Controller extends ApiController
 {
     private $defaultLayout = 'main';
     private $useLayout = true;
+    protected $renderer;
 
-
-    public function __construct()
+    public function __construct(Irender $renderer)
     {
         parent::__construct();
         $this->defaultAction = 'main';
+        $this->renderer = $renderer;
     }
 
 
     public function render($template, $params = [])
     {
-        if ($this->useLayout) {
-            return $this->renderTemlate(
+  /*       if ($this->useLayout) {
+            return $this->renderTemplate(
                 "layouts/{$this->defaultLayout}",
                 [
-                    'header' => $this->renderTemlate('header', $params),
-                    'content' => $this->renderTemlate($template, $params),
-                    'footer' => $this->renderTemlate('footer/footer', $params),
+                    'header' => $this->renderTemplate('header', $params),
+                    'content' => $this->renderTemplate($template, $params),
+                    'footer' => $this->renderTemplate('footer/footer', $params),
                 ]
             );
         } else {
-            return $this->renderTemlate($template, $params);
-        }
+            return $this->renderTemplate($template, $params);
+        } */
+        return $this->renderTemplate($template, $params);
     }
 
-    public function renderTemlate($template, $params = [])
-    {
-        extract($params);
-        ob_start();
-        $templatePath =  (new Config)->pathes['templates'] . $template . ".php";
-        if (file_exists($templatePath)) {
-            include $templatePath;
-        }
+    public function renderTemplate($template, $params = [])
+    {    
+       return $this->renderer->renderTemplate($template, $params);
     }
 }

@@ -4,18 +4,18 @@ namespace app\model;
 
 class Users extends Model
 {
-    public $id;
-    public $login;
-    public $first_name;
-    public $last_name;
-    public $img_small;
-    public $img_big;
-    public $sosial_network;
-    public $id_in_sosial_network;
-    public $link_to_sosial_network;
-    public $email;
-    public $password;
-    public $admin;
+    protected $id;
+    protected $login;
+    protected $first_name;
+    protected $last_name;
+    protected $img_small;
+    protected $img_big;
+    protected $sosial_network;
+    protected $id_in_sosial_network;
+    protected $link_to_sosial_network;
+    protected $email;
+    protected $password;
+    protected $admin;
 
     public function __construct(
         $id = null,
@@ -31,6 +31,7 @@ class Users extends Model
         $password = null,
         $admin = null
     ) {
+        parent::__construct();
         $this->id = $id;
         $this->login = $login;
         $this->first_name = $first_name;
@@ -50,3 +51,4 @@ class Users extends Model
         return 'users';
     }
 }
+

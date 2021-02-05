@@ -15,6 +15,7 @@ class WorkController extends Controller
     {
         $this->params['tags'] = Tags::getAll();
         $this->params['catalog'] = $this->getCatalog();
+        $this->params['del'] =$_GET['del'];
         echo $this->render('portfolio/portfolio', $this->params);
     }
 

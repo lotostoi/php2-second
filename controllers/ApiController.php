@@ -11,12 +11,13 @@ class ApiController
     protected $defaultAction = 'all';
     public $params = [];
     public $authModel = null;
+    public $user;
 
     public function __construct()
     {
         session_start();
         $this->authModel = new AuthorizationModel;
-        $this->authModel->getUser();
+        $this->user = $this->authModel->getUser();
         $this->params['user'] = $_SESSION['user']['login'] ?: null;
         $this->params['admin'] = $_SESSION['user']['admin'] ?: null;
     }

@@ -10,7 +10,7 @@ class ReviewsController extends Controller
 
     public function actionMain()
     {
-        $this->params['reviews'] = Reviews::getLimit(0, $this->countReviews);
+        $this->params['reviews'] = Reviews::getLimitRevert(0, $this->countReviews);
         echo $this->render('reviews/reviews', $this->params);
     }
 }
