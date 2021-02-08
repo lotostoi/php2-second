@@ -59,10 +59,7 @@ class __TwigTemplate_9187800cce4015b91450feaa27a934d1084b054190621a72d0f56a9e319
         echo "\t\t";
         $this->displayBlock('footer', $context, $blocks);
         // line 16
-        echo "\t\t<script src=\"/src/js/smoothScroll.js\"></script>
-\t\t<script src=\"/src/js/header.js\"></script>
-\t\t\t
-\t</body>
+        echo "\t</body>
 
 </html>
 ";
@@ -93,7 +90,7 @@ class __TwigTemplate_9187800cce4015b91450feaa27a934d1084b054190621a72d0f56a9e319
 
     public function getDebugInfo()
     {
-        return array (  84 => 15,  78 => 14,  72 => 13,  62 => 16,  59 => 15,  56 => 14,  54 => 13,  40 => 1,);
+        return array (  81 => 15,  75 => 14,  69 => 13,  62 => 16,  59 => 15,  56 => 14,  54 => 13,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -113,9 +110,6 @@ class __TwigTemplate_9187800cce4015b91450feaa27a934d1084b054190621a72d0f56a9e319
 \t\t{% block header %}{% endblock %}
 \t\t{% block content %}{% endblock %}
 \t\t{% block footer %}{% endblock %}
-\t\t<script src=\"/src/js/smoothScroll.js\"></script>
-\t\t<script src=\"/src/js/header.js\"></script>
-\t\t\t
 \t</body>
 
 </html>

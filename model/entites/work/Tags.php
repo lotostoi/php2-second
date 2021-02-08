@@ -1,9 +1,9 @@
 <?php
 
-namespace app\model\work;
+namespace app\model\entites\work;
 
 use app\model\Model;
-use app\engine\Db;
+
 
 class Tags extends Model
 {
@@ -13,11 +13,6 @@ class Tags extends Model
     public function __construct($name = null)
     {
         parent::__construct();
-       $this->name=$name; 
-    }
-
-    public static function getTableName()
-    {
-        return 'tags';
+        $this->name = $name;
     }
 }

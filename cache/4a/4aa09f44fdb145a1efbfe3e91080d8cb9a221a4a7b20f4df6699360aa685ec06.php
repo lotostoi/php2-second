@@ -112,7 +112,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
         }
         // line 53
         echo "\t\t\t\t\t\t</label>
-\t\t\t\t\t\t<a href=\"/auth/reg\">Если вы еще не зарегистрированы, вам сюда</a>
+\t\t\t\t\t\t<a href=\"/auth/reg\" class=\"a-reg\">Если вы еще не зарегистрированы, вам сюда</a>
 \t\t\t\t\t\t<label class=\"save\">
 \t\t\t\t\t\t\t<p>Запомнить_:</p>
 \t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"authorization/logout\">
@@ -125,8 +125,11 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
 \t</section>
+
 ";
     }
 
@@ -200,7 +203,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t\t\t\t<p class=\"message\">{{error}}</p>
 \t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t</label>
-\t\t\t\t\t\t<a href=\"/auth/reg\">Если вы еще не зарегистрированы, вам сюда</a>
+\t\t\t\t\t\t<a href=\"/auth/reg\" class=\"a-reg\">Если вы еще не зарегистрированы, вам сюда</a>
 \t\t\t\t\t\t<label class=\"save\">
 \t\t\t\t\t\t\t<p>Запомнить_:</p>
 \t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"authorization/logout\">
@@ -213,8 +216,11 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
 \t</section>
+
 {% endblock %}
 ", "auth/enter.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\auth\\enter.twig");
     }

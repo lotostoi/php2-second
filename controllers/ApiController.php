@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\model\AuthorizationModel;
+use app\engine\Session;
+use app\model\repositories\UsersRepository;
 
 class ApiController
 {
@@ -15,21 +17,19 @@ class ApiController
 
     public function __construct()
     {
-        session_start();
-        $this->authModel = new AuthorizationModel;
+
+        $session = new Session();
+        $session->sessionStart();
+        $this->authModel = new UsersRepository();
         $this->user = $this->authModel->getUser();
-        $this->params['user'] = $_SESSION['user']['login'] ?: null;
-        $this->params['admin'] = $_SESSION['user']['admin'] ?: null;
+
+        $this->params['user'] = $session->getSession('user')['login'] ?: null;
+        $this->params['admin'] = $session->getSession('user')['admin'] ?: null;
     }
 
-    public function runAction($acton = null)
+    public function runAction($action = null)
     {
-        $url_array = explode('/', $_SERVER['REQUEST_URI']);
-        $action = $url_array[2];
-        if (strstr($action, '?')) {
-            $action =  explode('?', $action)[0];
-        }
-
+       
         $this->action = $action ?: $this->defaultAction;
         $method = "action" . ucfirst($this->action);
         if (method_exists($this, $method)) {

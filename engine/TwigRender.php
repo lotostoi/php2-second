@@ -1,6 +1,6 @@
 <?php 
 namespace app\engine;
-require_once '../vendor/autoload.php';
+
 use app\interfaces\Irender;
 use app\config\Config;
 

@@ -159,6 +159,9 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         echo "\t\t\t</div>
 \t\t</div>
 \t</section>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>\t\t
+\t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
 ";
     }
 
@@ -238,6 +241,9 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t\t</div>
 \t\t</div>
 \t</section>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>\t\t
+\t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
 {% endblock %}
 ", "portfolio/portfolio.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\portfolio\\portfolio.twig");
     }

@@ -1,26 +1,27 @@
 <?php
-include "../engine/Autoload.php";
+require_once '../vendor/autoload.php';
+//include "../engine/Autoload.php";
 
 use app\config\Config;
-use app\engine\TwigRender;
+use app\engine\{TwigRender, Request};
 
-spl_autoload_register([new Autoload(), 'loadClass']);
 
-$url_array = explode('/', $_SERVER['REQUEST_URI']);
+//spl_autoload_register([new Autoload(), 'loadClass']);
 
-$controllerName =  $url_array[1] !== '' ? $url_array[1] : 'index';
+try {
+    $request = new Request();
+    $controllerName =  $request->getControllerName() ?: 'index';
+    $actionName = $request->getActionName();
+    $controllerClass = (new Config)->namespaces['controllers'] . ucfirst($controllerName) . "Controller";
 
-if (strstr($controllerName, '?')) {
-    $controllerName =  explode('?', $controllerName)[0];
+    if (class_exists($controllerClass)) {
+        $controller = new $controllerClass(new TwigRender());
+        $controller->runAction($actionName);
+    } else {
+        $controllerClass = (new Config)->namespaces['controllers'] . 'P404' . "Controller";
+        $controller = new $controllerClass(new TwigRender());
+        $controller->runAction('Main');
+    }
+} catch (\Exception  $e) {
+    var_dump($e);
 }
-
-$controllerClass = (new Config)->namespaces['controllers'] . ucfirst($controllerName) . "Controller";
-
-if (class_exists($controllerClass)) {
-    $controller = new $controllerClass(new TwigRender());
-    $controller->runAction($actionName);  
-} else {
-    echo "$controllerClass isn't";
-}
-
-

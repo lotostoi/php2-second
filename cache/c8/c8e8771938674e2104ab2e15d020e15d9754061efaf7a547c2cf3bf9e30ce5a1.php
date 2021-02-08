@@ -124,69 +124,71 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t\t\t\t\t<a href=\"";
             // line 60
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "link_to_sosial_network", [], "any", false, false, false, 60), "html", null, true);
-            echo "\">
-\t\t\t\t\t\t\t\t\t\t";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 61), "html", null, true);
-            echo "
-\t\t\t\t\t\t\t\t\t</a>
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 60), "html", null, true);
+            echo "</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<p class=\"review\" data-rev=\"";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 64), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 62), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 64), "html", null, true);
+            echo twig_escape_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 62), "js"), "html", null, true);
             echo "</p>
 \t\t\t\t\t\t\t\t<textarea class=\"edit_review hiden\" type=\"text\" name=\"edit_review\" v-model=\"review.review\" data-text=\"";
-            // line 65
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 65), "html", null, true);
-            echo "\">
-\t\t\t\t\t\t\t\t\t";
-            // line 66
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 66), "html", null, true);
-            echo "
-\t\t\t\t\t\t\t\t</textarea>
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 63), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 63), "html", null, true);
+            echo "</textarea>
+\t\t\t\t\t\t\t\t<div class=\"date\">";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "date", [], "any", false, false, false, 64), "html", null, true);
+            echo "</div>
 \t\t\t\t\t\t\t</div>
+
 \t\t\t\t\t\t\t";
-            // line 69
-            if ((($context["admin"] ?? null) || (0 === twig_compare(($context["user"] ?? null), twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 69))))) {
-                // line 70
+            // line 67
+            if ((($context["admin"] ?? null) || (0 === twig_compare(($context["user"] ?? null), twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 67))))) {
+                // line 68
                 echo "\t\t\t\t\t\t\t\t<div class=\"edit\" data-parent=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 70), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 68), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t<button class=\"review_edit\" data-edit=\"";
-                // line 71
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 71), "html", null, true);
+                // line 69
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 69), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t\t<button class=\"hiden review_save\" data-save=\"";
-                // line 74
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 74), "html", null, true);
+                // line 72
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 72), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t\t<button class=\"review_del\" data-del=\"";
-                // line 77
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 77), "html", null, true);
+                // line 75
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 75), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t";
             }
-            // line 82
-            echo "\t\t\t\t\t\t</form>
+            // line 80
+            echo "
+\t\t\t\t\t\t</form>
 \t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['review'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 83
         echo "\t\t\t\t</div>
 \t\t\t\t<button class=\"loadMore\">Загрузить еще</button>
 \t\t\t</div>
 \t\t</div>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/reviews.js\"></script>
 \t</section>
@@ -206,7 +208,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 
     public function getDebugInfo()
     {
-        return array (  186 => 84,  179 => 82,  171 => 77,  165 => 74,  159 => 71,  154 => 70,  152 => 69,  146 => 66,  142 => 65,  136 => 64,  130 => 61,  126 => 60,  122 => 59,  115 => 56,  111 => 55,  108 => 54,  78 => 26,  65 => 15,  63 => 14,  50 => 3,  46 => 2,  35 => 1,);
+        return array (  186 => 83,  178 => 80,  170 => 75,  164 => 72,  158 => 69,  153 => 68,  151 => 67,  145 => 64,  139 => 63,  133 => 62,  126 => 60,  122 => 59,  115 => 56,  111 => 55,  108 => 54,  78 => 26,  65 => 15,  63 => 14,  50 => 3,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -270,15 +272,13 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t\t\t<div class=\"user\">
 \t\t\t\t\t\t\t\t<div class=\"nick\">
 \t\t\t\t\t\t\t\t\t<img src=\"{{review.img_small}}\" alt=\"user-image\"/>
-\t\t\t\t\t\t\t\t\t<a href=\"{{review.link_to_sosial_network}}\">
-\t\t\t\t\t\t\t\t\t\t{{ review.user }}
-\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t<a href=\"{{review.link_to_sosial_network}}\">{{ review.user }}</a>
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<p class=\"review\" data-rev=\"{{review.id}}\">{{review.review}}</p>
-\t\t\t\t\t\t\t\t<textarea class=\"edit_review hiden\" type=\"text\" name=\"edit_review\" v-model=\"review.review\" data-text=\"{{review.id}}\">
-\t\t\t\t\t\t\t\t\t{{review.review}}
-\t\t\t\t\t\t\t\t</textarea>
+\t\t\t\t\t\t\t\t<p class=\"review\" data-rev=\"{{review.id}}\">{{review.review|e('js')}}</p>
+\t\t\t\t\t\t\t\t<textarea class=\"edit_review hiden\" type=\"text\" name=\"edit_review\" v-model=\"review.review\" data-text=\"{{review.id}}\">{{review.review}}</textarea>
+\t\t\t\t\t\t\t\t<div class=\"date\">{{review.date}}</div>
 \t\t\t\t\t\t\t</div>
+
 \t\t\t\t\t\t\t{% if admin or user == review.user %}
 \t\t\t\t\t\t\t\t<div class=\"edit\" data-parent=\"{{review.id}}\">
 \t\t\t\t\t\t\t\t\t<button class=\"review_edit\" data-edit=\"{{review.id}}\">
@@ -292,12 +292,15 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t{% endif %}
+
 \t\t\t\t\t\t</form>
 \t\t\t\t\t{% endfor %}
 \t\t\t\t</div>
 \t\t\t\t<button class=\"loadMore\">Загрузить еще</button>
 \t\t\t</div>
 \t\t</div>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/reviews.js\"></script>
 \t</section>

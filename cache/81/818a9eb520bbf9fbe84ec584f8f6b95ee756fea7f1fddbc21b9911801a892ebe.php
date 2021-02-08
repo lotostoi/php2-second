@@ -92,21 +92,23 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__text\">
 \t\t\t\t\tЗдесь Вы можете найти информацию обо мне, посмотреть моё портфолио как веб-разработчика, а также почитать или
-\t\t\t\t\t          добавить отзывы.
+\t\t\t\t\t\t\t\t\t\t          добавить отзывы.
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__text\">
 \t\t\t\t\tВ настоящее время я заканчиваю обучение на факультете веб-разработки в онлайн школе Geek Brains. Также являюсь
-\t\t\t\t\t          наставником для студентов по таким направлениям как js, node.js, php и html&css.
+\t\t\t\t\t\t\t\t\t\t          наставником для студентов по таким направлениям как js, node.js, php и html&css.
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__text\">
 \t\t\t\t\tНадеюсь вам тут понравиться!
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__message\">
 \t\t\t\t\tНа данный момент работа над сайтом не завершена, поэтому возможны баги, а также часть функционала пока не
-\t\t\t\t\t          работает…
+\t\t\t\t\t\t\t\t\t\t          работает…
 \t\t\t\t</p>
 \t\t\t</div>
 \t\t</section>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/header.js\"></script>
 \t</main>
 ";
     }
@@ -175,21 +177,23 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__text\">
 \t\t\t\t\tЗдесь Вы можете найти информацию обо мне, посмотреть моё портфолио как веб-разработчика, а также почитать или
-\t\t\t\t\t          добавить отзывы.
+\t\t\t\t\t\t\t\t\t\t          добавить отзывы.
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__text\">
 \t\t\t\t\tВ настоящее время я заканчиваю обучение на факультете веб-разработки в онлайн школе Geek Brains. Также являюсь
-\t\t\t\t\t          наставником для студентов по таким направлениям как js, node.js, php и html&css.
+\t\t\t\t\t\t\t\t\t\t          наставником для студентов по таким направлениям как js, node.js, php и html&css.
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__text\">
 \t\t\t\t\tНадеюсь вам тут понравиться!
 \t\t\t\t</p>
 \t\t\t\t<p class=\"hello__message\">
 \t\t\t\t\tНа данный момент работа над сайтом не завершена, поэтому возможны баги, а также часть функционала пока не
-\t\t\t\t\t          работает…
+\t\t\t\t\t\t\t\t\t\t          работает…
 \t\t\t\t</p>
 \t\t\t</div>
 \t\t</section>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/header.js\"></script>
 \t</main>
 {% endblock %}
 ", "index.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\index.twig");

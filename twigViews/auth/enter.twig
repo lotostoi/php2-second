@@ -51,7 +51,7 @@
 								<p class="message">{{error}}</p>
 							{% endif %}
 						</label>
-						<a href="/auth/reg">Если вы еще не зарегистрированы, вам сюда</a>
+						<a href="/auth/reg" class="a-reg">Если вы еще не зарегистрированы, вам сюда</a>
 						<label class="save">
 							<p>Запомнить_:</p>
 							<input type="hidden" name="redirect" value="authorization/logout">
@@ -64,6 +64,9 @@
 				</div>
 			</div>
 		</div>
-
+		<script src="/src/js/smoothScroll.js"></script>
+		<script src="/src/js/header.js"></script>
+		<script src="/src/js/server.js"></script>
 	</section>
+
 {% endblock %}

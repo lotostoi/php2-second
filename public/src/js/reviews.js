@@ -85,7 +85,8 @@ function insertReviewInEnd(container, review) {
   container.insertAdjacentHTML('beforeEnd', review)
 }
 
-function renderReview({ img_small, link_network, user, review, id, accessForEdit, admin }) {
+function renderReview({ img_small, link_network, user, review, id, date, accessForEdit, admin }) {
+  console.log(review)
   const edit =
     accessForEdit || admin
       ? ` 
@@ -103,8 +104,9 @@ function renderReview({ img_small, link_network, user, review, id, accessForEdit
                       <img src="${img_small}" alt="user-image" />
                       <a href="${link_network}"> ${user} </a>
                     </div>
-                    <p data-rev="${id}" class="review">${review}w</p>
-                    <textarea class="edit_review hiden" type="text" name="edit_review"data-text="${id}"> ${review}</textarea>
+                    <p data-rev="${id}" class="review">${review}</p>
+                    <textarea class="edit_review hiden" type="text" name="edit_review"data-text="${id}">${review}</textarea>
+                    <div class="date">${date}</div>
                   </div>        
                   ${edit}
               </form>

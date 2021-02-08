@@ -57,15 +57,13 @@
 							<div class="user">
 								<div class="nick">
 									<img src="{{review.img_small}}" alt="user-image"/>
-									<a href="{{review.link_to_sosial_network}}">
-										{{ review.user }}
-									</a>
+									<a href="{{review.link_to_sosial_network}}">{{ review.user }}</a>
 								</div>
-								<p class="review" data-rev="{{review.id}}">{{review.review}}</p>
-								<textarea class="edit_review hiden" type="text" name="edit_review" v-model="review.review" data-text="{{review.id}}">
-									{{review.review}}
-								</textarea>
+								<p class="review" data-rev="{{review.id}}">{{review.review|e('js')}}</p>
+								<textarea class="edit_review hiden" type="text" name="edit_review" v-model="review.review" data-text="{{review.id}}">{{review.review}}</textarea>
+								<div class="date">{{review.date}}</div>
 							</div>
+
 							{% if admin or user == review.user %}
 								<div class="edit" data-parent="{{review.id}}">
 									<button class="review_edit" data-edit="{{review.id}}">
@@ -79,12 +77,15 @@
 									</button>
 								</div>
 							{% endif %}
+
 						</form>
 					{% endfor %}
 				</div>
 				<button class="loadMore">Загрузить еще</button>
 			</div>
 		</div>
+		<script src="/src/js/smoothScroll.js"></script>
+		<script src="/src/js/header.js"></script>
 		<script src="/src/js/server.js"></script>
 		<script src="/src/js/reviews.js"></script>
 	</section>

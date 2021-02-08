@@ -48,5 +48,5 @@ menu.addEventListener('click', (e) => {
 
 // *******************end menu *************************
 
-const blokes = [...$.all('.resume__allInformation')]
+
 

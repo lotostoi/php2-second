@@ -1,6 +1,8 @@
 <?php
 
-namespace app\model;
+namespace app\model\entites;
+
+use app\model\Model;
 
 class Users extends Model
 {

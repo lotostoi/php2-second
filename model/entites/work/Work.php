@@ -1,9 +1,8 @@
 <?php
 
-namespace app\model\work;
+namespace app\model\entites\work;
 
 use app\model\Model;
-use app\engine\Db;
 
 class Work extends Model
 {
@@ -24,18 +23,5 @@ class Work extends Model
         $this->project = $project;
         $this->description = $description;
     }
-
-    public static function getTableName()
-    {
-        return 'works';
-    }
-
-    public static function getOne($id)
-    {
-       
-        $sql = "SELECT id_tag FROM `works_to_tags` WHERE `id_work` = :id";
-        return Db::getInstance()->queryAll($sql, ['id' => $id]);
-    }
-
 
 }

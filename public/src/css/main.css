@@ -613,7 +613,7 @@ body {
   font-size: 1.2rem;
 }
 
-.person-area > form.site > a {
+.person-area > form.site > a.a-reg {
   margin: 10px 0;
   width: 100%;
   max-width: 700px;
@@ -626,7 +626,8 @@ body {
           justify-content: flex-start;
 }
 
-.person-area > form.site > a {
+.person-area > form.site > a.exit,
+.person-area > form.site button {
   width: 100%;
   text-decoration: none;
   display: -webkit-box;
@@ -653,12 +654,14 @@ body {
   margin: 10px 0;
 }
 
-.person-area > form.site > a {
+.person-area > form.site > a.exit,
+.person-area > form.site button {
   background: -webkit-gradient(linear, left top, right top, from(black), color-stop(42%, rgba(1, 0, 0, 0.798757)), to(rgba(255, 98, 0, 0.667104))), url("../img/baner.jpg");
   background: linear-gradient(90deg, black 0%, rgba(1, 0, 0, 0.798757) 42%, rgba(255, 98, 0, 0.667104) 100%), url("../img/baner.jpg");
 }
 
-.person-area > form.site > a:active {
+.person-area > form.site > a.exit:active,
+.person-area > form.site button:active {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
 }
@@ -2639,6 +2642,11 @@ body {
   color: #333232;
 }
 
+.reviews-body__review > .user > .date {
+  color: gray;
+  font-style: italic;
+}
+
 .reviews-body__review > .edit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3855,5 +3863,70 @@ body {
     -webkit-transform: scale(0.99);
             transform: scale(0.99);
   }
+}
+
+.p404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.p404 > .header404 {
+  width: 100%;
+  height: 150px;
+}
+
+.p404 > .header404 {
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(42%, rgba(1, 0, 0, 0.798757)), to(rgba(255, 98, 0, 0.667104))), url("../img/baner.jpg");
+  background: linear-gradient(90deg, black 0%, rgba(1, 0, 0, 0.798757) 42%, rgba(255, 98, 0, 0.667104) 100%), url("../img/baner.jpg");
+}
+
+.p404 .message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.p404 .message > h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-size: 25vh;
+}
+
+.p404 .message > .mess {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 3vh;
+  color: #f56404;
 }
 /*# sourceMappingURL=main.css.map */

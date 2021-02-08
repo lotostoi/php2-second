@@ -1,8 +1,7 @@
 <?php
 
 namespace app\controllers;
-
-use app\model\AuthorizationModel;
+use app\engine\Session;
 
 class AuthorizationController extends Controller
 {

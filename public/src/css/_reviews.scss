@@ -227,6 +227,11 @@
           color: $color-dark;
         }
       }
+      & > .date {
+       
+        color: gray;
+        font-style: italic;
+      }
     }
     & > .edit {
       display: flex;
@@ -275,7 +280,7 @@
     background: rgb(0, 0, 0);
     color: $color-light;
     border: none;
-   
+
     @include grayShadow;
     border-radius: 3px;
     font-size: 1rem;

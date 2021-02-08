@@ -1,8 +1,7 @@
 <?php
-namespace app\model;
 
+namespace app\model\entites;
 use app\model\Model;
-
 
 class Hashes extends Model
 {
@@ -11,7 +10,8 @@ class Hashes extends Model
     protected $hash;
 
     public function __construct($id_user = null, $hash = null)
-    {   parent::__construct();
+    {
+        parent::__construct();
         $this->id_user = $id_user;
         $this->hash = $hash;
     }
