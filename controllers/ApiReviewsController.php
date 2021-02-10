@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\model\repositories\reviews\ReviewsRepository;
 use app\model\entites\reviews\Reviews;
-use app\engine\Request;
+use app\engine\App;
 
 
 class ApiReviewsController extends ApiController
@@ -12,15 +12,15 @@ class ApiReviewsController extends ApiController
     private $countReviews = 2;
     public function actionAll()
     {
-        echo json_encode((new ReviewsRepository())->getAll());
+        echo json_encode(App::call()->ReviewsRepository->getAll());
         die();
     }
     public function actionLimit()
     {
-        $from = (new Request())->getParams()['limit'];
+        $from = App::call()->Request->getParams()['limit'];
         $to = $this->countReviews;
         $revs = [];
-        foreach ((new ReviewsRepository())->getLimitRevert($from, $to) as $obj) {
+        foreach (App::call()->ReviewsRepository->getLimitRevert($from, $to) as $obj) {
             $obj['admin'] = $this->params['admin'];
             $obj['accessForEdit'] = $obj['user'] === $this->params['user'];
             $revs[] = $obj;
@@ -40,7 +40,7 @@ class ApiReviewsController extends ApiController
                 $this->user['admin']
             );
 
-            (new ReviewsRepository())->save($review);
+            App::call()->ReviewsRepository->save($review);
 
             echo json_encode([
                 "result" => 'ok',
@@ -61,19 +61,19 @@ class ApiReviewsController extends ApiController
     }
     public function actionEdit()
     {
-        $id = (new Request())->getParams()['id'];
-        $textReview = (new Request())->getParams()['review'];
-        $review = (new ReviewsRepository())->getOne($id);
+        $id = App::call()->Request->getParams()['id'];
+        $textReview = App::call()->Request->getParams()['review'];
+        $review = App::call()->ReviewsRepository->getOne($id);
         $review->review = $textReview;
-        (new ReviewsRepository())->save($review);
+        App::call()->ReviewsRepository->save($review);
         echo json_encode(['result' => 'ok']);
         die();
     }
     public function actionDelete()
     {
-        $id = (new Request())->getParams()['id'];
-        $review = (new ReviewsRepository())->getOne($id);
-        (new ReviewsRepository())->delete($review);
+        $id = App::call()->Request->getParams()['id'];
+        $review = App::call()->ReviewsRepository->getOne($id);
+        App::call()->ReviewsRepository->delete($review);
         echo json_encode(['result' => 'ok']);
         die();
     }

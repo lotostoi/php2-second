@@ -1,36 +1,29 @@
 <?php
 
-namespace app\config;
-
-use app\traits\GetterAndSetter;
-
-define("PUBLIC_FOLDER", $_SERVER['CONTEXT_DOCUMENT_ROOT']);
-define("TEMPLATES", PUBLIC_FOLDER . "/../views/");
-define("CONFIG", PUBLIC_FOLDER . "/../config/");
-define("MODELS", PUBLIC_FOLDER . "/../models/");
-define("CONTROLLERS", PUBLIC_FOLDER . "/../controllers/");
-define("CORE", PUBLIC_FOLDER . "/../core/");
-define("API", PUBLIC_FOLDER . "/../api/");
-define("BIG", "src/bigimages/");
-define("SMALL", "src/smallimages/");
-
-class Config
-{   
-    protected $db = [
-        'driver' => 'mysql',
-        'host' => 'localhost:3306',
-        'user' => 'lotos',
-        'password' => 'XrTA2B2Igm3AzBPR',
-        'dbname' => 'my_portfolio'
-    ];
-
-    protected $namespaces= [
-        'controllers' => "app\\controllers\\",
-    ];
-
-    protected $pathes = [
-        'templates' => TEMPLATES,
-    ];
-
-    use GetterAndSetter;
-}
+return [
+    'namespaces_Controllers' => "app\\controllers\\",
+    'templates' => $_SERVER['CONTEXT_DOCUMENT_ROOT'] . "/../twigViews/",
+    'BIG'=> 'src/bigimages/',
+    'SMALL' =>'src/smallimages/',
+    'STOR_FOR_IMG' => 'src/img/store/',
+    'components' => [
+        'Db' => [
+            'class' => app\engine\Db::class,
+            'driver' => 'mysql',
+            'host' => 'localhost:3306',
+            'login' => 'lotos',
+            'password' => 'XrTA2B2Igm3AzBPR',
+            'database' => 'my_portfolio',
+            'charset' => 'utf8'
+        ],
+        'Request' => ['class' => app\engine\Request::class],
+        'Session' => ['class' => app\engine\Session::class],
+        'LoaderImages' => ['class' => app\engine\LoaderImages::class],
+        'ReviewsRepository' => ['class' => app\model\repositories\reviews\ReviewsRepository::class],
+        'WorkRepository' => ['class' => app\model\repositories\work\WorkRepository::class],
+        'WorkToTagsRepository' => ['class' => app\model\repositories\work\WorkToTagsRepository::class],
+        'TagsRepository' => ['class' => app\model\repositories\work\TagsRepository::class],
+        'UsersRepository' => ['class' => app\model\repositories\UsersRepository::class],
+        'HashesRepository' => ['class' => app\model\repositories\HashesRepository::class],
+    ],
+];

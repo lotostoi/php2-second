@@ -1,0 +1,92 @@
+{% extends "mainLayuot.twig" %}
+{% block content %}
+	<section class="common wrapper">
+		<div class="common-header__fone">
+			<div class="common-header__cont">
+				<h1 class="common-header__h1">Добавить работу_</h1>
+			</div>
+		</div>
+		<div class="common-body">
+			<div class="admin-catalog">
+				{% if result =='ok' %}
+					<p class="result_loader">Работа была успешно добавлена!</p>
+				{% endif %}
+				<form action="" enctype="multipart/form-data" class="admin-catalog__from" method="POST">
+
+					<div class="form__img">
+						<div class="img">
+							<label for="">Load image:</label>
+							<input type="file" class="img-work" name="work-image[]">
+							<input type="hidden" name="linkToImg" value="">
+							<div class="picture"></div>
+						</div>
+
+						{% if errors.load %}
+							<p class="form__message">Загрузите изображение</p>
+						{% endif %}
+
+					</div>
+
+					<div class="form__tags">
+						{% for tag in tags %}
+							<label>
+								<span>{{ tag.name}}</span>
+								<input type="checkbox" name="_tag_{{tag.name}}" {% if tag.tagForName %} checked {% endif %} value="{{tag.tagForName}}">
+							</label>
+						{% endfor %}
+						{% if errors.tags %}
+							<p class="form__message">Выберите теги!</p>
+						{% endif %}
+					</div>
+
+					<div class="form__title">
+						<label>
+							<span>Title:</span>
+							<input type="text" name="title" value="{{title}}">
+						</label>
+						{% if errors.title %}
+							<p class="form__messeage">Введите название!</p>
+						{% endif %}
+					</div>
+					<div class="form__git">
+						<label>
+							<span>Link to git:</span>
+							<input type="text" name="git" value="{{git}}">
+						</label>
+
+						{% if errors.git %}
+							<p class="form__message">Введите сылку...</p>
+						{% endif %}
+					</div>
+
+					<div class="form__project">
+						<label>
+							<span>Link to project:</span>
+							<input type="text" name="project" value="{{project}}">
+						</label>
+						{% if errors.project %}
+							<p class="form__message">Введите сылку...</p>
+						{% endif %}
+					</div>
+
+					<div class="form__description">
+						<label>
+							<span>Description:</span>
+							<textarea type="text" name="description">{{description}}</textarea>
+						</label>
+						{% if errors.description %}
+							<p class="form__message">Введите описание...</p>
+						{% endif %}
+					</div>
+					<input type="hidden" name="start" value="1">
+					<button type="submit">Add work</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<script src="/src/js/smoothScroll.js"></script>
+	<script src="/src/js/header.js"></script>
+	<script src="/src/js/server.js"></script>
+	<script src="/src/js/admin-work.js"></script>
+
+{% endblock %}

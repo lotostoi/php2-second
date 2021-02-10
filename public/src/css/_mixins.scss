@@ -92,7 +92,7 @@ $time: 0.3s;
         rgba(1, 0, 0, 0.7987570028011204) 42%,
         rgba(255, 98, 0, 0.6671043417366946) 100%
       ),
-      url('../img/baner.jpg');
+      url("../img/baner.jpg");
   }
 }
 @mixin bc-fone-rev {
@@ -104,7 +104,7 @@ $time: 0.3s;
         rgba(249, 128, 7, 0.7987570028011204) 0%,
         rgba(1, 1, 0, 1) 100%
       ),
-      url('../img/baner.jpg');
+      url("../img/baner.jpg");
   }
 }
 
@@ -138,7 +138,7 @@ $time: 0.3s;
   width: $width;
   outline: none;
   padding: 10px;
-  background-image: url('../img/fonforlittelelem.jpg');
+  background-image: url("../img/fonforlittelelem.jpg");
   background-size: contain;
   background: rgb(0, 0, 0);
   color: $color-light;
@@ -148,6 +148,36 @@ $time: 0.3s;
   font-size: $fs;
   @include bc-fone;
   margin: 10px;
+  box-sizing: border-box;
+
+  &:hover {
+    @include bc-fone-rev;
+  }
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+@mixin but($width: 200px, $height: 30px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: $width;
+  height: $height;
+  outline: none;
+  padding: 10px;
+  background-image: url("../img/fonforlittelelem.jpg");
+  background-size: contain;
+  background: rgb(0, 0, 0);
+  color: $color-light;
+  border: none;
+
+  @include grayShadow;
+  border-radius: 3px;
+  font-size: 1rem;
+  @include bc-fone;
+  margin: 0 20px;
   box-sizing: border-box;
 
   &:hover {

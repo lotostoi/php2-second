@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\model\repositories\reviews\ReviewsRepository;
+use app\engine\App;
 
 class ReviewsController extends Controller
 {
@@ -10,7 +11,7 @@ class ReviewsController extends Controller
 
     public function actionMain()
     {
-        $this->params['reviews'] = (new ReviewsRepository())->getLimitRevert(0, $this->countReviews);
+        $this->params['reviews'] = App::call()->ReviewsRepository->getLimitRevert(0, $this->countReviews);
         echo $this->render('reviews/reviews', $this->params);
     }
 }

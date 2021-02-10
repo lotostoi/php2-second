@@ -100,15 +100,15 @@
     position: relative;
     &__outside-work {
       position: absolute;
-      top: -30px;
+      top: -35px;
       right: 20px;
-      color: $color-dark;
+      @include but; 
     }
     &__outside-filters {
       position: absolute;
-      top: -30px;
-      right: 120px;
-      color: $color-dark;
+      top: -35px;
+      right: 240px;
+      @include but; 
     }
     &__cont {
       display: flex;
@@ -136,7 +136,7 @@
           display: flex;
           width: 100%;
           justify-content: center;
-          background: #696969 url('../img/loader.svg') center center no-repeat;
+          background: #696969 url('../img/loader.svg') center no-repeat;
           background-size: 30%;
           & > img {
             width: 100%;

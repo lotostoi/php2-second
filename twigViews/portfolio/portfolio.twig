@@ -33,7 +33,7 @@
 				<p class="result_loader">Работа была удалена успешно...</p>
 			{% endif %}
 			{% if admin %}
-				<a href="/portfolio/add" class="portfolio-catalog__outside-work">Add work</a>
+				<a href="/work/add" class="portfolio-catalog__outside-work">Add work</a>
 				<a href="/filters" class="portfolio-catalog__outside-filters">Edit filters</a>
 			{% endif %}
 			<div class="portfolio-catalog__cont">
@@ -51,13 +51,14 @@
 								<span>{{tag}}</span>
 							{% endfor %}
 						</div>
-						<a href="/work?id=<?= $work['id'] ?>" class="link">Подробнее...</a>
+						<a href="/work/work?id={{work.id}}" class="link">Подробнее...</a>
 					</div>
 				{% endfor %}
 			</div>
 		</div>
-	</section>
 		<script src="/src/js/smoothScroll.js"></script>		
 		<script src="/src/js/header.js"></script>
 		<script src="/src/js/server.js"></script>
+	</section>
+		
 {% endblock %}

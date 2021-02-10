@@ -2,7 +2,7 @@
 namespace app\engine;
 
 use app\interfaces\Irender;
-use app\config\Config;
+
 
 class TwigRender implements Irender
  {
@@ -10,7 +10,7 @@ class TwigRender implements Irender
 
     public function __construct()
     {
-      $loader = new \Twig\Loader\FilesystemLoader('../twigViews');
+      $loader = new \Twig\Loader\FilesystemLoader("../twigViews");
       $this->twig = new \Twig\Environment($loader, [
          'cache' => '../cache',
          'debug' => true

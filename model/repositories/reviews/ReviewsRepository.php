@@ -14,7 +14,8 @@ class ReviewsRepository extends Repository
     }
 
     public  function getTableName()
-    {
+
+    {  
         return 'reviews';
     }
 }

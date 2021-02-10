@@ -1,25 +1,29 @@
 <?php
 
 namespace app\engine;
-
-use app\config\Config;
-use app\traits\TSingletone;
-
 class Db
 {
     protected $connection =  null;
-    private $config = null;
-    private static $instance = null;
+    protected $config = null;
 
-    use TSingletone;
+
+    public function __construct($driver = null, $host = null, $login = null, $password = null, $database = null, $charset = "utf8")
+    {
+        $this->config['driver'] = $driver;
+        $this->config['host'] = $host;
+        $this->config['login'] = $login;
+        $this->config['password'] = $password;
+        $this->config['database'] = $database;
+        $this->config['charset'] = $charset;
+    }
+
 
     public function getConnection()
     {
         if (is_null($this->connection)) {
-            $this->config = (new Config)->db;
             $this->connection = new \PDO(
                 $this->prepareDsnString(),
-                $this->config['user'],
+                $this->config['login'],
                 $this->config['password']
             );
             $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
@@ -29,17 +33,18 @@ class Db
 
     private function prepareDsnString()
     {
+  
         return sprintf(
             "%s:host=%s;dbname=%s",
             $this->config['driver'],
             $this->config['host'],
-            $this->config['dbname']
+            $this->config['database']
         );
     }
 
     protected function query($sql, $params)
     {
-        
+
         $stmt = $this->getConnection()->prepare($sql);
         $stmt->execute($params);
         return $stmt;
@@ -50,7 +55,6 @@ class Db
     public function queryOne($sql, $params, $class = null)
     {
         if (!$class) {
-
             return $this->query($sql, $params)->fetch();
         } else {
             $stmt = $this->query($sql, $params);

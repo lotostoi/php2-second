@@ -5,6 +5,12 @@
   margin-top: 10px;
   box-sizing: border-box;
   position: relative;
+  &__linkToEdit {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    @include but;
+  }
   &__edit {
     position: absolute;
     top: 10px;
@@ -19,7 +25,7 @@
       height: 474px;
       display: flex;
       justify-content: center;
-      background: #696969 url('../img/loader.svg') center center no-repeat;
+      background: #696969 url("../img/loader.svg") center center no-repeat;
       background-size: 30%;
       @include mq(900px, max) {
         width: 500px;
@@ -34,7 +40,7 @@
   }
   &__title {
     font-family: $ff;
-   
+
     @include mq(600px, max) {
       font-size: 1rem;
     }
@@ -47,7 +53,7 @@
       font-size: 1rem;
       line-height: 25px;
     }
-   
+
     margin: 0;
   }
   &__a {
@@ -75,6 +81,5 @@
     font-style: italic;
     font-size: 1.1rem;
     margin-right: 5px;
-    
   }
 }

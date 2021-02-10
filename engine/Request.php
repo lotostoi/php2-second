@@ -29,6 +29,7 @@ class Request
         if (strstr($this->actionName, '?')) {
             $this->actionName =  explode('?', $this->actionName)[0];
         }
+      
 
         $this->params = $_REQUEST;
 

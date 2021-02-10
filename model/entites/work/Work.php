@@ -12,7 +12,7 @@ class Work extends Model
     protected $git = null;
     protected $project = null;
     protected $description = null;
-    protected $tags = null;
+
 
     public function __construct($title = null, $img = null, $git = null, $project = null, $description = null)
     {
@@ -23,5 +23,4 @@ class Work extends Model
         $this->project = $project;
         $this->description = $description;
     }
-
 }

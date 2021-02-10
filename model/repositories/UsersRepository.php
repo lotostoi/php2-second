@@ -5,7 +5,7 @@ namespace app\model\repositories;
 use app\model\entites\Hashes;
 use app\model\Repository;
 use app\model\entites\Users;
-use app\engine\Request;
+use app\engine\App;
 
 class UsersRepository extends Repository
 {
@@ -22,17 +22,18 @@ class UsersRepository extends Repository
 
     public function auth()
     {
-        $params = (new Request())->getParams();
+        $params = App::call()->Request->getParams();
 
         if (isset($params['login']) || isset($params['password'])) {
-            if (!isset($_SESSION['user'])) {
+
+            if (!isset(App::call()->Session->Session->getSession['user'])) {
+
                 $redirect = $params['redirect'];
                 $login = trim(($params['login']));
                 $password = $params['password'];
                 $save = $params['save'] ? true : "false";
                 $user = $this->getOneByField('login', $login);
                 $user = $user->id ? $user : $this->getOneByField('email', $login);
-          
 
                 if ($user->showKeys()['id']) {
                     if (password_verify($password, $user->showKeys()['password'])) {
@@ -40,14 +41,14 @@ class UsersRepository extends Repository
                         header("Location: /$redirect");
                         die();
                     } else {
-                        session_start();
-                        $_SESSION['auth_error'] = "Неверный логин или пароль";
+                        App::call()->Session->sessionStart();
+                        App::call()->Session->Session->setSession("auth_error", "Неверный логин или пароль");
                         header("Location: /authorization/enter");
                         die();
                     }
                 } else {
-                    session_start();
-                    $_SESSION['auth_error'] = "Неверный логин или пароль";
+                    App::call()->Session->sessionStart();
+                    App::call()->Session->Session->setSession("auth_error", "Неверный логин или пароль");
                     header("Location: /authorization/enter");
                     die();
                 }
@@ -60,26 +61,26 @@ class UsersRepository extends Repository
 
     public function setCook($user, $save)
     {
-        $_SESSION['user'] = $user;
+        App::call()->Session->setSession("user", $user);
         $id = $user['id'];
         if ($save == 1) {
             $hash = uniqid(rand(), true);
-            (new HashesRepository())->save(new Hashes($id, $hash));
+            App::call()->HashesRepository->save(new Hashes($id, $hash));
             setcookie("hash", "$hash", time() + 60 * 60 * 24 * 30, "/");
         }
     }
 
     public function getUser()
     {
-        if ($_SESSION['user']) {
-            return $_SESSION['user'];
+        if (App::call()->Session->getSession('user')) {
+            return App::call()->Session->getSession('user');
         } elseif ($_COOKIE['hash']) {
             $hash = $_COOKIE['hash'];
-            $user_id = (array) (new HashesRepository())->getOneByField('hash', $hash);
+            $user_id = (array) App::call()->HashesRepository->getOneByField('hash', $hash);
             $user_id  = $user_id['id_user'];
             if ($user_id) {
                 $user = (array) $this->getOne($user_id);
-                $_SESSION['user'] = $user;
+                App::call()->Session->setSession('user', $user);
                 return $user;
             }
         }

@@ -103,7 +103,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         echo "\t\t\t";
         if (($context["admin"] ?? null)) {
             // line 36
-            echo "\t\t\t\t<a href=\"/portfolio/add\" class=\"portfolio-catalog__outside-work\">Add work</a>
+            echo "\t\t\t\t<a href=\"/work/add\" class=\"portfolio-catalog__outside-work\">Add work</a>
 \t\t\t\t<a href=\"/filters\" class=\"portfolio-catalog__outside-filters\">Edit filters</a>
 \t\t\t";
         }
@@ -148,7 +148,10 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 53
             echo "\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<a href=\"/work?id=<?= \$work['id'] ?>\" class=\"link\">Подробнее...</a>
+\t\t\t\t\t\t<a href=\"/work/work?id=";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "id", [], "any", false, false, false, 54), "html", null, true);
+            echo "\" class=\"link\">Подробнее...</a>
 \t\t\t\t\t</div>
 \t\t\t\t";
         }
@@ -158,10 +161,11 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         // line 57
         echo "\t\t\t</div>
 \t\t</div>
-\t</section>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>\t\t
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
+\t</section>
+\t\t
 ";
     }
 
@@ -177,7 +181,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 
     public function getDebugInfo()
     {
-        return array (  159 => 57,  150 => 53,  141 => 51,  137 => 50,  130 => 46,  122 => 43,  118 => 41,  114 => 40,  111 => 39,  106 => 36,  103 => 35,  99 => 33,  97 => 32,  91 => 28,  82 => 25,  77 => 23,  74 => 22,  70 => 21,  50 => 3,  46 => 2,  35 => 1,);
+        return array (  162 => 57,  153 => 54,  150 => 53,  141 => 51,  137 => 50,  130 => 46,  122 => 43,  118 => 41,  114 => 40,  111 => 39,  106 => 36,  103 => 35,  99 => 33,  97 => 32,  91 => 28,  82 => 25,  77 => 23,  74 => 22,  70 => 21,  50 => 3,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -217,7 +221,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t\t\t<p class=\"result_loader\">Работа была удалена успешно...</p>
 \t\t\t{% endif %}
 \t\t\t{% if admin %}
-\t\t\t\t<a href=\"/portfolio/add\" class=\"portfolio-catalog__outside-work\">Add work</a>
+\t\t\t\t<a href=\"/work/add\" class=\"portfolio-catalog__outside-work\">Add work</a>
 \t\t\t\t<a href=\"/filters\" class=\"portfolio-catalog__outside-filters\">Edit filters</a>
 \t\t\t{% endif %}
 \t\t\t<div class=\"portfolio-catalog__cont\">
@@ -235,15 +239,16 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t\t\t\t\t\t\t<span>{{tag}}</span>
 \t\t\t\t\t\t\t{% endfor %}
 \t\t\t\t\t\t</div>
-\t\t\t\t\t\t<a href=\"/work?id=<?= \$work['id'] ?>\" class=\"link\">Подробнее...</a>
+\t\t\t\t\t\t<a href=\"/work/work?id={{work.id}}\" class=\"link\">Подробнее...</a>
 \t\t\t\t\t</div>
 \t\t\t\t{% endfor %}
 \t\t\t</div>
 \t\t</div>
-\t</section>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>\t\t
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
+\t</section>
+\t\t
 {% endblock %}
 ", "portfolio/portfolio.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\portfolio\\portfolio.twig");
     }

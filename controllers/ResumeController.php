@@ -6,7 +6,7 @@ class ResumeController extends Controller
   
     public function actionMain()
     {
-        echo $this->render('resume/resume', []);
+        echo $this->render('resume/resume', $this->params);
     }
      
 }

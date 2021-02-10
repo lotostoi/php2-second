@@ -1,11 +1,7 @@
 <?php
 
 namespace app\controllers;
-
-use app\model\AuthorizationModel;
-use app\engine\Session;
-use app\model\repositories\UsersRepository;
-
+use app\engine\App;
 class ApiController
 {
 
@@ -17,19 +13,14 @@ class ApiController
 
     public function __construct()
     {
-
-        $session = new Session();
-        $session->sessionStart();
-        $this->authModel = new UsersRepository();
+        $this->authModel = App::call()->UsersRepository;
         $this->user = $this->authModel->getUser();
-
-        $this->params['user'] = $session->getSession('user')['login'] ?: null;
-        $this->params['admin'] = $session->getSession('user')['admin'] ?: null;
+        $this->params['user'] = App::call()->Session->getSession('user')['login'] ?: null;
+        $this->params['admin'] = App::call()->Session->getSession('user')['admin'] ?: null;
     }
 
     public function runAction($action = null)
     {
-       
         $this->action = $action ?: $this->defaultAction;
         $method = "action" . ucfirst($this->action);
         if (method_exists($this, $method)) {

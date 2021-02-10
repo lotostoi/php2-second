@@ -3,7 +3,7 @@
 namespace app\model;
 
 use app\interfaces\IModel;
-use app\engine\Db;
+use app\engine\App;
 
 
 abstract class Repository implements IModel
@@ -13,57 +13,61 @@ abstract class Repository implements IModel
     {
         $tableName = $this->getTableName();
         $sql = "SELECT * FROM {$tableName} WHERE id = :id";
-        return Db::getInstance()->queryOne($sql, ['id' => $id], $this->getEntityClass());
+        return App::call()->Db->queryOne($sql, ['id' => $id], $this->getEntityClass());
     }
 
     public  function getOneByField($field, $value)
     {
         $tableName = $this->getTableName();
         $sql = "SELECT * FROM {$tableName} WHERE {$field} = :{$field}";
-        return Db::getInstance()->queryOne($sql, ["{$field}" => $value], $this->getEntityClass());
+        return App::call()->Db->queryOne($sql, ["{$field}" => $value], $this->getEntityClass());
     }
 
     public  function getAll($fieldName = null, $value = null)
     {
         $tableName = $this->getTableName();
         $sql = $fieldName && $value ? "SELECT * FROM {$tableName} WHERE `{$fieldName}`={$value}" : "SELECT * FROM {$tableName}";
-        return Db::getInstance()->queryAll($sql);
+        return App::call()->Db->queryAll($sql);
     }
     public function getAllRevert($fieldName = null, $value = null)
     {
         $tableName = $this->getTableName();
         $sql = $fieldName && $value ? "SELECT * FROM {$tableName} WHERE `{$fieldName}`={$value} ORDER BY id DESC" : "SELECT * FROM {$tableName} ORDER BY id DESC";
-        return Db::getInstance()->queryAll($sql);
+        return App::call()->Db->queryAll($sql);
     }
 
     public function getLimit($from, $to)
     {
         $tableName = $this->getTableName();
         $sql = "SELECT * FROM {$tableName} LIMIT ?, ?";
-        return Db::getInstance()->queryLimit($sql, $from, $to);
+        return App::call()->Db->queryLimit($sql, $from, $to);
     }
     public  function getLimitRevert($from, $to)
     {
         $tableName = $this->getTableName();
         $sql = "SELECT * FROM {$tableName} ORDER BY id DESC LIMIT ?, ?";
-        return Db::getInstance()->queryLimit($sql, $from, $to);
+        return App::call()->Db->queryLimit($sql, $from, $to);
     }
 
     public function insert(Model $entity)
     {
-
+       
         $tableName = $this->getTableName();
+   
+      
         $data = $this->getColumnsAndValues($entity);
+    
         $sql = "INSERT INTO {$tableName} ({$data['columns']}) VALUES ({$data['values']})";
-        Db::getInstance()->execute($sql, $data['params']);
-        $entity->id = Db::getInstance()->getLastId();
+        App::call()->Db->execute($sql, $data['params']);
+        $entity->id = App::call()->Db->getLastId();
+    
     }
 
     public function delete(Model $entity)
     {
         $tableName = $this->getTableName();
         $sql = "DELETE FROM {$tableName} WHERE id=:id";
-        return Db::getInstance()->execute($sql, [':id' => $entity->id]);
+        return App::call()->Db->execute($sql, [':id' => $entity->id]);
     }
 
     public function update(Model $entity)
@@ -78,13 +82,14 @@ abstract class Repository implements IModel
         $tableName = $this->getTableName();
         $params['id'] = $entity->id;
         $sql = "UPDATE `{$tableName}` SET {$colums} WHERE `id`=:id";
-        Db::getInstance()->execute($sql, $params);
+        App::call()->Db->execute($sql, $params);
         $entity->setFalseAllProps();
     }
 
 
     public  function save(Model $entity)
     {
+       
         if (is_null($entity->id)) {
             $this->insert($entity);
         } else {
@@ -112,10 +117,6 @@ abstract class Repository implements IModel
 
         return ['columns' => $colums, 'values' => $values, 'params' => $params];
     }
-
-
-
-
 
     abstract protected function getEntityClass();
 

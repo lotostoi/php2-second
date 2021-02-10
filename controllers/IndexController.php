@@ -8,7 +8,7 @@ class IndexController extends Controller
   
     public function actionMain()
     {
-        echo $this->render('index', []);
+        echo $this->render('index', $this->params);
     }
      
 }
