@@ -7,8 +7,6 @@ use app\engine\App;
 
 class FiltersController extends Controller
 {
-
-
     public function actionAdd()
     {
         $tag = App::call()->Request->getParams()['tag'];
@@ -45,17 +43,14 @@ class FiltersController extends Controller
         echo json_encode(['result' => 'ok',]);
         die();
     }
-    public function actionLimit()
+    public function actionEdit()
     {
-        $from = App::call()->Request->getParams()['limit'];
-        $to = $this->countReviews;
-        $revs = [];
-        foreach (App::call()->ReviewsRepository->getLimitRevert($from, $to) as $obj) {
-            $obj['admin'] = $this->params['admin'];
-            $obj['accessForEdit'] = $obj['user'] === $this->params['user'];
-            $revs[] = $obj;
-        }
-        echo json_encode($revs);
+        $id = App::call()->Request->getParams()['id'];
+        $tag = App::call()->Request->getParams()['tag'];
+        $objTag = App::call()->TagsRepository->getOne($id);
+        $objTag->name = $tag;
+        App::call()->TagsRepository->save($objTag);
+        echo json_encode(['result' => 'ok',]);
         die();
     }
 }

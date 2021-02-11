@@ -203,6 +203,7 @@ class __TwigTemplate_5043fa9942d5e642ed25596d85f7c200d0a02fc48ca21b9666b7b80e9d8
 \t\t</div>
 \t</section>
 \t<script src=\"/src/js/smoothScroll.js\"></script>
+\t<script src=\"/src/js/functions.js\"></script>
 \t<script src=\"/src/js/header.js\"></script>
 \t<script src=\"/src/js/server.js\"></script>
 \t<script src=\"/src/js/admin-work.js\"></script>
@@ -315,6 +316,7 @@ class __TwigTemplate_5043fa9942d5e642ed25596d85f7c200d0a02fc48ca21b9666b7b80e9d8
 \t\t</div>
 \t</section>
 \t<script src=\"/src/js/smoothScroll.js\"></script>
+\t<script src=\"/src/js/functions.js\"></script>
 \t<script src=\"/src/js/header.js\"></script>
 \t<script src=\"/src/js/server.js\"></script>
 \t<script src=\"/src/js/admin-work.js\"></script>

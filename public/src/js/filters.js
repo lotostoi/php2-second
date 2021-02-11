@@ -52,10 +52,9 @@ wrapper.addEventListener('click', async (e) => {
         const tag = $.el(`input[data-input="${id}"]`)
         try {
             await http.post(
-                `filter/edit`, {
+                `filters/edit`, {
                 id,
                 tag: tag.value,
-                action: 'edit',
             },
                 true
             )

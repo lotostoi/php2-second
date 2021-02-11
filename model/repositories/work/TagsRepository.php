@@ -25,7 +25,7 @@ class TagsRepository extends Repository
         $id = App::call()->Request->getParams()['id'];
         $sql = "DELETE FROM tags, works_to_tags USING tags, works_to_tags WHERE tags.id=:id AND works_to_tags.id_tag=:id";
         App::call()->Db->execute($sql, [':id' =>$id]);
-        $tag = App::call()->TagsRepository->getOne($id);
-        App::call()->TagsRepository($tag); 
+        $tag = $this->getOne($id);
+        $tag = $this->delete($tag); 
     }
 }
