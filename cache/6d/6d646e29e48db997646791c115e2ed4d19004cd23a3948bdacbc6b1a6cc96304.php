@@ -52,7 +52,7 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 \t\t\t<div class=\"common-header__cont\">
 \t\t\t\t<h1 class=\"common-header__h1\">";
         // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "title", [], "any", false, false, false, 6), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
         echo "</h1>
 \t\t\t</div>
 \t\t</div>
@@ -69,53 +69,76 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
         echo "\t\t\t\t";
         if (($context["admin"] ?? null)) {
             // line 15
-            echo "\t\t\t\t\t<a href=\"./portfolio/edit?id=";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "id", [], "any", false, false, false, 15), "html", null, true);
-            echo "&order=1\" class=\"work__linkToEdit\">Edit this work</a>
+            echo "\t\t\t\t\t<a href=\"/work/edit?id=";
+            echo twig_escape_filter($this->env, ($context["id"] ?? null), "html", null, true);
+            echo "\" class=\"work__linkToEdit\">Редактировать</a>
+\t\t\t\t\t<div class=\"work__deleteWork\">
+\t\t\t\t\t\t<a href=\"/work/delete?id=";
+            // line 17
+            echo twig_escape_filter($this->env, ($context["id"] ?? null), "html", null, true);
+            echo "\" class=\"block delete\">Удалить</a>
+\t\t\t\t\t\t<input type=\"checkbox\" class=\"accessDel\">
+\t\t\t\t\t</div>
 \t\t\t\t";
         }
-        // line 17
-        echo "\t\t\t\t<div class=\"work__img\" data-src=\"/src/bigimages/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "img", [], "any", false, false, false, 17), "html", null, true);
+        // line 21
+        echo "\t\t\t\t<div class=\"work__img\" data-src=\"";
+        echo twig_escape_filter($this->env, ($context["img_big"] ?? null), "html", null, true);
         echo "\">
-\t\t\t\t\t<img src=\"/src/bigimages/";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "img", [], "any", false, false, false, 18), "html", null, true);
+\t\t\t\t\t<img src=\"/";
+        // line 22
+        echo twig_escape_filter($this->env, ($context["img_big"] ?? null), "html", null, true);
         echo "\" width=\"720\" height=\"476\" alt=\"name\" class=\"big-picture__img\">
 \t\t\t\t</div>
-\t\t\t\t<h1 class=\"work__title\">";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "title", [], "any", false, false, false, 20), "html", null, true);
-        echo "</h1>
+\t\t\t\t<div class=\"work__tags\">
+\t\t\t\t\t\t\t<span class=\"title\">Tехнологии:
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t";
+        // line 27
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["tagsForInput"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+            // line 28
+            echo "\t\t\t\t\t\t\t\t<span>";
+            echo twig_escape_filter($this->env, $context["tag"], "html", null, true);
+            echo "</span>
+\t\t\t\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 30
+        echo "\t\t\t\t\t\t</div>
 \t\t\t\t<p class=\"work__description\">";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "description", [], "any", false, false, false, 21), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
         echo "</p>
 \t\t\t\t<a href=\"";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "project", [], "any", false, false, false, 22), "html", null, true);
+        // line 32
+        echo twig_escape_filter($this->env, ($context["project"] ?? null), "html", null, true);
         echo "\" class=\"work__a\">Посмотреть проект...</a>
 \t\t\t\t";
-        // line 23
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "git", [], "any", false, false, false, 23), "noaccess"))) {
-            // line 24
+        // line 33
+        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "git", [], "any", false, false, false, 33), "noaccess"))) {
+            // line 34
             echo "\t\t\t\t\t<a href=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "git", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, ($context["git"] ?? null), "html", null, true);
             echo "\" class=\"work__a\">Посмотреть код..
 \t\t\t\t\t</a>
 \t\t\t\t";
         } else {
-            // line 27
+            // line 37
             echo "\t\t\t\t\t<p class=\"work__noAccess\">Код закрыт по просьбе заказчика..</p>
 \t\t\t\t";
         }
-        // line 29
-        echo "\t\t\t\t<a href=\"/portfolio/get\" class=\"work__a\">Назад в портфолио...
+        // line 39
+        echo "\t\t\t\t<a href=\"/work\" class=\"work__a\">Назад в портфолио...
 \t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/work.js\"></script>
 \t</section>
 ";
     }
@@ -132,7 +155,7 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 
     public function getDebugInfo()
     {
-        return array (  113 => 29,  109 => 27,  102 => 24,  100 => 23,  96 => 22,  92 => 21,  88 => 20,  83 => 18,  78 => 17,  72 => 15,  69 => 14,  65 => 12,  63 => 11,  55 => 6,  50 => 3,  46 => 2,  35 => 1,);
+        return array (  135 => 39,  131 => 37,  124 => 34,  122 => 33,  118 => 32,  114 => 31,  111 => 30,  102 => 28,  98 => 27,  90 => 22,  85 => 21,  78 => 17,  72 => 15,  69 => 14,  65 => 12,  63 => 11,  55 => 6,  50 => 3,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -142,7 +165,7 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 \t<section class=\"common wrapper\">
 \t\t<div class=\"common-header__fone\">
 \t\t\t<div class=\"common-header__cont\">
-\t\t\t\t<h1 class=\"common-header__h1\">{{ work.title }}</h1>
+\t\t\t\t<h1 class=\"common-header__h1\">{{title }}</h1>
 \t\t\t</div>
 \t\t</div>
 \t\t<div class=\"common-body\">
@@ -151,26 +174,37 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 \t\t\t\t\t<p class=\"result_loader\">Работа была успешно отредактированна!</p>
 \t\t\t\t{% endif %}
 \t\t\t\t{% if admin %}
-\t\t\t\t\t<a href=\"./portfolio/edit?id={{work.id}}&order=1\" class=\"work__linkToEdit\">Edit this work</a>
+\t\t\t\t\t<a href=\"/work/edit?id={{id}}\" class=\"work__linkToEdit\">Редактировать</a>
+\t\t\t\t\t<div class=\"work__deleteWork\">
+\t\t\t\t\t\t<a href=\"/work/delete?id={{id}}\" class=\"block delete\">Удалить</a>
+\t\t\t\t\t\t<input type=\"checkbox\" class=\"accessDel\">
+\t\t\t\t\t</div>
 \t\t\t\t{% endif %}
-\t\t\t\t<div class=\"work__img\" data-src=\"/src/bigimages/{{work.img}}\">
-\t\t\t\t\t<img src=\"/src/bigimages/{{work.img}}\" width=\"720\" height=\"476\" alt=\"name\" class=\"big-picture__img\">
+\t\t\t\t<div class=\"work__img\" data-src=\"{{img_big}}\">
+\t\t\t\t\t<img src=\"/{{img_big}}\" width=\"720\" height=\"476\" alt=\"name\" class=\"big-picture__img\">
 \t\t\t\t</div>
-\t\t\t\t<h1 class=\"work__title\">{{work.title}}</h1>
-\t\t\t\t<p class=\"work__description\">{{work.description}}</p>
-\t\t\t\t<a href=\"{{work.project}}\" class=\"work__a\">Посмотреть проект...</a>
+\t\t\t\t<div class=\"work__tags\">
+\t\t\t\t\t\t\t<span class=\"title\">Tехнологии:
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t{% for tag in tagsForInput %}
+\t\t\t\t\t\t\t\t<span>{{tag}}</span>
+\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t</div>
+\t\t\t\t<p class=\"work__description\">{{description}}</p>
+\t\t\t\t<a href=\"{{project}}\" class=\"work__a\">Посмотреть проект...</a>
 \t\t\t\t{%  if work.git != \"noaccess\" %}
-\t\t\t\t\t<a href=\"{{work.git}}\" class=\"work__a\">Посмотреть код..
+\t\t\t\t\t<a href=\"{{git}}\" class=\"work__a\">Посмотреть код..
 \t\t\t\t\t</a>
 \t\t\t\t{% else %}
 \t\t\t\t\t<p class=\"work__noAccess\">Код закрыт по просьбе заказчика..</p>
 \t\t\t\t{% endif %}
-\t\t\t\t<a href=\"/portfolio/get\" class=\"work__a\">Назад в портфолио...
+\t\t\t\t<a href=\"/work\" class=\"work__a\">Назад в портфолио...
 \t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/work.js\"></script>
 \t</section>
 {% endblock %}
 ", "portfolio/work.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\portfolio\\work.twig");

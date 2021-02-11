@@ -40,30 +40,40 @@
       justify-content: center;
       background-color: rgba(128, 128, 128, 0.15);
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 3px;
       box-sizing: border-box;
       & > div.img {
         display: flex;
         align-items: center;
+        position: relative;
+        height: 300px;
         & > label {
           font-size: 1.5rem;
           font-weight: 500;
         }
-        & > input {
-          padding: 10px;
-          margin-left: 20px;
+        & > input.img-work {
+          // visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          width: 400px;
+          height: 270px;
           display: flex;
           min-height: 30px;
           justify-content: center;
           align-items: center;
           line-height: 35px;
-
+          top: 10px;
+          left: 5px;
+          z-index: 105;
           font-size: 1.5rem;
-          @include placeholder {
-            font-size: 1.5rem;
+
+          &:hover {
+            visibility: visible;
+            border: 1px solid $color-bright;
           }
         }
         & div.picture {
+          position: absolute;
           width: 400px;
           height: 270px;
           border: 1px solid gray;
@@ -73,7 +83,11 @@
           justify-content: center;
           align-items: center;
           background-color: rgba(0, 0, 0, 0.616);
+          top: 10px;
+          left: 5px;
+          z-index: 102;
           & > img {
+            max-width: 390px;
             height: 260px;
             border-radius: 5px;
           }
@@ -91,7 +105,7 @@
       justify-content: flex-start;
       background-color: rgba(128, 128, 128, 0.15);
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 3px;
       box-sizing: border-box;
       & > label {
         display: flex;
@@ -117,27 +131,27 @@
       justify-content: flex-start;
       background-color: rgba(128, 128, 128, 0.15);
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 3px;
       box-sizing: border-box;
       & > label {
         width: 100%;
         display: flex;
         padding: 5px;
-        margin-right: 10px;
+        margin-right: 3px;
         align-items: center;
         & > span {
           width: 200px;
-          /*     font-family: $f-r; */
+
           font-size: 1.1rem;
         }
         & > input {
-          border-radius: 10px;
+          border-radius: 3px;
           outline: none;
           width: 70%;
           min-height: 25px;
           padding: 5px;
           margin-left: 10px;
-          /*     font-family: $f-r; */
+          border: 1px solid gray;
           font-size: 1.1rem;
         }
       }
@@ -150,7 +164,7 @@
       justify-content: flex-start;
       background-color: rgba(128, 128, 128, 0.15);
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 3px;
       box-sizing: border-box;
       & > label {
         width: 100%;
@@ -160,17 +174,16 @@
         align-items: center;
         & > span {
           width: 200px;
-          /*     font-family: $f-r; */
           font-size: 1.1rem;
         }
         & > textarea {
-          border-radius: 10px;
+          border-radius: 3px;
           outline: none;
           width: 70%;
           min-height: 95px;
           padding: 5px;
           margin-left: 10px;
-          /*     font-family: $f-r; */
+          padding: 10px;
           font-size: 1.1rem;
         }
       }
@@ -180,8 +193,19 @@
       min-height: 40px;
       justify-content: center;
       align-items: center;
-      /*     font-family: $f-r; */
       font-size: 1.4rem;
+      @include but;
+      margin: 10px 0;
+    }
+    & > button.block {
+      background-color: gray;
+      background-image: none;
+      color: rgba(255, 255, 255, 0.685);
+      cursor: not-allowed;
+      &:hover {
+        background-image: none;
+        background-color: gray;
+      }
     }
   }
 }

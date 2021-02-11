@@ -1,0 +1,37 @@
+{% extends "mainLayuot.twig" %}
+{% block content %}
+	<section class="common wrapper">
+		<div class="common-header__fone">
+			<div class="common-header__cont">
+				<h1 class="common-header__h1">Редактировать фильтры_</h1>
+			</div>
+		</div>
+		<div class="common-body">
+			<div class="admin-filters">
+				<p class="filters-message hiden"></p>
+				<p class="filters-error hiden"></p>
+				<div class="admin-filters__wrapper">
+					{% for tag in tags %}
+						<div class="filter" data-tag="{{tag.id}}">
+							<input type="text" data-input="{{tag.id}}" value="{{tag.name}}">
+							<button data-save="{{tag.id}}">Сохранить</button>
+							<button data-delete="{{tag.id}}">Удалить</button>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="admin-filters__add">
+					<form action="" method="POST" id="new-tag">
+						<input type="text" name="tag" id="admin-filters-tag" placeholder="новый фильтр">
+						<button id="add-tag">Добавить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="/src/js/smoothScroll.js"></script>
+	<script src="/src/js/functions.js"></script>
+	<script src="/src/js/header.js"></script>
+	<script src="/src/js/server.js"></script>
+	<script src="/src/js/filters.js"></script>
+
+{% endblock %}

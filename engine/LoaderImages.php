@@ -46,8 +46,8 @@ class LoaderImages
     public function loadImage($img, $folder)
     {
         $name = uniqid() . "." . explode('.', $img['name'])[1];
+        App::call()->LoaderImages->cleanDir($folder);
         move_uploaded_file($img['tmp_name'], $folder . $name);
-        App::call()->LoaderImages->clean($file, $folder);
         return $folder . $name;
     }
 

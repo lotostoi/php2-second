@@ -8,8 +8,48 @@
   &__linkToEdit {
     position: absolute;
     right: 20px;
-    top: 20px;
+    //top: 20px;
     @include but;
+    margin: 0;
+  }
+  &__deleteWork {
+    top: 50px;
+    right: 15px;
+    width: 200px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid $color-bright;
+    & > a {
+      @include but;
+      margin: 0;
+      background-image: none;
+      background-color: red;
+      &:hover {
+        background-image: none;
+        background-color: rgb(161, 3, 3);
+      }
+    }
+    & > a.block {
+      cursor: not-allowed;
+      background-color: gray;
+      background-image: none;
+      &:hover {
+        background-image: none;
+        background-color: gray;
+      }
+      &:active {
+        background-image: none;
+        background-color: gray;
+        transform: scale(1);
+      }
+    }
+
+    & > input {
+      margin-top: 10px;
+    }
   }
   &__edit {
     position: absolute;
@@ -27,6 +67,7 @@
       justify-content: center;
       background: #696969 url("../img/loader.svg") center center no-repeat;
       background-size: 30%;
+      @include shadow-bot;
       @include mq(900px, max) {
         width: 500px;
         height: 330px;
@@ -45,10 +86,29 @@
       font-size: 1rem;
     }
   }
+  &__tags {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    & > .title {
+      font-weight: 500;
+      font-style: italic;
+      margin-right: 5px;
+      color: $color-dark;
+    }
+    & > span {
+      font-weight: 300;
+      font-style: italic;
+      margin-right: 5px;
+      color: $color-dark;
+    }
+  }
   &__description {
     font-family: $ff;
     font-size: 1.2rem;
     line-height: 35px;
+    font-style: italic;
     @include mq(600px, max) {
       font-size: 1rem;
       line-height: 25px;

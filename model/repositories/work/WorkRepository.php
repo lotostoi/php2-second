@@ -26,7 +26,6 @@ class WorkRepository extends Repository
         $works_to_tags =  App::call()->WorkToTagsRepository->getAll();
 
         $catalog = [];
-
         foreach ($allWorks as $work) {
             $id = $work['id'];
             $tags = [];
@@ -46,51 +45,178 @@ class WorkRepository extends Repository
         return $catalog;
     }
 
-    function addWork()
+    public function getWork()
     {
-        $err = $this->check_form();
-        $title = App::call()->Request->getParams()['title'];
-        if (!$err && $title) {
+        $id = App::call()->Request->getParams()['id'];
+        $work = App::call()->WorkRepository->getOne($id);
+        $work_to_tags = App::call()->WorkToTagsRepository->getAll();
+        $tags = App::call()->TagsRepository->getAll();
+        $tagsId = [];
+
+        foreach ($work_to_tags  as $con) {
+            if ($con['id_work'] == $id) {
+                $tagsId[] = $con['id_tag'];
+            }
+        }
+
+        $tagsForThisWork = [];
+        $tagsForInput = [];
+
+        foreach ($tags as $tag) {
+            foreach ($tagsId  as $id) {
+                if ($tag['id'] == $id) {
+                    $tagsForThisWork[] = $tag;
+                    $tagsForInput[] = $tag['name'] . ",";
+                }
+            }
+        }
+        $tagsForInput[count($tagsForInput) - 1] = str_replace(',', '.', $tagsForInput[count($tagsForInput) - 1]);
+
+        return [
+            'id' => $work->id,
+            'title' => $work->title,
+            'git' => $work->git,
+            'project' => $work->project,
+            'description' => $work->description,
+            'img_big' => App::call()->config['BIG'] . $work->img,
+            'img_small' => App::call()->config['SMALL'] . $work->img,
+            'tags' => $tagsForThisWork,
+            'tagsForInput' => $tagsForInput,
+            'result' => App::call()->Request->getParams()['result']
+        ];
+    }
+
+    public function addWork()
+    {
+        if (!empty(App::call()->Request->getParams()['change'])) {
+            $err = $this->check_form();
             $title = App::call()->Request->getParams()['title'];
-            $git = App::call()->Request->getParams()['git'];
-            $project = App::call()->Request->getParams()['project'];
-            $description = App::call()->Request->getParams()['description'];
-            $link = App::call()->Request->getParams()['linkToImg'];
-            $big = App::call()->config['BIG'];
-            $small = App::call()->config['SMALL'];
+            if (!$err && $title) {
+                $title = App::call()->Request->getParams()['title'];
+                $git = App::call()->Request->getParams()['git'];
+                $project = App::call()->Request->getParams()['project'];
+                $description = App::call()->Request->getParams()['description'];
+                $link = App::call()->Request->getParams()['linkToImg'];
+                $big = App::call()->config['BIG'];
+                $small = App::call()->config['SMALL'];
+                $img = App::call()->LoaderImages->ResizeImg($link, $big, $small);
 
-            $img = App::call()->LoaderImages->ResizeImg($link , $big, $small);
+                if (!empty($link)) {
 
-            if (!empty($link)) {
+                    $work = new Work($title, $img, $git, $project, $description);
+                    $this->save($work);
+                    $tags = $this->getTagsChecked();
+                    $allTags = App::call()->TagsRepository->getAll();
 
-                // переписать эту часть после прохождения курса по базам данных;
-                // переписать эту часть после прохождения курса по базам данных;
-                // переписать эту часть после прохождения курса по базам данных;
-                // переписать эту часть после прохождения курса по базам данных;
-                // переписать эту часть после прохождения курса по базам данных;
+                    foreach ($allTags as $tag) {
+                        foreach ($tags as $r_tag) {
+                            if ($tag['name'] != $r_tag) continue;
+                            $workToTags = new WorkToTags($work->id, $tag['id']);
+                            App::call()->WorkToTagsRepository->save($workToTags);
+                        }
+                    }
+                } else {
+                    die("File isn't loaded ");
+                }
+                header("Location: /work?result=ok");
+                die();
+            }
+        } else {
+            $params = [];
+            $params['tags'] = $this->getTagsForParams();
+            $params['title'] = App::call()->Request->getParams()['title'];
+            $params['git'] = App::call()->Request->getParams()['git'];
+            $params['project'] = App::call()->Request->getParams()['project'];
+            $params['description'] = App::call()->Request->getParams()['description'];
+            $params['result'] = App::call()->Request->getParams()['result'];
+            $params['linkToImg'] = App::call()->Request->getParams()['linkToImg'];
+            $params['errors'] = App::call()->Session->getSession('errors');
+            return $params;
+        }
+    }
 
+    public function editWork()
+    {
+        $id = App::call()->Request->getParams()['id'];
+        if (!empty(App::call()->Request->getParams()['change'])) {
+            $err = $this->check_form();
+            $title = App::call()->Request->getParams()['title'];
+            if (!$err && $title) {
 
-                $work = new Work($title, $img, $git, $project, $description);
+                $work = $this->getOne($id);
 
-                $this->save($work);
+                $req = App::call()->Request->getParams();
 
+                $flag = false;
 
-                $tags = $this->getTagsChecked();
+                if ($req['title'] != $work->title) {
+                    $work->title = $req['title'];
+                    $flag = true;
+                }
+                if ($req['git'] != $work->git) {
+                    $work->git = $req['git'];
+                    $flag = true;
+                }
+                if ($req['project'] != $work->project) {
+                    $work->project = $req['project'];
+                    $flag = true;
+                }
+                if ($req['description'] != $work->description) {
+                    $work->description = $req['description'];
+                    $flag = true;
+                }
+
+                if ($work->img != explode("/", $req['linkToImg'])[count(explode("/", $req['linkToImg'])) - 1]) {
+                    $work->img =  explode("/", $req['linkToImg'])[count(explode("/", $req['linkToImg'])) - 1];
+                    $big = App::call()->config['BIG'];
+                    $small = App::call()->config['SMALL'];
+                    App::call()->LoaderImages->ResizeImg($req['linkToImg'], $big, $small);
+                    $flag = true;
+                }
+
+                if ($flag) {
+                    $this->save($work);
+                }
+
+                $checkedTags = $this->getTagsChecked();
+                $sql = "DELETE FROM `works_to_tags` WHERE id_work=:id";
+                App::call()->Db->execute($sql, [':id' => $work->id]);
                 $allTags = App::call()->TagsRepository->getAll();
-
                 foreach ($allTags as $tag) {
-                    foreach ($tags as $r_tag) {
+                    foreach ($checkedTags as $r_tag) {
                         if ($tag['name'] != $r_tag) continue;
                         $workToTags = new WorkToTags($work->id, $tag['id']);
                         App::call()->WorkToTagsRepository->save($workToTags);
                     }
                 }
-            } else {
-                die("File isn't loaded ");
+
+                header("Location: /work?result=ok");
+                die();
             }
-            header("Location: /work/add?result=ok");
-            die();
+        } else {
+            $work = $this->getWork($id);
+            $params = [];
+            $params['tags'] = $this->getTagsForParams();
+            $params['title'] = $work['title'];
+            $params['git'] = $work['git'];
+            $params['project'] = $work['project'];
+            $params['description'] = $work['description'];
+            $params['result'] = null;
+            $params['linkToImg'] = $work['img_big'];
+            $params['errors'] = null;
+            return $params;
         }
+    }
+
+    public function deleteWork()
+    {
+        $id = App::call()->Request->getParams()['id'];
+        $work = $this->getOne($id);
+        $sql = "DELETE FROM `works_to_tags` WHERE id_work=:id";
+        App::call()->Db->execute($sql, [':id' => $work->id]);
+        $this->delete($work);
+        header("Location: /work?result=ok");
+        die();
     }
 
     public function  check_form()
@@ -123,19 +249,26 @@ class WorkRepository extends Repository
     protected function getTagsChecked()
     {
         $tags = [];
-        foreach ($_POST as $key => $val) {
-            if (strpos($key, '_tag_') !== false) {
-                $tags[] = str_replace('_', '.', str_replace('_tag_', '', $key));
+        $id = App::call()->Request->getParams()['id'];
+        if ($id && empty(App::call()->Request->getParams()['change'])) {
+            $checkedTags = $this->getWork($id)['tags'];
+            foreach ($checkedTags as $tag) {
+                $tags[] = $tag['name'];
+            }
+        } else {
+            foreach ($_POST as $key => $val) {
+                if (strpos($key, '_tag_') !== false) {
+                    $tags[] = str_replace('_', '.', str_replace('_tag_', '', $key));
+                }
             }
         }
-
         return $tags;
     }
 
     public function getTagsForParams()
     {
         $tags = App::call()->TagsRepository->getAll();
-        $checkedTags = $this->getTagsChecked();
+        $checkedTags =  $this->getTagsChecked();
         foreach ($tags as $key => $tag) {
             foreach ($checkedTags as $value) {
                 if ($value === $tag['name']) {

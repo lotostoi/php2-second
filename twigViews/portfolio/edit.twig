@@ -77,8 +77,9 @@
 							<p class="form__message">Введите описание...</p>
 						{% endif %}
 					</div>
+					<input type="hidden" name="start" value="1">
 					<input type="hidden" name="change" value="">
-					<button type="submit" disabled class="addWork block">Add work</button>
+					<button type="submit" class="editWork block" disabled>Edit work</button>
 				</form>
 			</div>
 		</div>
@@ -88,5 +89,6 @@
 	<script src="/src/js/header.js"></script>
 	<script src="/src/js/server.js"></script>
 	<script src="/src/js/admin-work.js"></script>
+
 
 {% endblock %}

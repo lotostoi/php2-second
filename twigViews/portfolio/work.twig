@@ -3,7 +3,7 @@
 	<section class="common wrapper">
 		<div class="common-header__fone">
 			<div class="common-header__cont">
-				<h1 class="common-header__h1">{{ work.title }}</h1>
+				<h1 class="common-header__h1">{{title }}</h1>
 			</div>
 		</div>
 		<div class="common-body">
@@ -12,25 +12,37 @@
 					<p class="result_loader">Работа была успешно отредактированна!</p>
 				{% endif %}
 				{% if admin %}
-					<a href="./portfolio/edit?id={{work.id}}&order=1" class="work__linkToEdit">Edit this work</a>
+					<a href="/work/edit?id={{id}}" class="work__linkToEdit">Редактировать</a>
+					<div class="work__deleteWork">
+						<a href="/work/delete?id={{id}}" class="block delete">Удалить</a>
+						<input type="checkbox" class="accessDel">
+					</div>
 				{% endif %}
-				<div class="work__img" data-src="/src/bigimages/{{work.img}}">
-					<img src="/src/bigimages/{{work.img}}" width="720" height="476" alt="name" class="big-picture__img">
+				<div class="work__img" data-src="{{img_big}}">
+					<img src="/{{img_big}}" width="720" height="476" alt="name" class="big-picture__img">
 				</div>
-				<h1 class="work__title">{{work.title}}</h1>
-				<p class="work__description">{{work.description}}</p>
-				<a href="{{work.project}}" class="work__a">Посмотреть проект...</a>
+				<div class="work__tags">
+							<span class="title">Tехнологии:
+							</span>
+							{% for tag in tagsForInput %}
+								<span>{{tag}}</span>
+							{% endfor %}
+						</div>
+				<p class="work__description">{{description}}</p>
+				<a href="{{project}}" class="work__a">Посмотреть проект...</a>
 				{%  if work.git != "noaccess" %}
-					<a href="{{work.git}}" class="work__a">Посмотреть код..
+					<a href="{{git}}" class="work__a">Посмотреть код..
 					</a>
 				{% else %}
 					<p class="work__noAccess">Код закрыт по просьбе заказчика..</p>
 				{% endif %}
-				<a href="/portfolio/get" class="work__a">Назад в портфолио...
+				<a href="/work" class="work__a">Назад в портфолио...
 				</a>
 			</div>
 		</div>
 		<script src="/src/js/smoothScroll.js"></script>
+		<script src="/src/js/functions.js"></script>
 		<script src="/src/js/header.js"></script>
+		<script src="/src/js/work.js"></script>
 	</section>
 {% endblock %}

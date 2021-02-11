@@ -6,7 +6,7 @@ let amountReviews = 0
 let step = 2
 loadMore.addEventListener('click', async e => {
   e.preventDefault()
-  const review = await http.get(`apiReviews/limit?limit=${(amountReviews += step)}`)
+  const review = await http.get(`reviews/limit?limit=${(amountReviews += step)}`)
   review.forEach(rev => {
     const _review = renderReview(rev)
     insertReviewInEnd(wrapperForReviews, _review)
@@ -19,7 +19,7 @@ reviews.addEventListener('click', async e => {
     e.preventDefault()
     let body = new FormData(document.getElementById('add-reviews'))
     try {
-      const review = await http.post('apiReviews/add', body)
+      const review = await http.post('reviews/add', body)
       if (review.result === 'ok') {
         document.querySelector('.message').classList.add('hiden')
         const rev = renderReview(review)
@@ -52,7 +52,7 @@ reviews.addEventListener('click', async e => {
     body.append('id', id)
     body.append('review', text.value)
     try {
-      const result = await http.post('apiReviews/edit', body)
+      const result = await http.post('reviews/edit', body)
       rev.innerHTML = text.value
       el.classList.toggle('hiden')
       text.classList.toggle('hiden')
@@ -68,7 +68,7 @@ reviews.addEventListener('click', async e => {
     let body = new FormData()
     body.append('id', id)
     try {
-      const result = await http.post('apiReviews/delete', body)
+      const result = await http.post('reviews/delete', body)
       reviews.querySelector(`form[data-form="${id}"]`).classList.toggle('hiden')
       amountReviews--
     } catch (e) {

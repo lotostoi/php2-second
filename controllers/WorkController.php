@@ -22,32 +22,43 @@ class WorkController extends Controller
 
     public function actionWork()
     {
-        $id = App::call()->Request->getParams()['id'];
-        $this->params['result'] = App::call()->Request->getParams()['result'];
-        $this->params['work'] = App::call()->WorkRepository->getOne($id);
-        echo $this->render('portfolio/work', $this->params);
+
+        echo $this->render('portfolio/work', array_merge(App::call()->WorkRepository->getWork(), $this->params));
     }
 
     public function actionAdd()
     {
-        App::call()->WorkRepository->addWork();
-        $this->params['tags'] = App::call()->WorkRepository->getTagsForParams();
-        $this->params['title'] = App::call()->Request->getParams()['title'];
-        $this->params['git'] = App::call()->Request->getParams()['git'];
-        $this->params['project'] = App::call()->Request->getParams()['project'];
-        $this->params['description'] = App::call()->Request->getParams()['description'];
-        $this->params['result'] = App::call()->Request->getParams()['result'];
-        $this->params['errors'] = App::call()->Session->getSession('errors');
-        echo $this->render('portfolio/add', $this->params);
+        echo $this->render('portfolio/add', array_merge(App::call()->WorkRepository->addWork(), $this->params));
+    }
+
+    public function actionEdit()
+    {
+        echo $this->render('portfolio/edit',  array_merge(App::call()->WorkRepository->editWork(), $this->params));
+    }
+    public function actionDelete()
+    {
+        App::call()->WorkRepository->deleteWork();
     }
 
     public function actionLoadImg()
     {
         $file = $_FILES['file'];
         $folder = App::call()->config['STOR_FOR_IMG'];
-        App::call()->LoaderImages->clean($file, $folder);
         $link = App::call()->LoaderImages->loadImage($file, $folder);
         echo json_encode(['link' => "/" . $link]);
+        die();
+    }
+
+    public function actionFilters() {
+          echo $this->render('portfolio/filters',  array_merge(App::call()->WorkRepository->editWork(), $this->params));
+    }
+
+    public function actionApiAll()
+    {
+        echo json_encode([
+            'result' => 'ok',
+            'catalog' => $this->params['catalog'] = App::call()->WorkRepository->getCatalog()
+        ]);
         die();
     }
 }

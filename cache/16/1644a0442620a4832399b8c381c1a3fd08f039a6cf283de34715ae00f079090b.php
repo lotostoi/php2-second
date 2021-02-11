@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* portfolio/add.twig */
-class __TwigTemplate_4f949cb62b1522896f6d878b566070ec71752054c10f5d002d1a8a306b8e8a7e extends Template
+/* portfolio/edit.twig */
+class __TwigTemplate_5043fa9942d5e642ed25596d85f7c200d0a02fc48ca21b9666b7b80e9d8edca9 extends Template
 {
     private $source;
     private $macros = [];
@@ -38,7 +38,7 @@ class __TwigTemplate_4f949cb62b1522896f6d878b566070ec71752054c10f5d002d1a8a306b8
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("mainLayuot.twig", "portfolio/add.twig", 1);
+        $this->parent = $this->loadTemplate("mainLayuot.twig", "portfolio/edit.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -195,8 +195,9 @@ class __TwigTemplate_4f949cb62b1522896f6d878b566070ec71752054c10f5d002d1a8a306b8
         }
         // line 79
         echo "\t\t\t\t\t</div>
+\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t<input type=\"hidden\" name=\"change\" value=\"\">
-\t\t\t\t\t<button type=\"submit\" disabled class=\"addWork block\">Add work</button>
+\t\t\t\t\t<button type=\"submit\" class=\"editWork block\" disabled>Edit work</button>
 \t\t\t\t</form>
 \t\t\t</div>
 \t\t</div>
@@ -206,12 +207,13 @@ class __TwigTemplate_4f949cb62b1522896f6d878b566070ec71752054c10f5d002d1a8a306b8
 \t<script src=\"/src/js/server.js\"></script>
 \t<script src=\"/src/js/admin-work.js\"></script>
 
+
 ";
     }
 
     public function getTemplateName()
     {
-        return "portfolio/add.twig";
+        return "portfolio/edit.twig";
     }
 
     public function isTraitable()
@@ -305,8 +307,9 @@ class __TwigTemplate_4f949cb62b1522896f6d878b566070ec71752054c10f5d002d1a8a306b8
 \t\t\t\t\t\t\t<p class=\"form__message\">Введите описание...</p>
 \t\t\t\t\t\t{% endif %}
 \t\t\t\t\t</div>
+\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t<input type=\"hidden\" name=\"change\" value=\"\">
-\t\t\t\t\t<button type=\"submit\" disabled class=\"addWork block\">Add work</button>
+\t\t\t\t\t<button type=\"submit\" class=\"editWork block\" disabled>Edit work</button>
 \t\t\t\t</form>
 \t\t\t</div>
 \t\t</div>
@@ -316,7 +319,8 @@ class __TwigTemplate_4f949cb62b1522896f6d878b566070ec71752054c10f5d002d1a8a306b8
 \t<script src=\"/src/js/server.js\"></script>
 \t<script src=\"/src/js/admin-work.js\"></script>
 
+
 {% endblock %}
-", "portfolio/add.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\portfolio\\add.twig");
+", "portfolio/edit.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\portfolio\\edit.twig");
     }
 }

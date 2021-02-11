@@ -4,21 +4,34 @@ namespace app\controllers;
 
 
 use app\interfaces\Irender;
-use app\engine\Render;
+use app\engine\App;
 
-class Controller extends ApiController
+class Controller
 {
-    private $defaultLayout = 'main';
-    private $useLayout = true;
+    protected $defaultAction;
+    protected $action;
+    public $params = [];
+    public $authModel = null;
+    public $user;
     protected $renderer;
 
     public function __construct(Irender $renderer)
     {
-        parent::__construct();
         $this->defaultAction = 'main';
+        $this->authModel = App::call()->UsersRepository;
+        $this->user = $this->authModel->getUser();
+        $this->params['user'] = App::call()->Session->getSession('user')['login'] ?: null;
+        $this->params['admin'] = App::call()->Session->getSession('user')['admin'] ?: null;
         $this->renderer = $renderer;
     }
-
+    public function runAction($action = null)
+    {
+        $this->action = $action ?: $this->defaultAction;
+        $method = "action" . ucfirst($this->action);
+        if (method_exists($this, $method)) {
+            $this->$method();
+        }
+    }
 
     public function render($template, $params = [])
     {
@@ -26,7 +39,7 @@ class Controller extends ApiController
     }
 
     public function renderTemplate($template, $params = [])
-    {    
-       return $this->renderer->renderTemplate($template, $params);
+    {
+        return $this->renderer->renderTemplate($template, $params);
     }
 }
