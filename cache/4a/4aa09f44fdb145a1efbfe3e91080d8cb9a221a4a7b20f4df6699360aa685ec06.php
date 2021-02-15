@@ -59,7 +59,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t<p class=\"title\">Вход через социальные сети:</p>
 \t\t\t\t\t<div class=\"social-network\">
 \t\t\t\t\t\t<div class=\"list\">
-\t\t\t\t\t\t\t<form action=\"../api/auth-vk\" method=\"POST\">
+\t\t\t\t\t\t\t<form action=\"/authorization/enterVK\" method=\"POST\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"vk_save\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"authorization/logout\">
@@ -67,7 +67,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t\t\t\t\t<i class=\"fa fa-vk\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t</form>
-\t\t\t\t\t\t\t<form action=\"../api/auth-fb\" method=\"POST\">
+\t\t\t\t\t\t\t<form action=\"/authorization/enterFB\" method=\"POST\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"authorization/logout\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"fb_save\">
@@ -76,11 +76,12 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t</div>
+\t\t\t\t\t\t<label class=\"save\">
+\t\t\t\t\t\t\t<p>Запомнить_:</p>
+\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"save_sn\" checked id=\"checked_network\"/>
+\t\t\t\t\t\t</label>
 \t\t\t\t\t</div>
-\t\t\t\t\t<label class=\"save\">
-\t\t\t\t\t\t<p>Запомнить_:</p>
-\t\t\t\t\t\t<input type=\"checkbox\" name=\"save_sn\" checked id=\"checked_network\"/>
-\t\t\t\t\t</label>
+
 \t\t\t\t\t<hr/>
 \t\t\t\t\t<form action=\"/authorization/auth\" class=\"site\" method=\"POST\">
 \t\t\t\t\t\t<p class=\"title\">Вход через сайт:</p>
@@ -88,29 +89,29 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t\t\t<p class=\"title-small\">Введите логин или email_</p>
 \t\t\t\t\t\t\t<input type=\"text\" name=\"login\" placeholder=\"Введите логин или email...\"/>
 \t\t\t\t\t\t\t";
-        // line 43
+        // line 44
         if (($context["error"] ?? null)) {
-            // line 44
+            // line 45
             echo "\t\t\t\t\t\t\t\t<p class=\"message\">";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "</p>
 \t\t\t\t\t\t\t";
         }
-        // line 46
+        // line 47
         echo "\t\t\t\t\t\t</label>
 \t\t\t\t\t\t<label class=\"pass\">
 \t\t\t\t\t\t\t<p class=\"title-small\">Введите пароль_</p>
 \t\t\t\t\t\t\t<input type=\"password\" name=\"password\" placeholder=\"Введите пароль...\"/>
 \t\t\t\t\t\t\t";
-        // line 50
+        // line 51
         if (($context["error"] ?? null)) {
-            // line 51
+            // line 52
             echo "\t\t\t\t\t\t\t\t<p class=\"message\">";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "</p>
 \t\t\t\t\t\t\t";
         }
-        // line 53
+        // line 54
         echo "\t\t\t\t\t\t</label>
 \t\t\t\t\t\t<a href=\"/auth/reg\" class=\"a-reg\">Если вы еще не зарегистрированы, вам сюда</a>
 \t\t\t\t\t\t<label class=\"save\">
@@ -126,8 +127,10 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
+\t\t<script src=\"/src/js/sosialNetworks.js\"></script>
 \t</section>
 
 ";
@@ -145,7 +148,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 
     public function getDebugInfo()
     {
-        return array (  114 => 53,  108 => 51,  106 => 50,  100 => 46,  94 => 44,  92 => 43,  50 => 3,  46 => 2,  35 => 1,);
+        return array (  115 => 54,  109 => 52,  107 => 51,  101 => 47,  95 => 45,  93 => 44,  50 => 3,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -164,7 +167,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t<p class=\"title\">Вход через социальные сети:</p>
 \t\t\t\t\t<div class=\"social-network\">
 \t\t\t\t\t\t<div class=\"list\">
-\t\t\t\t\t\t\t<form action=\"../api/auth-vk\" method=\"POST\">
+\t\t\t\t\t\t\t<form action=\"/authorization/enterVK\" method=\"POST\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"vk_save\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"authorization/logout\">
@@ -172,7 +175,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t\t\t\t\t<i class=\"fa fa-vk\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t</form>
-\t\t\t\t\t\t\t<form action=\"../api/auth-fb\" method=\"POST\">
+\t\t\t\t\t\t\t<form action=\"/authorization/enterFB\" method=\"POST\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"authorization/logout\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"fb_save\">
@@ -181,11 +184,12 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t</div>
+\t\t\t\t\t\t<label class=\"save\">
+\t\t\t\t\t\t\t<p>Запомнить_:</p>
+\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"save_sn\" checked id=\"checked_network\"/>
+\t\t\t\t\t\t</label>
 \t\t\t\t\t</div>
-\t\t\t\t\t<label class=\"save\">
-\t\t\t\t\t\t<p>Запомнить_:</p>
-\t\t\t\t\t\t<input type=\"checkbox\" name=\"save_sn\" checked id=\"checked_network\"/>
-\t\t\t\t\t</label>
+
 \t\t\t\t\t<hr/>
 \t\t\t\t\t<form action=\"/authorization/auth\" class=\"site\" method=\"POST\">
 \t\t\t\t\t\t<p class=\"title\">Вход через сайт:</p>
@@ -217,8 +221,10 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
+\t\t<script src=\"/src/js/sosialNetworks.js\"></script>
 \t</section>
 
 {% endblock %}

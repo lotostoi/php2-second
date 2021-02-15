@@ -42,20 +42,17 @@ class UsersRepository extends Repository
                         die();
                     } else {
                         App::call()->Session->sessionStart();
-                        App::call()->Session->Session->setSession("auth_error", "Неверный логин или пароль");
+                        App::call()->Session->setSession("auth_error", "Неверный логин или пароль");
                         header("Location: /authorization/enter");
                         die();
                     }
                 } else {
                     App::call()->Session->sessionStart();
-                    App::call()->Session->Session->setSession("auth_error", "Неверный логин или пароль");
+                    App::call()->Session->setSession("auth_error", "Неверный логин или пароль");
                     header("Location: /authorization/enter");
                     die();
                 }
             }
-        }
-        if (!empty($_SESSION['sn_user'])) {
-            // sn_auth();
         }
     }
 
@@ -76,10 +73,10 @@ class UsersRepository extends Repository
             return App::call()->Session->getSession('user');
         } elseif ($_COOKIE['hash']) {
             $hash = $_COOKIE['hash'];
-            $user_id = (array) App::call()->HashesRepository->getOneByField('hash', $hash);
-            $user_id  = $user_id['id_user'];
+            $user_id = App::call()->HashesRepository->getOneByField('hash', $hash);
+            $user_id  = $user_id->id_user;
             if ($user_id) {
-                $user = (array) $this->getOne($user_id);
+                $user = $this->getOne($user_id)->showKeys();
                 App::call()->Session->setSession('user', $user);
                 return $user;
             }

@@ -23,6 +23,13 @@ abstract class Repository implements IModel
         return App::call()->Db->queryOne($sql, ["{$field}" => $value], $this->getEntityClass());
     }
 
+    public  function getOneAND($field1, $value1, $field2, $value2)
+    {
+        $tableName = $this->getTableName();
+        $sql = "SELECT * FROM {$tableName} WHERE {$field1} = :{$field1} AND {$field2} = :{$field2}";
+        return App::call()->Db->queryOne($sql, ["{$field1}" => $value1, "{$field2}" => $value2], $this->getEntityClass());
+    }
+
     public  function getAll($fieldName = null, $value = null)
     {
         $tableName = $this->getTableName();
@@ -51,16 +58,14 @@ abstract class Repository implements IModel
 
     public function insert(Model $entity)
     {
-       
+
         $tableName = $this->getTableName();
-   
-      
         $data = $this->getColumnsAndValues($entity);
-    
         $sql = "INSERT INTO {$tableName} ({$data['columns']}) VALUES ({$data['values']})";
         App::call()->Db->execute($sql, $data['params']);
+        
         $entity->id = App::call()->Db->getLastId();
-    
+     
     }
 
     public function delete(Model $entity)
@@ -89,7 +94,7 @@ abstract class Repository implements IModel
 
     public  function save(Model $entity)
     {
-       
+
         if (is_null($entity->id)) {
             $this->insert($entity);
         } else {

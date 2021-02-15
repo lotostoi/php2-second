@@ -12,7 +12,7 @@
 					<p class="title">Вход через социальные сети:</p>
 					<div class="social-network">
 						<div class="list">
-							<form action="../api/auth-vk" method="POST">
+							<form action="/authorization/enterVK" method="POST">
 								<input type="hidden" name="start" value="1">
 								<input type="hidden" name="save_sn" value="1" id="vk_save">
 								<input type="hidden" name="redirect" value="authorization/logout">
@@ -20,7 +20,7 @@
 									<i class="fa fa-vk" aria-hidden="true"></i>
 								</button>
 							</form>
-							<form action="../api/auth-fb" method="POST">
+							<form action="/authorization/enterFB" method="POST">
 								<input type="hidden" name="start" value="1">
 								<input type="hidden" name="redirect" value="authorization/logout">
 								<input type="hidden" name="save_sn" value="1" id="fb_save">
@@ -29,11 +29,12 @@
 								</button>
 							</form>
 						</div>
+						<label class="save">
+							<p>Запомнить_:</p>
+							<input type="checkbox" name="save_sn" checked id="checked_network"/>
+						</label>
 					</div>
-					<label class="save">
-						<p>Запомнить_:</p>
-						<input type="checkbox" name="save_sn" checked id="checked_network"/>
-					</label>
+
 					<hr/>
 					<form action="/authorization/auth" class="site" method="POST">
 						<p class="title">Вход через сайт:</p>
@@ -68,6 +69,7 @@
 		<script src="/src/js/functions.js"></script>
 		<script src="/src/js/header.js"></script>
 		<script src="/src/js/server.js"></script>
+		<script src="/src/js/sosialNetworks.js"></script>
 	</section>
 
 {% endblock %}

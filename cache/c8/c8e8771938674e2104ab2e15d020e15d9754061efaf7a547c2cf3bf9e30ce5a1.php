@@ -188,9 +188,11 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/reviews.js\"></script>
+\t\t<script src=\"/src/js/sosialNetworks.js\"></script>
 \t</section>
 
 ";
@@ -300,9 +302,11 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/reviews.js\"></script>
+\t\t<script src=\"/src/js/sosialNetworks.js\"></script>
 \t</section>
 
 {% endblock %}

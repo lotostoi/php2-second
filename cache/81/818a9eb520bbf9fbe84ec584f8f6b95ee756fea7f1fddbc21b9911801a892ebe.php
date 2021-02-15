@@ -108,6 +108,7 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t\t</div>
 \t\t</section>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t</main>
 ";
@@ -193,6 +194,7 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t\t</div>
 \t\t</section>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t</main>
 {% endblock %}

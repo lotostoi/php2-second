@@ -20,7 +20,6 @@ class Users extends Model
     protected $admin;
 
     public function __construct(
-        $id = null,
         $login = null,
         $first_name = null,
         $last_name = null,
@@ -34,7 +33,6 @@ class Users extends Model
         $admin = null
     ) {
         parent::__construct();
-        $this->id = $id;
         $this->login = $login;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
@@ -48,9 +46,5 @@ class Users extends Model
         $this->admin = $admin;
     }
 
-    public static function getTableName()
-    {
-        return 'users';
-    }
 }
 

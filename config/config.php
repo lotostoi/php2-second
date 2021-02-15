@@ -5,8 +5,23 @@ return [
     'templates' => $_SERVER['CONTEXT_DOCUMENT_ROOT'] . "/../twigViews/",
     'BIG'=> 'src/bigimages/',
     'SMALL' =>'src/smallimages/',
+    'USER_SMALL'=> 'src/img/users/small/',
+    'USER_BIG'=> 'src/img/users/big/',
     'STOR_FOR_IMG' => 'src/img/store/',
     'components' => [
+        'VK'=> [
+            'class'=>app\model\VK::class,
+            'id'=>"7732862",
+            'sicret_key'=>"6ASPAMRTdJF9ZGnGh9Zn",
+            "redirect"=> "http://php" . "/authorization/enterVK"
+        ],
+        'FB'=> [
+            'class'=>app\model\FB::class,
+            'id'=>"836893896877665",
+            'sicret_key'=>"a71ee9339580a71db101ac7f5b35e01c",
+            "redirect"=> "http://php" . "/authorization/enterFB"
+        ],
+
         'Db' => [
             'class' => app\engine\Db::class,
             'driver' => 'mysql',

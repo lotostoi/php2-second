@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers;
-use app\engine\Session;
+use app\engine\App;
 
 class AuthorizationController extends Controller
 {
@@ -12,6 +12,16 @@ class AuthorizationController extends Controller
         echo $this->render('auth/enter', $this->params);
         $_SESSION['auth_error'] = null;
     }
+
+    public function actionEnterVK()
+    {
+        App::call()->VK->authVK();
+    }
+    public function actionEnterFB()
+    {
+        App::call()->FB->authFB();
+    }
+
     public function actionLogout()
     {
         $this->authModel->toEnter();

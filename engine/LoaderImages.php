@@ -42,6 +42,13 @@ class LoaderImages
         App::call()->LoaderImages->cleanDir($folder);
         return $name; 
     }
+    
+    public function resImage($img, $folder, $width) {
+        $name = explode('/', $img)[count(explode('/', $img)) - 1];
+        $this->Resize->load($img);
+        $this->Resize->resizeToWidth($width);
+        $this->Resize->save($folder . $name);
+    }
 
     public function loadImage($img, $folder)
     {

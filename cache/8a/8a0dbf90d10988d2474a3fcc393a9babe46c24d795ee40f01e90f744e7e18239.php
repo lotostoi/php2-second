@@ -112,8 +112,8 @@ class __TwigTemplate_27a31f7dfef8d7aba44dfe911c8925e93c9d5815f18ab4c4a1c722f791a
 \t\t\t\t</p>
 \t\t\t</section>
 \t\t</div>
-\t\t<script src=\"/src/js/smoothScroll.js\"></script>\t\t
-\t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/resume.js\"></script>
 \t</section>
 ";
@@ -203,8 +203,8 @@ class __TwigTemplate_27a31f7dfef8d7aba44dfe911c8925e93c9d5815f18ab4c4a1c722f791a
 \t\t\t\t</p>
 \t\t\t</section>
 \t\t</div>
-\t\t<script src=\"/src/js/smoothScroll.js\"></script>\t\t
-\t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/resume.js\"></script>
 \t</section>
 {% endblock %}

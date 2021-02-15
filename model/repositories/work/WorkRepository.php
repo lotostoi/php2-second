@@ -21,9 +21,9 @@ class WorkRepository extends Repository
 
     public function getCatalog()
     {
-        $allWorks = $this->getAll();
-        $allTags =  App::call()->TagsRepository->getAll();
-        $works_to_tags =  App::call()->WorkToTagsRepository->getAll();
+        $allWorks = $this->getAllRevert();
+        $allTags =  App::call()->TagsRepository->getAllRevert();
+        $works_to_tags =  App::call()->WorkToTagsRepository->getAllRevert();
 
         $catalog = [];
         foreach ($allWorks as $work) {

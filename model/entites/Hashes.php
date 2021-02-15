@@ -16,8 +16,5 @@ class Hashes extends Model
         $this->hash = $hash;
     }
 
-    public static function getTableName()
-    {
-        return 'hashes';
-    }
+
 }
