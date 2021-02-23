@@ -7,11 +7,11 @@ use app\engine\App;
 
 class ReviewsController extends Controller
 {
-    private $countReviews = 2;
-
+ 
     public function actionMain()
     {
-        $this->params['reviews'] = App::call()->ReviewsRepository->getLimitRevert(0, $this->countReviews);
+        $this->params['reviews'] = App::call()->ReviewsRepository->getLimitRevert(0, App::call()->config['AMOUNT_REVIEVS']);
+        $this->params['amount'] = App::call()->config['AMOUNT_REVIEVS'];
         echo $this->render('reviews/reviews', $this->params);
     }
 
@@ -23,7 +23,7 @@ class ReviewsController extends Controller
     public function actionLimit()
     {
         $from = App::call()->Request->getParams()['limit'];
-        $to = $this->countReviews;
+        $to = App::call()->config['AMOUNT_REVIEVS'];
         $revs = [];
         foreach (App::call()->ReviewsRepository->getLimitRevert($from, $to) as $obj) {
             $obj['admin'] = $this->params['admin'];

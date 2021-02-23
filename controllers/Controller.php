@@ -30,6 +30,8 @@ class Controller
         $method = "action" . ucfirst($this->action);
         if (method_exists($this, $method)) {
             $this->$method();
+        } else {
+            echo $this->render('p404', ['message' => App::call()->Request->getRequestString()]);
         }
     }
 

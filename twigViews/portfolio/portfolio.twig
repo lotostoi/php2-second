@@ -1,6 +1,7 @@
 {% extends "mainLayuot.twig" %}
 {% block content %}
 	<section class="common wrapper">
+		<input type="hidden" name="folderImg" value="{{folderImg}}">
 		<div class="common-header__fone">
 			<div class="common-header__cont">
 				<h1 class="common-header__h1">Мои работы_</h1>
@@ -39,7 +40,7 @@
 				{% for work in catalog %}
 					<div class="product">
 						<div class="img">
-							<img src="/src/smallimages/{{work.img}}" alt="{{work.title}}" width="417" height="292">
+							<img src="{{folderImg}}{{work.img}}" alt="{{work.title}}" width="417" height="292">
 						</div>
 						<p class="title">
 							{{work.title}}</p>
@@ -60,6 +61,7 @@
 		<script src="/src/js/header.js"></script>
 		<script src="/src/js/server.js"></script>
 		<script src="/src/js/portfolio.js"></script>
+
 	</section>
 
 {% endblock %}

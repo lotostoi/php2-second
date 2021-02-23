@@ -124,21 +124,33 @@ class __TwigTemplate_44dcfc8ed6819218af3072d92cb050bbe070c8cf6d9f226385a4915417a
 \t\t\t\t\t\t\t<a href=\"#\">GitHub</a>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"footer__form\">
+\t\t\t\t\t<form class=\"footer__form\" id=\"footerForm\">
+\t\t\t\t\t\t<p class=\"footer__form-success block\" data-result=\"saccess\">Ваше сообщение успешно отправленно, мы свяжемся с вами в ближайшее время...</p>
+\t\t\t\t\t\t<p class=\"footer__form-error block\" data-result=\"error\">При отправке сообщения возникала ошибка, повторите попытку позже...</p>
 \t\t\t\t\t\t<h4>Форма обратной связи_</h4>
 \t\t\t\t\t\t<input type=\"text\" name=\"name\" placeholder=\"Ваше имя\">
+\t\t\t\t\t\t<small class=\"errorMessage block\" data-name=\"name\">Минимальная длина имени 3 символа</small>
 \t\t\t\t\t\t<input type=\"email\" name=\"email\" placeholder=\"Вашь e-mail\">
+\t\t\t\t\t\t<small class=\"errorMessage block\" data-name=\"email\">Не коректный email адрес</small>
 \t\t\t\t\t\t<textarea name=\"message\" cols=\"30\" rows=\"10\" placeholder=\"Текст сообщения\"></textarea>
-\t\t\t\t\t\t<button>
-\t\t\t\t\t\t\tОтправить
+\t\t\t\t\t\t<small class=\"errorMessage block\" data-name=\"message\">Минимальная длина сообщения 3 символа</small>
+\t\t\t\t\t\t<button class=\"sendMessage\">
+\t\t\t\t\t\t\t<div class=\"lds-ring block\">
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<span class=\"title\">Отправить</span>
 \t\t\t\t\t\t</button>
-\t\t\t\t\t</div>
+\t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t\t<p class=\"rights\">©
 \t\t\t\t\t<?= date('Y') ?>
 \t\t\t\t\tАлександр Плотников. Все права защищены.</p>
 \t\t\t</div>
 \t\t</div>
+\t\t<script src=\"/src/js/form.js\"></script>
 \t</footer>
 ";
     }
@@ -224,21 +236,33 @@ class __TwigTemplate_44dcfc8ed6819218af3072d92cb050bbe070c8cf6d9f226385a4915417a
 \t\t\t\t\t\t\t<a href=\"#\">GitHub</a>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"footer__form\">
+\t\t\t\t\t<form class=\"footer__form\" id=\"footerForm\">
+\t\t\t\t\t\t<p class=\"footer__form-success block\" data-result=\"saccess\">Ваше сообщение успешно отправленно, мы свяжемся с вами в ближайшее время...</p>
+\t\t\t\t\t\t<p class=\"footer__form-error block\" data-result=\"error\">При отправке сообщения возникала ошибка, повторите попытку позже...</p>
 \t\t\t\t\t\t<h4>Форма обратной связи_</h4>
 \t\t\t\t\t\t<input type=\"text\" name=\"name\" placeholder=\"Ваше имя\">
+\t\t\t\t\t\t<small class=\"errorMessage block\" data-name=\"name\">Минимальная длина имени 3 символа</small>
 \t\t\t\t\t\t<input type=\"email\" name=\"email\" placeholder=\"Вашь e-mail\">
+\t\t\t\t\t\t<small class=\"errorMessage block\" data-name=\"email\">Не коректный email адрес</small>
 \t\t\t\t\t\t<textarea name=\"message\" cols=\"30\" rows=\"10\" placeholder=\"Текст сообщения\"></textarea>
-\t\t\t\t\t\t<button>
-\t\t\t\t\t\t\tОтправить
+\t\t\t\t\t\t<small class=\"errorMessage block\" data-name=\"message\">Минимальная длина сообщения 3 символа</small>
+\t\t\t\t\t\t<button class=\"sendMessage\">
+\t\t\t\t\t\t\t<div class=\"lds-ring block\">
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t\t<div></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<span class=\"title\">Отправить</span>
 \t\t\t\t\t\t</button>
-\t\t\t\t\t</div>
+\t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t\t<p class=\"rights\">©
 \t\t\t\t\t<?= date('Y') ?>
 \t\t\t\t\tАлександр Плотников. Все права защищены.</p>
 \t\t\t</div>
 \t\t</div>
+\t\t<script src=\"/src/js/form.js\"></script>
 \t</footer>
 {% endblock %}
 ", "mainLayuot.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\mainLayuot.twig");

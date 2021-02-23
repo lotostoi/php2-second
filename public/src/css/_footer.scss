@@ -1,3 +1,50 @@
+input:-internal-autofill-selected {
+  background-color: rgb(238, 158, 10) !important;
+}
+//anim for button  start ****
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.lds-ring.block {
+  display: none;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 1px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//anim for button  end ****
+
 .footer {
   display: flex;
   border-bottom: 1px solid rgba(128, 128, 128, 0.13);
@@ -50,7 +97,6 @@
         display: flex;
         justify-content: space-between;
         .field__title {
-          // text-transform: uppercase;
           font-weight: 600;
           color: $color-light;
         }
@@ -102,7 +148,9 @@
       }
     }
   }
+
   &__form {
+    position: relative;
     order: 2;
     display: flex;
     flex-direction: column;
@@ -116,10 +164,9 @@
       font-size: 1.3rem;
       line-height: 24px;
       font-weight: 300;
-      margin-bottom: 20px;
     }
     & input {
-      margin-bottom: 20px;
+      margin-top: 20px;
       width: 100%;
       background-color: transparent;
       border-radius: 3px;
@@ -135,8 +182,21 @@
         border: 1px solid #fff;
       }
     }
+    & input.error:-internal-autofill-selected {
+      background-color: rgba(255, 0, 0, 0.356);
+    }
+    & input.success:-internal-autofill-selected {
+      background-color: transparent;
+    }
+    & input.error {
+      background-color: rgba(255, 0, 0, 0.356);
+    }
+    & input.success {
+      background-color: transparent;
+    }
     & textarea {
       width: 100%;
+      margin-top: 20px;
       background-color: transparent;
       border-radius: 3px;
       border: 1px solid #fff;
@@ -152,7 +212,13 @@
         border: 1px solid #fff;
       }
     }
-    & button {
+    & textarea.error {
+      background: rgba(255, 0, 0, 0.356) !important;
+    }
+    & textarea.success {
+      background: transparent !important;
+    }
+    & .sendMessage {
       width: 100%;
       margin-top: 20px;
       background-color: transparent;
@@ -160,15 +226,11 @@
       border: 1px solid #fff;
       padding: 10px;
       height: 60px;
-      color: #fff;
-      font-size: 16px;
-      line-height: 24px;
       display: flex;
       box-sizing: border-box;
       justify-content: center;
       align-items: center;
       outline: none;
-      text-transform: uppercase;
       @include bc-fone-rev;
       &:hover {
         border-color: gray;
@@ -176,7 +238,63 @@
       &:active {
         transform: scale(0.99);
       }
+      & > span {
+        color: #fff;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        display: flex;
+      }
+      & > span.block {
+        display: none;
+      }
     }
+    & > .errorMessage {
+      color: rgba(255, 0, 0, 0.561);
+      font-style: italic;
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+    & > .errorMessage.block {
+      display: none;
+    }
+    & .sendMessage.block {
+      cursor: not-allowed;
+      color: rgb(197, 197, 197);
+      border-color: rgb(197, 197, 197);
+      @include bc-fone-rev-off;
+      &:hover {
+        border-color: rgb(197, 197, 197);
+      }
+      &:active {
+        transform: scale(1);
+      }
+    }
+  }
+  &__form-success,
+  &__form-error {
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 250;
+    opacity: 1;
+    transition: opacity 0.3s;
+    background-color: rgba(27, 183, 245, 0.698);
+  }
+  &__form-error {
+    background-color: rgba(245, 27, 27, 0.698);
+  }
+  &__form-success.block,
+  &__form-error.block {
+    opacity: 0;
   }
 }
 
@@ -248,7 +366,7 @@
       }
       & > .social {
         margin-top: 0px;
-        padding-left:  10px;
+        padding-left: 10px;
         align-items: flex-start;
         display: flex;
         flex-direction: column;
@@ -337,7 +455,7 @@
           border: 1px solid #fff;
         }
       }
-      & button {
+      & .sendMessage {
         width: 100%;
         margin-top: 20px;
         background-color: transparent;

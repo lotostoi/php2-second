@@ -11,6 +11,5 @@ accessDel.addEventListener('click', (e) => {
 })
 
 btn.addEventListener('click', (e) => {
-    console.log(11)
     if (!flag) e.preventDefault()
 })

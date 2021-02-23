@@ -58,6 +58,7 @@ class __TwigTemplate_433fe6bbd1d7abbd24b8ab2cbf56fc4ef1ea7d67ebe04079c67ac947c65
         echo "\" - не найдена</p>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t</section>
 
@@ -91,6 +92,7 @@ class __TwigTemplate_433fe6bbd1d7abbd24b8ab2cbf56fc4ef1ea7d67ebe04079c67ac947c65
 \t\t\t\tСтраница \"{{message}}\" - не найдена</p>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
+\t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t</section>
 

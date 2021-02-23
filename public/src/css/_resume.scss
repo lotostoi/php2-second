@@ -3,7 +3,54 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.13);
   color: $color-dark;
   display: flex;
+  &__nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(107, 107, 107);
+    height: 40px;
+    margin-bottom: 20px;
+    @include shadow-bot;
+    & > .nav_link {
+      display: flex;
+      padding: 0 5px;
+      align-items: center;
+      height: 100%;
+      margin-right: 20px;
+      @include link;
+      text-decoration: none;
+    }
+  }
 
+  &__block {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(233, 232, 232);
+    @include shadow-bot;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0;
+    & > .title {
+      padding: 5px;
+    }
+    & > .content {
+      padding: 5px;
+      font-size: 1.2rem;
+      line-height: 30px;
+    }
+    & a.link {
+      padding: 0 5px;
+      text-decoration: none;
+      background-color: rgb(54, 53, 51);
+      color: rgb(255, 115, 0);
+      border-radius: 0 5px 5px 0;
+      &:hover {
+        background-color: $color-dark;
+        color: $color-light;
+      }
+    }
+  }
 
   &__cont {
     width: 100%;
@@ -14,91 +61,113 @@
     align-items: flex-start;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 100px  var(--padding) 50px;
+    padding: 100px var(--padding) 50px;
     background-color: $color-fone-light;
   }
-  &__title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: $color-dark;
-    margin-bottom: 30px;
-  }
-  &__prediction {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-    color: $color-dark;
-    margin-bottom: 30px;
-  }
-
   &__allInformation {
     width: 100%;
     margin: 10px 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
     & .title {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      padding: 5px 20px;
+      padding: 5px 10px;
       align-items: center;
+      justify-content: flex-start;
       cursor: pointer;
-      @include bc-fone;
       border-radius: 5px 5px 5px 5px;
-      @include shadow-bot;
       box-sizing: border-box;
       & h4 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 400;
-        color: $color-light;
+        color: $color-dark;
+        font-style: italic;
       }
       & i {
-        color: $color-light;
-        font-size: 1.5rem;
+        margin-right: 10px;
+        color: $color-dark;
+        font-size: 1rem;
         transition: transform 0.3s;
       }
       & i.active {
         transform: rotate(90deg);
       }
     }
-    & .title:hover {
-      @include bc-fone-rev;
+    & .title:hover > h4,
+    & .title:hover > i {
+      color: $color-dark-hover;
     }
     & .content {
-      @include textIndent;
-      @include firstLetter;
       overflow: hidden;
       height: 0;
-      width: 98%;
+      width: calc(100% - 20px);
       background-color: white;
       font-size: 18px;
       font-weight: 400;
       line-height: 30px;
       color: $color-dark;
-      border-radius: 0 0 20px 20px;
-      -webkit-box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.48);
-      -moz-box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.48);
-      box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.48);
       box-sizing: content-box;
       opacity: 0;
-      & > p {
-        @include textIndent;
-        @include firstLetter;
+      flex-direction: column;
+      border: 1px solid rgb(233, 232, 232);
+      @include shadow-bot;
+      background-color: rgba(246, 216, 187, 0.335);
+      & > h4 {
         color: $color-dark;
-        //margin-bottom: 10px;
+        margin: 10px 0;
+        padding: 0 10px;
+      }
+      & > ol {
+        display: flex;
+        flex-direction: column;
+      }
+      & > ol > li {
+        display: flex;
+        list-style-type: decimal;
+      }
+      & > ol > li > a {
+        padding: 0 10px;
+        display: flex;
+        color: $color-dark;
+        margin-bottom: 10px;
+      }
+      & ol > li > a:hover {
+        color: $color-dark-hover;
+      }
+      & > .technology {
+        display: flex;
+        justify-content: start;
+        padding: 10px 5px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        & > li {
+          // width: auto;
+          margin: 5px;
+          display: flex;
+          align-items: center;
+          background-color: white;
+          max-width: 250px;
+          padding: 10px;
+          justify-content: center;
+        }
+        & > li > img {
+          // width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+        & > li > span {
+          display: flex;
+        }
       }
     }
     & .content.active {
-      height: auto!important;
       opacity: 1;
-      margin: 20px 0;
-      padding: 10px 10px;
     }
     & .content.measuring {
-      margin: 20px 0;
-      padding: 10px 10px;
       height: auto !important;
       position: absolute;
       visibility: hidden;

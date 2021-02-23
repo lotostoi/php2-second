@@ -1,6 +1,6 @@
 const wrapper = $.el('.portfolio-catalog__cont') || null
 if (wrapper) {
-    console.log(111);
+
     const filter = $.el('#pf_filter')
     const catalog = http.get('work/apiAll').catch(console.log)
     const tags = $.el('#pf_tags')
@@ -43,19 +43,20 @@ if (wrapper) {
     })
 
     function renderWork({ id, title, img, tags }) {
+        const folder = $.el(`input[name="folderImg"]`).value
         const _tags = tags.map((tag) => `<span>${tag}</span>`).join('')
         return `
-    <div class="product">
-        <div class="img">
-          <img src="/src/smallimages/${img}" alt="">
-        </div>
-        <p class="title">${title}</p>
-        <div class="tags">
-            <span class="title">Tехнологии: </span>
-            ${_tags}
-        </div>
-        <a href="/work?id=${id}" class="link">Подробнее...</a>
-    </div>
+            <div class="product">
+                <div class="img">
+                <img src="${folder}${img}" alt="">
+                </div>
+                <p class="title">${title}</p>
+                <div class="tags">
+                    <span class="title">Tехнологии: </span>
+                    ${_tags}
+                </div>
+                <a href="/work/work?id=${id}" class="link">Подробнее...</a>
+            </div>
     `
     }
 }

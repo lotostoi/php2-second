@@ -119,7 +119,7 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
         echo "\" class=\"work__a\">Посмотреть проект...</a>
 \t\t\t\t";
         // line 33
-        if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, ($context["work"] ?? null), "git", [], "any", false, false, false, 33), "noaccess"))) {
+        if ((0 !== twig_compare(($context["git"] ?? null), "noaccess"))) {
             // line 34
             echo "\t\t\t\t\t<a href=\"";
             echo twig_escape_filter($this->env, ($context["git"] ?? null), "html", null, true);
@@ -140,6 +140,8 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 \t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/work.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
+\t
 \t</section>
 ";
     }
@@ -193,7 +195,7 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 \t\t\t\t\t\t</div>
 \t\t\t\t<p class=\"work__description\">{{description}}</p>
 \t\t\t\t<a href=\"{{project}}\" class=\"work__a\">Посмотреть проект...</a>
-\t\t\t\t{%  if work.git != \"noaccess\" %}
+\t\t\t\t{%  if git != \"noaccess\" %}
 \t\t\t\t\t<a href=\"{{git}}\" class=\"work__a\">Посмотреть код..
 \t\t\t\t\t</a>
 \t\t\t\t{% else %}
@@ -207,6 +209,8 @@ class __TwigTemplate_470d1aba41ac526dd0ce5cbb23a3e6b353d0093f212a82d721251d7331f
 \t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/work.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
+\t
 \t</section>
 {% endblock %}
 ", "portfolio/work.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\portfolio\\work.twig");

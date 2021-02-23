@@ -3,7 +3,7 @@ const wrapperForReviews = document.querySelector('.reviews-body__wrapper')
 const loadMore = document.querySelector('.loadMore')
 
 let amountReviews = 0
-let step = 2
+let step = +document.querySelector(`[name ="amount"]`).value
 loadMore.addEventListener('click', async e => {
   e.preventDefault()
   const review = await http.get(`reviews/limit?limit=${(amountReviews += step)}`)
@@ -113,3 +113,9 @@ function renderReview({ img_small, link_network, user, review, id, date, accessF
           `
 }
 
+
+const  mainLink = "http://localhost:3000/"
+
+function getPath(path) {
+  return mainLink + path
+}

@@ -108,6 +108,12 @@ $time: 0.3s;
   }
 }
 
+@mixin bc-fone-rev-off {
+  & {
+    background: rgb(78, 78, 78);
+  }
+}
+
 @mixin textIndent($value: 40px) {
   & {
     text-indent: $value;
@@ -185,5 +191,23 @@ $time: 0.3s;
   }
   &:active {
     transform: scale(0.99);
+  }
+}
+
+// links
+
+@mixin link {
+  display: flex;
+  font-size: 1rem;
+  color: $color-light;
+  font-weight: 500;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-fone-hover;
+    color: $color-light;
+  }
+  &:active {
+    background-color: $color-light-active;
   }
 }

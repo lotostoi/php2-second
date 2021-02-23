@@ -28,7 +28,6 @@ class App
         }
     }
 
-
     public static function call()
     {
         return static::getInstance();
@@ -58,7 +57,11 @@ class App
             $controller = new $controllerClass(new TwigRender());
             $controller->runAction($actionName);
         } else {
-            echo "Controller {$controllerClass} isn't finded... ";
+            $controllerName =  'p404';
+            $actionName = $this->Request->getActionName();
+            $controllerClass = $this->config['namespaces_Controllers'] . ucfirst($controllerName) . "Controller";
+            $controller = new $controllerClass(new TwigRender());
+            $controller->runAction($actionName);
         }
     }
 }

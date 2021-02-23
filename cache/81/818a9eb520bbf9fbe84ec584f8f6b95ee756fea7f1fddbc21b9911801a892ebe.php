@@ -70,13 +70,13 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"sotsseti\">
-\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/lotos.toi\" target=\"_blank\">
 \t\t\t\t\t\t\t\t<i class=\"fa fa-github\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/lotos.toi\" target=\"_blank\" >
 \t\t\t\t\t\t\t\t<i class=\"fa fa-instagram\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/lotos.toi\" target=\"_blank\">
 \t\t\t\t\t\t\t\t<i class=\"fa fa-facebook-official\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t</div>
@@ -110,6 +110,8 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
 \t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
+\t
 \t</main>
 ";
     }
@@ -156,13 +158,13 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"sotsseti\">
-\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/lotos.toi\" target=\"_blank\">
 \t\t\t\t\t\t\t\t<i class=\"fa fa-github\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/lotos.toi\" target=\"_blank\" >
 \t\t\t\t\t\t\t\t<i class=\"fa fa-instagram\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t<a href=\"https://www.facebook.com/lotos.toi\" target=\"_blank\">
 \t\t\t\t\t\t\t\t<i class=\"fa fa-facebook-official\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t</div>
@@ -196,6 +198,8 @@ class __TwigTemplate_6c77b82b5a87e8454b5422e9a9f48232cc84a9b6ae258bad2aac7fc1a69
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
 \t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
+\t\t<script src=\"/src/js/server.js\"></script>
+\t
 \t</main>
 {% endblock %}
 ", "index.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\index.twig");

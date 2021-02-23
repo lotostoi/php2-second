@@ -48,6 +48,10 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         $macros = $this->macros;
         // line 3
         echo "\t<section class=\"common wrapper\">
+\t\t<input type=\"hidden\" name=\"folderImg\" value=\"";
+        // line 4
+        echo twig_escape_filter($this->env, ($context["folderImg"] ?? null), "html", null, true);
+        echo "\">
 \t\t<div class=\"common-header__fone\">
 \t\t\t<div class=\"common-header__cont\">
 \t\t\t\t<h1 class=\"common-header__h1\">Мои работы_</h1>
@@ -65,20 +69,20 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t\t\t\t<input type=\"checkbox\" name=\"all\" data-name=\"all\" checked=\"checked\"/>
 \t\t\t\t</label>
 \t\t\t\t";
-        // line 20
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["tags"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 21
+            // line 22
             echo "\t\t\t\t\t<label class=\"filter\">
 \t\t\t\t\t\t<span class=\"title\">";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 22), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 23), "html", null, true);
             echo ":
 \t\t\t\t\t\t</span>
 \t\t\t\t\t\t<input type=\"checkbox\" name=\"";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 24), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 25), "html", null, true);
             echo "\"/>
 \t\t\t\t\t</label>
 \t\t\t\t";
@@ -86,57 +90,58 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 28
         echo "\t\t\t\t<button id=\"pf_filter\">Применить</button>
 \t\t\t</div>
 \t\t</div>
 \t\t<div class=\"portfolio-catalog\">
 \t\t\t";
-        // line 31
+        // line 32
         if ((($context["admin"] ?? null) && (0 === twig_compare(($context["del"] ?? null), "ok")))) {
-            // line 32
+            // line 33
             echo "\t\t\t\t<p class=\"result_loader\">Работа была удалена успешно...</p>
 \t\t\t";
         }
-        // line 34
+        // line 35
         echo "\t\t\t";
         if (($context["admin"] ?? null)) {
-            // line 35
+            // line 36
             echo "\t\t\t\t<a href=\"/work/add\" class=\"portfolio-catalog__outside-work\">Добавить работу</a>
 \t\t\t\t<a href=\"/work/filters\" class=\"portfolio-catalog__outside-filters\">Фильтры</a>
 \t\t\t";
         }
-        // line 38
+        // line 39
         echo "\t\t\t<div class=\"portfolio-catalog__cont\">
 \t\t\t\t";
-        // line 39
+        // line 40
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["catalog"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["work"]) {
-            // line 40
+            // line 41
             echo "\t\t\t\t\t<div class=\"product\">
 \t\t\t\t\t\t<div class=\"img\">
-\t\t\t\t\t\t\t<img src=\"/src/smallimages/";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "img", [], "any", false, false, false, 42), "html", null, true);
+\t\t\t\t\t\t\t<img src=\"";
+            // line 43
+            echo twig_escape_filter($this->env, ($context["folderImg"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "img", [], "any", false, false, false, 43), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "title", [], "any", false, false, false, 42), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "title", [], "any", false, false, false, 43), "html", null, true);
             echo "\" width=\"417\" height=\"292\">
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<p class=\"title\">
 \t\t\t\t\t\t\t";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "title", [], "any", false, false, false, 45), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "title", [], "any", false, false, false, 46), "html", null, true);
             echo "</p>
 \t\t\t\t\t\t<div class=\"tags\">
 \t\t\t\t\t\t\t<span class=\"title\">Tехнологии:
 \t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t";
-            // line 49
+            // line 50
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["work"], "tags", [], "any", false, false, false, 49));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["work"], "tags", [], "any", false, false, false, 50));
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                // line 50
+                // line 51
                 echo "\t\t\t\t\t\t\t\t<span>";
                 echo twig_escape_filter($this->env, $context["tag"], "html", null, true);
                 echo "</span>
@@ -145,11 +150,11 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 52
+            // line 53
             echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t\t<a href=\"/work/work?id=";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "id", [], "any", false, false, false, 53), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["work"], "id", [], "any", false, false, false, 54), "html", null, true);
             echo "\" class=\"link\">Подробнее...</a>
 \t\t\t\t\t</div>
 \t\t\t\t";
@@ -157,7 +162,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['work'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 57
         echo "\t\t\t</div>
 \t\t</div>
 \t\t<script src=\"/src/js/smoothScroll.js\"></script>
@@ -165,6 +170,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/portfolio.js\"></script>
+
 \t</section>
 
 ";
@@ -182,7 +188,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 
     public function getDebugInfo()
     {
-        return array (  161 => 56,  152 => 53,  149 => 52,  140 => 50,  136 => 49,  129 => 45,  121 => 42,  117 => 40,  113 => 39,  110 => 38,  105 => 35,  102 => 34,  98 => 32,  96 => 31,  90 => 27,  81 => 24,  76 => 22,  73 => 21,  69 => 20,  50 => 3,  46 => 2,  35 => 1,);
+        return array (  166 => 57,  157 => 54,  154 => 53,  145 => 51,  141 => 50,  134 => 46,  125 => 43,  121 => 41,  117 => 40,  114 => 39,  109 => 36,  106 => 35,  102 => 33,  100 => 32,  94 => 28,  85 => 25,  80 => 23,  77 => 22,  73 => 21,  53 => 4,  50 => 3,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -190,6 +196,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
         return new Source("{% extends \"mainLayuot.twig\" %}
 {% block content %}
 \t<section class=\"common wrapper\">
+\t\t<input type=\"hidden\" name=\"folderImg\" value=\"{{folderImg}}\">
 \t\t<div class=\"common-header__fone\">
 \t\t\t<div class=\"common-header__cont\">
 \t\t\t\t<h1 class=\"common-header__h1\">Мои работы_</h1>
@@ -228,7 +235,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t\t\t{% for work in catalog %}
 \t\t\t\t\t<div class=\"product\">
 \t\t\t\t\t\t<div class=\"img\">
-\t\t\t\t\t\t\t<img src=\"/src/smallimages/{{work.img}}\" alt=\"{{work.title}}\" width=\"417\" height=\"292\">
+\t\t\t\t\t\t\t<img src=\"{{folderImg}}{{work.img}}\" alt=\"{{work.title}}\" width=\"417\" height=\"292\">
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<p class=\"title\">
 \t\t\t\t\t\t\t{{work.title}}</p>
@@ -249,6 +256,7 @@ class __TwigTemplate_07bf8ad23c69ecfbae9d89a4b41f64907937790f80730203feb9065de32
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/portfolio.js\"></script>
+
 \t</section>
 
 {% endblock %}

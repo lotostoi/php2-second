@@ -5,11 +5,11 @@ class DropWindow {
         this.$indicator = $.el(options.indicator, this.$el)
         this.$content = $.el(options.contentSel, this.$el)
         this.height = 0
-        this.#handler()
-        this.#getHeight()
+        this._handler()
+        this._getHeight()
     }
 
-    async #getHeight() {
+    async _getHeight() {
         let { $content, $indicator } = this
         if (!$content.classList.contains('active')) {
             $content.classList.add('measuring')
@@ -27,7 +27,7 @@ class DropWindow {
         $content.style.transition = 'margin 300ms,padding 300ms, height 300ms, opacity 300ms'
     }
 
-    async #switchWindow(e) {
+    async _switchWindow(e) {
         let { $content, $indicator } = this
         if (!$content.classList.contains('active')) {
             $content.classList.add('active')
@@ -39,8 +39,8 @@ class DropWindow {
             $content.style.height = `${0}px`
         }
     }
-    #handler() {
-        this.$button.addEventListener('click', this.#switchWindow.bind(this))
+    _handler() {
+        this.$button.addEventListener('click', this._switchWindow.bind(this))
     }
 }
 

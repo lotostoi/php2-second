@@ -103,6 +103,7 @@ class __TwigTemplate_96aec09fe6918aefc94596eae6e1fc410d0dcf4862a94caa65011f9a18c
 \t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
+\t
 \t</section>
 ";
     }
@@ -167,6 +168,7 @@ class __TwigTemplate_96aec09fe6918aefc94596eae6e1fc410d0dcf4862a94caa65011f9a18c
 \t\t<script src=\"/src/js/functions.js\"></script>
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
+\t
 \t</section>
 {% endblock %}
 ", "auth/logout.twig", "C:\\OpenServer\\domains\\php2-second\\twigViews\\auth\\logout.twig");

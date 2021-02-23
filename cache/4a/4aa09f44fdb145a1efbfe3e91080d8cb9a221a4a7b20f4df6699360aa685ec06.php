@@ -131,6 +131,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/sosialNetworks.js\"></script>
+\t
 \t</section>
 
 ";
@@ -225,6 +226,7 @@ class __TwigTemplate_219356f22faa2f575de04633a9da0acaa870c62e58abb5963301eef1dff
 \t\t<script src=\"/src/js/header.js\"></script>
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/sosialNetworks.js\"></script>
+\t
 \t</section>
 
 {% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html><body style='font-family:Arial,sans-serif;'>;
+    <h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Новое сообщение:</h2>\r\n";
+    <p>" . $_POST['text'] . "</p>\r\n";
+    <p><strong>Телефон клиента:</strong> " . $phone . "</p>\r\n";
+    <p><strong>Email клиента:</strong> " . $email_cl . "</p>\r\n";
+    <p><strong>Имя клиента:</strong> " . $name . "</p>\r\n";
+    </body></html>";
+
+    // текст письма для посетителя сайта
+
+    $msg_cl = "<!DOCTYPE html><body style='font-family:Arial,sans-serif;'>";
+    $msg_cl .= "<h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Новое сообщение:</h2>\r\n";
+    $msg_cl .= "<p>" . "<strong>Ваше сообщение:  \"</strong> " . $_POST['text'] . "<strong>\" успешно доставлено, мы свяжемся с вами в ближайшее время!</strong>" . "</p>\r\n";
+    $msg_cl .= "<p><strong>Адрес отправителя:</strong> " . $email_owner . "</p>\r\n";
+    $msg_cl .= "</body></html>";

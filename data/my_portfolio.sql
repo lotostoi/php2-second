@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 08, 2021 at 06:41 PM
+-- Generation Time: Feb 20, 2021 at 04:22 AM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.5
 
@@ -224,7 +224,64 @@ INSERT INTO `hashes` (`id`, `id_user`, `hash`) VALUES
 (184, 8, '66714785602104409b38b2.99595605'),
 (185, 8, '39606250260210452325cc9.95064897'),
 (186, 8, '1068017877602104fa2712d9.08814591'),
-(187, 8, '2604393536021069e9be955.20077048');
+(187, 8, '2604393536021069e9be955.20077048'),
+(188, 8, '7308916026022276d081920.06877511'),
+(189, 8, '338760980602229cf70af58.76725695'),
+(190, 8, '186659113260222e164f2c04.45566123'),
+(191, 8, '7222220866022360ae74c69.99555246'),
+(192, 8, '502179159602356eb78e579.06408080'),
+(193, 8, '329598180602517ec322e24.89321260'),
+(194, 8, '2655991726025294b3d8d33.43078200'),
+(195, 21, '1488025250602740ae0b9a77.61943269'),
+(196, 21, '205549127602746f25368f3.90291052'),
+(197, 21, '6914887576027c2084266f1.07429286'),
+(198, 21, '2271861026027c2143ee9b1.12966000'),
+(199, 21, '20340314866027c5dc05f580.14960896'),
+(200, 21, '13005184476027c858f273e2.76526782'),
+(201, 21, '15195190596027ca86b4e443.88178544'),
+(202, 21, '21296026656027caae8ecc90.46047863'),
+(203, 21, '14249550506027caec9aac22.81150496'),
+(204, 21, '16494360496027cb11d22628.52520111'),
+(205, 21, '3076555776027ce8e897375.57094762'),
+(206, 21, '5387640456027d142558dc0.67992781'),
+(207, 21, '7455286926027d16d6dc168.98303936'),
+(208, 21, '11613469666027d19749bb72.08109258'),
+(209, 21, '7261217396027d1f42c6a39.10662089'),
+(210, 21, '92017300360294984044f04.04279739'),
+(211, 21, '1139600788602949c2289369.04436970'),
+(212, 21, '204284917602949eaa67262.94645499'),
+(213, 21, '160335247860294a4701bf49.47011196'),
+(214, 21, '147920170160294a9869b519.79292497'),
+(215, 0, '91781572860294f0d3c6ab6.92117607'),
+(216, 0, '66126754360294f8c26d860.33499981'),
+(217, 0, '190680749260294ffb246e21.13726193'),
+(218, 0, '20433314446029512793e797.27639034'),
+(219, 0, '108907412360295209c9e554.66927834'),
+(220, 0, '12703754526029525c4d29c8.75486903'),
+(221, 0, '7051828336029538b469329.08843415'),
+(222, 0, '2143640568602954087aaa70.48513790'),
+(223, 0, '124084327560295516ca10e9.80233893'),
+(224, 0, '20301949016029554e829ae5.46194808'),
+(225, 0, '881244643602a9a00708386.86269848'),
+(226, 0, '926078109602a9a4415a570.22481141'),
+(227, 0, '1475637597602a9a9f8f5ef2.44455138'),
+(228, 0, '374452331602a9b2cc6bbe3.03228462'),
+(229, 23, '656481687602a9c5db54e50.68802794'),
+(230, 23, '355829351602a9c94b06b72.29619955'),
+(231, 23, '1577872315602a9cc505d656.53483760'),
+(232, 23, '647613089602a9d88b49526.58363246'),
+(233, 23, '148270157602a9dac8f1cd6.53452457'),
+(234, 23, '795610668602a9f55a2bd77.80756810'),
+(235, 23, '1356924001602a9fe1722af8.06441258'),
+(236, 23, '1389538812602aa13394ed53.31205995'),
+(237, 23, '1879522459602aa1570e7e93.30650996'),
+(238, 23, '301065322602aa2635c9ea0.12989270'),
+(239, 23, '2037749957602aa57e020eb5.89459187'),
+(240, 24, '1353033305602aa5e44e89b9.11099191'),
+(241, 8, '971304340602aaac5efaa16.98925071'),
+(242, 24, '535955974602ab4cb0c32b4.31608440'),
+(243, 24, '2119816615602b0ac91bbcd7.24952024'),
+(244, 8, '1112248590602b0adb015306.33961650');
 
 -- --------------------------------------------------------
 
@@ -268,11 +325,10 @@ INSERT INTO `pictures` (`id`, `name`, `name_and_ext`, `number_of_views`) VALUES
 
 CREATE TABLE `reviews` (
   `id` int NOT NULL,
-  `user` varchar(200) COLLATE utf8_bin NOT NULL,
-  `link_to_sosial_network` varchar(800) COLLATE utf8_bin NOT NULL,
-  `review` text COLLATE utf8_bin NOT NULL,
-  `img_small` varchar(800) COLLATE utf8_bin NOT NULL,
-  `date` char(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `user` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `link_to_sosial_network` varchar(800) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `review` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `img_small` varchar(800) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `admin` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -280,14 +336,11 @@ CREATE TABLE `reviews` (
 -- Dumping data for table `reviews`
 --
 
-INSERT INTO `reviews` (`id`, `user`, `link_to_sosial_network`, `review`, `img_small`, `date`, `admin`) VALUES
-(36, 'Alexander', 'https://vk.com/id631958029', '  Проверка!\n  ', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', '2021-02-08', 1),
-(41, 'Марина', 'https://facebook.com/3435303603361672', 'Все отлично!', 'https://graph.facebook.com/3435303603361672/picture?width=100', '2021-02-08', 0),
-(74, 'Ember', 'https://vk.com/id118736477', 'Rere', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=100x0&quality=96&crop=53,53,427,427&sign=1907f867a8aaa807696231215763963b&c_uniq_tag=9kpdmsmL5dkL72vM5mQRy3UaZCQm4bGaXzuThXw5pEY&ava=1', '2021-02-08', 0),
-(75, 'Иван', 'https://some-link', 'good', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', '2021-02-08', 0),
-(117, 'lotos', 'notLink', 'tryrt', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', '2021-02-08', 1),
-(118, 'lotos', 'notLink', 'erte', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', '2021-02-08', 1),
-(119, 'lotos', 'notLink', '111', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', '2021-02-08', 1);
+INSERT INTO `reviews` (`id`, `user`, `link_to_sosial_network`, `review`, `img_small`, `admin`) VALUES
+(74, 'Ember', 'https://vk.com/id118736477', ' Rere 1', 'https://sun1-86.userapi.com/impg/W80a51WFrvCyaQljxr2tZ_w0KJc__XNqEjby5w/sZD1889xFW0.jpg?size=100x0&quality=96&crop=53,53,427,427&sign=1907f867a8aaa807696231215763963b&c_uniq_tag=9kpdmsmL5dkL72vM5mQRy3UaZCQm4bGaXzuThXw5pEY&ava=1', 0),
+(76, 'ÐœÐ¸Ñ…Ð°Ð¸Ð»', 'https://vk.com/id14406547', ' ÐžÑ‚Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð½Ð°ÑÑ‚Ð°Ð²Ð½Ð¸Ðº Ð½Ð° ÐºÑƒÑ€ÑÐµ JavaScript - Ð¿Ñ€Ð¾Ð´Ð²Ð¸Ð½ÑƒÑ‚Ñ‹Ð¹ ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ (GeekBrains). Ð¥Ð¾Ñ€Ð¾ÑˆÐ¾ Ð¿Ð¾Ð¼Ð¾Ð³ Ñ€Ð°Ð·Ð¾Ð±Ñ€Ð°Ñ‚ÑŒÑÑ Ñ vue.js Ð¸ ÐµÐ³Ð¾ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð°Ð¼Ð¸. Ð ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÑŽ, ÐºÐ°Ðº Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð¸ÑÑ‚Ð° Ñ Ð¾Ñ‚Ð»Ð¸Ñ‡Ð½Ñ‹Ð¼ Ð¿Ð¾Ð½Ð¸Ð¼Ð°ÐµÐ¼ JS', 'https://sun1-19.userapi.com/impg/Da73J3wv9Yg8sJ00jpZGBiG2-pnSDAJkJe5z1g/xRvAFOEMknk.jpg?size=100x0&quality=96&crop=855,1,1705,1705&sign=791d59af31e6ee366dc028f30dfcc48d&c_uniq_tag=bKr8maDtlwQJzQ9GiuLDISVw7x1KCE7CJUDIouWKV40&ava=1', 0),
+(77, '<&lenny^>', 'https://vk.com/id12094371', 'ÐžÑ‚Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð½Ð°ÑÑ‚Ð°Ð²Ð½Ð¸Ðº Ð½Ð° ÐºÑƒÑ€ÑÐµ JavaScript - Ð¿Ñ€Ð¾Ð´Ð²Ð¸Ð½ÑƒÑ‚Ñ‹Ð¹ ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ (GeekBrains). Ð›ÑƒÑ‡ÑˆÐ¸Ð¹ Ñ ÐºÐµÐ¼ Ñ Ð¾Ð±Ñ‰Ð°Ð»ÑÑ Ð·Ð° Ð²Ñ€ÐµÐ¼Ñ Ð¾Ð±ÑƒÑ‡ÐµÐ½Ð¸Ñ!!!', 'https://sun1-30.userapi.com/s/v1/if1/VpZuzlwv1S0YtF5vuPRhtcE2dC7z1tTfKAsNZ8PzbpL1lAqPAVRI12JDZrDE4BB602nRpdFU.jpg?size=100x0&quality=96&crop=66,3,1327,1327&ava=1', 0),
+(78, 'Ð“ÑƒÐ»ÑŒÐ½Ð°Ð·', 'https://vk.com/id32553386', ' Ð—Ð°Ð¼ÐµÑ‡Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð½Ð°ÑÑ‚Ð°Ð²Ð½Ð¸Ðº Ð¿Ñ€Ð¾Ð´Ð²Ð¸Ð½ÑƒÑ‚Ð¾Ð³Ð¾ js. Ð›ÑƒÑ‡ÑˆÐ¸Ð¹! ÐžÑ‡ÐµÐ½ÑŒ Ð³Ñ€Ð°Ð¼Ð¾Ñ‚Ð½Ð¾, Ð¿Ñ€Ð¾Ñ„ÐµÑÑÐ¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¾, Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾ Ñ€Ð°Ð·ÑŠÑÑÐ½Ð¸Ð» ÑÐ»Ð¾Ð¶Ð½ÐµÐ¹ÑˆÐ¸Ðµ Ñ‚ÐµÐ¼Ñ‹, Ð¿Ð¾Ð¼Ð¾Ð³ Ñ€Ð°Ð·Ð¾Ð±Ñ€Ð°Ñ‚ÑŒÑÑ Ñ Vue.js Ð¸ ÑÐ¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒÑÑ Ñ Ñ‚Ñ€ÑƒÐ´Ð½Ð¾ÑÑ‚ÑÐ¼Ð¸ Ð² webpack. ', 'https://sun1-20.userapi.com/s/v1/if1/Aa5ldMPtwS4zoLXWWFqGCKIZzlVGbLZFOCJtJ62HRmnb4JjTAPiCUeQuuIBko67EVWdNrBMc.jpg?size=100x0&quality=96&crop=656,661,716,716&ava=1', 0);
 
 -- --------------------------------------------------------
 
@@ -312,7 +365,8 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 (45, 'Vue.js'),
 (46, 'React.js'),
 (47, 'node.js'),
-(49, 'php');
+(49, 'php'),
+(77, 'sql');
 
 -- --------------------------------------------------------
 
@@ -341,9 +395,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `login`, `first_name`, `last_name`, `img_small`, `img_big`, `sosial_network`, `id_in_sosial_network`, `link_to_sosial_network`, `email`, `password`, `admin`) VALUES
 (8, 'lotos', 'Alexander', 'Plotnikov', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 'https://sun1-25.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=400x0&quality=96&crop=21,21,598,598&sign=2c46ad8d64911277cf9645740109cea3&c_uniq_tag=grwze31xC46FfvzlVogDLQ3RGb-SVR-mZBQoo8iSh6E&ava=1', 'site', 0, 'notLink', 'lotos_toi@mail.ru', '$2y$10$jJv4zl2Z2XPx01n86ABM.e4SiBs6uzH7fefZNCFrk9atFlpz26/Ne', 1),
-(11, 'Марина', 'Марина', 'Чуносова', 'https://graph.facebook.com/3435303603361672/picture?width=100', 'https://graph.facebook.com/3435303603361672/picture?width=300', 'fb', 3435303603361672, 'https://facebook.com/3435303603361672', 'sibysi@mail.ru', '', 0),
+(11, 'Марина', 'Марина', 'Чуносова', '/src/img/users/small/fb3435303603361672.jpg', '/src/img/users/big/fb3435303603361672.jpg', 'fb', 3435303603361672, 'https://facebook.com/3435303603361672', 'sibysi@mail.ru', '', 0),
 (12, 'Александр', 'Александр', 'Плотников', 'https://graph.facebook.com/2768117680107010/picture?width=100', 'https://graph.facebook.com/2768117680107010/picture?width=300', 'fb', 2768117680107010, 'https://facebook.com/2768117680107010', 'lotos_toi@mail.ru', '', 0),
-(21, 'Alexander', 'Alexander', 'Plotnikov', 'https://sun1-83.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=100x0&quality=96&crop=21,21,598,598&sign=9f904ff5cb4fda0aa00b898dff849491&c_uniq_tag=qR8gD6dwqomp1a9hjUJ7BrWTT6SYDhd53xM3VgNCk0I&ava=1', 'https://sun1-83.userapi.com/impg/UDYZmA3sed_oVjVeakMUeIyVnDYS_1dea9nDlw/xKcZ007YYJI.jpg?size=400x0&quality=96&crop=21,21,598,598&sign=2c46ad8d64911277cf9645740109cea3&c_uniq_tag=grwze31xC46FfvzlVogDLQ3RGb-SVR-mZBQoo8iSh6E&ava=1', 'vk', 631958029, 'https://vk.com/id631958029', 'не указан', '', 0);
+(24, 'Alexander', 'Alexander', 'Plotnikov', '/src/img/users/small/vk631958029.jpg', '/src/img/users/big/vk631958029.jpg', 'vk', 631958029, 'https://vk.com/id631958029', 'не указан', '', 0);
 
 -- --------------------------------------------------------
 
@@ -365,11 +419,10 @@ CREATE TABLE `works` (
 --
 
 INSERT INTO `works` (`id`, `title`, `img`, `git`, `project`, `description`) VALUES
-(6, 'Адаптивная верстка', 'Скриншот 26-12-2020 135014.jpg', 'https://github.com/lotostoi/E-Shop.io', 'https://lotostoi.github.io/E-Shop.io/', 'Пример адаптивной верстки. html, css, scss, js, gulp.\r\nПример адаптивной верстки интернет магазина. Слайдер написан на ванильном js. Для работы с scss использовался gulp.  '),
-(7, 'Простая верстка статической страницы', 'Скриншот 26-12-2020 135735.png', ' https://github.com/lotostoi/html5-css3.io', 'https://lotostoi.github.io/html5-css3.io/', 'Простая верстка статической страницы. html, css.\r\nПример верстки статической страницы без адаптива.'),
-(8, 'Интернет магазин на php', 'Скриншот 26-12-2020 140157.png', 'https://github.com/lotostoi/startMVC', 'http://lotose.ru/', 'Простой интернет магазин на php.\r\nВ магазине реализован, поиск, простая авторизация, простая админка с возможностью добавлять и редактировать товары.  Админка доступна под логином admin 12345. Дизайн произвольный, верстка без адаптива. Код написан в OOП стиле. Фреймворки не используются.'),
-(9, 'Пример адаптивной вертски интернет магазина', '1.png', 'https://github.com/lotostoi/index.io/tree/lesson4', 'https://lotostoi.github.io/index.io/', 'Пример адаптивной вёрстки интернет магазина.\r\nHtml, scss, js, vue.js.\r\nВерстка интернет магазина по макету. По ссылка показана верстка главной страницы, в репозитории можно посмотреть вёрстку других страниц. При верстке часть функционала была реализована с помощью js, vue.js(простой слайдер), ползунок для фильтрации цен на странице product.html,  реализован на основе плагина https://refreshless.com/nouislider/. '),
-(12, 'Адаптивная верстка', '7.png', ' https://github.com/lotostoi/html5-css3.io', 'https://lotostoi.github.io/site-s.github.io/', 'Одна из первых моих работ по верстке! Работа выполнена  при прохождении следующего курса https://geekbrains.ru/courses/9 ');
+(6, 'Адаптивная верстка', '602524f05b4bf.jpg', 'https://github.com/lotostoi/E-Shop.io', 'https://lotostoi.github.io/E-Shop.io/', 'Пример адаптивной верстки.\r\nПример адаптивной верстки интернет магазина. Слайдер написан на ванильном js. Для работы с scss использовался gulp.  '),
+(7, 'Простая верстка статической страницы', 'Скриншот 26-12-2020 135735.png', ' https://github.com/lotostoi/html5-css3.io', 'https://lotostoi.github.io/html5-css3.io/', 'Простая верстка статической страницы.\r\nПример верстки статической страницы без адаптива.'),
+(8, 'Интернет магазин на php', '602526e6024f2.jpg', 'https://github.com/lotostoi/startMVC', 'http://lotose.ru/', 'Простой интернет магазин на php.\r\nВ магазине реализован, поиск, простая авторизация, простая админка с возможностью добавлять и редактировать товары.  Админка доступна под логином admin 12345. Дизайн произвольный, верстка без адаптива. Код написан в OOП стиле. Фреймворки не используются.'),
+(9, 'Пример адаптивной вертски интернет магазина', '1.png', 'https://github.com/lotostoi/index.io/tree/lesson4', 'https://lotostoi.github.io/index.io/', 'Пример адаптивной вёрстки интернет магазина.\r\nВерстка интернет магазина по макету. По ссылка показана верстка главной страницы, в репозитории можно посмотреть вёрстку других страниц. При верстке часть функционала была реализована с помощью js, vue.js(простой слайдер), ползунок для фильтрации цен на странице product.html,  реализован на основе плагина https://refreshless.com/nouislider/. ');
 
 -- --------------------------------------------------------
 
@@ -388,24 +441,54 @@ CREATE TABLE `works_to_tags` (
 --
 
 INSERT INTO `works_to_tags` (`id`, `id_work`, `id_tag`) VALUES
-(284, 8, 22),
-(285, 8, 42),
-(286, 8, 43),
-(287, 8, 44),
-(288, 8, 49),
-(291, 7, 22),
-(292, 7, 42),
-(293, 6, 22),
-(294, 6, 42),
-(295, 6, 43),
-(296, 6, 44),
-(305, 9, 22),
-(306, 9, 42),
-(307, 9, 43),
-(308, 9, 44),
-(319, 12, 22),
-(320, 12, 42),
-(321, 12, 44);
+(322, 0, 22),
+(323, 0, 42),
+(324, 0, 43),
+(325, 0, 42),
+(326, 0, 43),
+(327, 0, 42),
+(328, 0, 43),
+(329, 0, 42),
+(330, 0, 43),
+(331, 0, 42),
+(332, 0, 43),
+(333, 0, 42),
+(334, 0, 43),
+(335, 0, 42),
+(336, 0, 43),
+(337, 0, 42),
+(338, 0, 43),
+(339, 0, 42),
+(340, 0, 43),
+(341, 0, 42),
+(342, 0, 43),
+(343, 0, 42),
+(344, 0, 43),
+(345, 0, 42),
+(346, 0, 43),
+(361, 0, 43),
+(362, 0, 44),
+(363, 0, 45),
+(364, 0, 46),
+(365, 0, 43),
+(366, 0, 44),
+(367, 0, 45),
+(429, 7, 22),
+(430, 7, 42),
+(431, 9, 22),
+(432, 9, 42),
+(433, 9, 43),
+(434, 9, 44),
+(435, 6, 22),
+(436, 6, 42),
+(437, 6, 43),
+(438, 6, 44),
+(439, 6, 45),
+(445, 8, 22),
+(446, 8, 42),
+(447, 8, 43),
+(448, 8, 44),
+(449, 8, 49);
 
 --
 -- Indexes for dumped tables
@@ -461,7 +544,7 @@ ALTER TABLE `works_to_tags`
 -- AUTO_INCREMENT for table `hashes`
 --
 ALTER TABLE `hashes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
 -- AUTO_INCREMENT for table `pictures`
@@ -473,31 +556,31 @@ ALTER TABLE `pictures`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `works_to_tags`
 --
 ALTER TABLE `works_to_tags`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=452;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,6 +17,7 @@ class WorkController extends Controller
         $this->params['tags'] = App::call()->TagsRepository->getAll();
         $this->params['catalog'] = App::call()->WorkRepository->getCatalog();
         $this->params['del'] = App::call()->Request->getParams()['del'];
+        $this->params['folderImg'] = App::call()->config['BIG'];
         echo $this->render('portfolio/portfolio', $this->params);
     }
 

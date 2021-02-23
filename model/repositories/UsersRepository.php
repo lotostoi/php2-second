@@ -35,7 +35,7 @@ class UsersRepository extends Repository
                 $user = $this->getOneByField('login', $login);
                 $user = $user->id ? $user : $this->getOneByField('email', $login);
 
-                if ($user->showKeys()['id']) {
+                if ($user && $user->showKeys()['id']) {
                     if (password_verify($password, $user->showKeys()['password'])) {
                         $this->setCook($user->showKeys(), $save);
                         header("Location: /$redirect");

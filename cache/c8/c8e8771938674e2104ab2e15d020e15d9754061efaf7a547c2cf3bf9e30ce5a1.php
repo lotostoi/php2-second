@@ -48,6 +48,10 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
         $macros = $this->macros;
         // line 3
         echo "\t<section class=\"common wrapper\">
+\t\t<input type=\"hidden\" name=\"amount\" value=\"";
+        // line 4
+        echo twig_escape_filter($this->env, ($context["amount"] ?? null), "html", null, true);
+        echo "\">
 \t\t<div class=\"common-header__fone\">
 \t\t\t<div class=\"common-header__cont\">
 \t\t\t\t<h1 class=\"common-header__h1\">Отзывы_</h1>
@@ -59,9 +63,9 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t<div class=\"common-body\" id=\"reviews\">
 \t\t\t<div class=\"reviews\">
 \t\t\t\t";
-        // line 14
+        // line 15
         if (($context["user"] ?? null)) {
-            // line 15
+            // line 16
             echo "\t\t\t\t\t<form class=\"reviews-body__form\" id=\"add-reviews\" method=\"POST\">
 \t\t\t\t\t\t<label>
 \t\t\t\t\t\t\t<span>
@@ -74,12 +78,12 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t</form>
 \t\t\t\t";
         } else {
-            // line 26
+            // line 27
             echo "\t\t\t\t\t<div class=\"reviews-body__enter\">
 \t\t\t\t\t\t<p class=\"title\">Что бы оставить отзыв необходимо авторизироваться:</p>
 \t\t\t\t\t\t<div class=\"social-network\">
 \t\t\t\t\t\t\t<div class=\"list\">
-\t\t\t\t\t\t\t\t<form action=\"../api/auth-vk\" method=\"POST\">
+\t\t\t\t\t\t\t\t<form action=\"/authorization/enterVK\" method=\"POST\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"vk_save\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"reviews\">
@@ -87,7 +91,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-vk\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t</form>
-\t\t\t\t\t\t\t\t<form action=\"../api/auth-fb\" method=\"POST\">
+\t\t\t\t\t\t\t\t<form action=\"/authorization/enterFB\" method=\"POST\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"reviews\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"fb_save\">
@@ -104,77 +108,77 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t</div>
 \t\t\t\t";
         }
-        // line 54
+        // line 55
         echo "\t\t\t\t<div class=\"reviews-body__wrapper\">
 \t\t\t\t\t";
-        // line 55
+        // line 56
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["reviews"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["review"]) {
-            // line 56
+            // line 57
             echo "\t\t\t\t\t\t<form class=\"reviews-body__review\" data-form=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 56), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 57), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t<div class=\"user\">
 \t\t\t\t\t\t\t\t<div class=\"nick\">
 \t\t\t\t\t\t\t\t\t<img src=\"";
-            // line 59
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "img_small", [], "any", false, false, false, 59), "html", null, true);
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "img_small", [], "any", false, false, false, 60), "html", null, true);
             echo "\" alt=\"user-image\"/>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 60
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "link_to_sosial_network", [], "any", false, false, false, 60), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "link_to_sosial_network", [], "any", false, false, false, 61), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 60), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 61), "html", null, true);
             echo "</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<p class=\"review\" data-rev=\"";
-            // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 62), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 62), "js"), "html", null, true);
-            echo "</p>
-\t\t\t\t\t\t\t\t<textarea class=\"edit_review hiden\" type=\"text\" name=\"edit_review\" v-model=\"review.review\" data-text=\"";
             // line 63
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 63), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 63), "html", null, true);
+            echo twig_escape_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 63), "js"), "html", null, true);
+            echo "</p>
+\t\t\t\t\t\t\t\t<textarea class=\"edit_review hiden\" type=\"text\" name=\"edit_review\" v-model=\"review.review\" data-text=\"";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 64), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "review", [], "any", false, false, false, 64), "html", null, true);
             echo "</textarea>
 \t\t\t\t\t\t\t\t<div class=\"date\">";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "date", [], "any", false, false, false, 64), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "date", [], "any", false, false, false, 65), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t";
-            // line 67
-            if ((($context["admin"] ?? null) || (0 === twig_compare(($context["user"] ?? null), twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 67))))) {
-                // line 68
+            // line 68
+            if ((($context["admin"] ?? null) || (0 === twig_compare(($context["user"] ?? null), twig_get_attribute($this->env, $this->source, $context["review"], "user", [], "any", false, false, false, 68))))) {
+                // line 69
                 echo "\t\t\t\t\t\t\t\t<div class=\"edit\" data-parent=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 68), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 69), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t<button class=\"review_edit\" data-edit=\"";
-                // line 69
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 69), "html", null, true);
+                // line 70
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 70), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t\t<button class=\"hiden review_save\" data-save=\"";
-                // line 72
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 72), "html", null, true);
+                // line 73
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 73), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t\t<button class=\"review_del\" data-del=\"";
-                // line 75
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 75), "html", null, true);
+                // line 76
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", [], "any", false, false, false, 76), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t";
             }
-            // line 80
+            // line 81
             echo "
 \t\t\t\t\t\t</form>
 \t\t\t\t\t";
@@ -182,7 +186,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['review'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 84
         echo "\t\t\t\t</div>
 \t\t\t\t<button class=\"loadMore\">Загрузить еще</button>
 \t\t\t</div>
@@ -193,6 +197,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/reviews.js\"></script>
 \t\t<script src=\"/src/js/sosialNetworks.js\"></script>
+\t
 \t</section>
 
 ";
@@ -210,7 +215,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 
     public function getDebugInfo()
     {
-        return array (  186 => 83,  178 => 80,  170 => 75,  164 => 72,  158 => 69,  153 => 68,  151 => 67,  145 => 64,  139 => 63,  133 => 62,  126 => 60,  122 => 59,  115 => 56,  111 => 55,  108 => 54,  78 => 26,  65 => 15,  63 => 14,  50 => 3,  46 => 2,  35 => 1,);
+        return array (  190 => 84,  182 => 81,  174 => 76,  168 => 73,  162 => 70,  157 => 69,  155 => 68,  149 => 65,  143 => 64,  137 => 63,  130 => 61,  126 => 60,  119 => 57,  115 => 56,  112 => 55,  82 => 27,  69 => 16,  67 => 15,  53 => 4,  50 => 3,  46 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -218,6 +223,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
         return new Source("{% extends \"mainLayuot.twig\" %}
 {% block content %}
 \t<section class=\"common wrapper\">
+\t\t<input type=\"hidden\" name=\"amount\" value=\"{{amount}}\">
 \t\t<div class=\"common-header__fone\">
 \t\t\t<div class=\"common-header__cont\">
 \t\t\t\t<h1 class=\"common-header__h1\">Отзывы_</h1>
@@ -244,7 +250,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t\t<p class=\"title\">Что бы оставить отзыв необходимо авторизироваться:</p>
 \t\t\t\t\t\t<div class=\"social-network\">
 \t\t\t\t\t\t\t<div class=\"list\">
-\t\t\t\t\t\t\t\t<form action=\"../api/auth-vk\" method=\"POST\">
+\t\t\t\t\t\t\t\t<form action=\"/authorization/enterVK\" method=\"POST\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"vk_save\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"reviews\">
@@ -252,7 +258,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-vk\" aria-hidden=\"true\"></i>
 \t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t</form>
-\t\t\t\t\t\t\t\t<form action=\"../api/auth-fb\" method=\"POST\">
+\t\t\t\t\t\t\t\t<form action=\"/authorization/enterFB\" method=\"POST\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"start\" value=\"1\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"redirect\" value=\"reviews\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"save_sn\" value=\"1\" id=\"fb_save\">
@@ -307,6 +313,7 @@ class __TwigTemplate_92577816996886cc1e21362907e53252e670ccbb23fe6df0d4fddac2dcb
 \t\t<script src=\"/src/js/server.js\"></script>
 \t\t<script src=\"/src/js/reviews.js\"></script>
 \t\t<script src=\"/src/js/sosialNetworks.js\"></script>
+\t
 \t</section>
 
 {% endblock %}

@@ -62,20 +62,32 @@
 							<a href="#">GitHub</a>
 						</div>
 					</div>
-					<div class="footer__form">
+					<form class="footer__form" id="footerForm">
+						<p class="footer__form-success block" data-result="saccess">Ваше сообщение успешно отправленно, мы свяжемся с вами в ближайшее время...</p>
+						<p class="footer__form-error block" data-result="error">При отправке сообщения возникала ошибка, повторите попытку позже...</p>
 						<h4>Форма обратной связи_</h4>
 						<input type="text" name="name" placeholder="Ваше имя">
+						<small class="errorMessage block" data-name="name">Минимальная длина имени 3 символа</small>
 						<input type="email" name="email" placeholder="Вашь e-mail">
+						<small class="errorMessage block" data-name="email">Не коректный email адрес</small>
 						<textarea name="message" cols="30" rows="10" placeholder="Текст сообщения"></textarea>
-						<button>
-							Отправить
+						<small class="errorMessage block" data-name="message">Минимальная длина сообщения 3 символа</small>
+						<button class="sendMessage">
+							<div class="lds-ring block">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<span class="title">Отправить</span>
 						</button>
-					</div>
+					</form>
 				</div>
 				<p class="rights">©
 					<?= date('Y') ?>
 					Александр Плотников. Все права защищены.</p>
 			</div>
 		</div>
+		<script src="/src/js/form.js"></script>
 	</footer>
 {% endblock %}
