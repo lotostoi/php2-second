@@ -86,25 +86,29 @@ $time: 0.3s;
 
 @mixin bc-fone {
   & {
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(1, 0, 0, 0.7987570028011204) 42%,
-        rgba(255, 98, 0, 0.6671043417366946) 100%
-      ),
-      url("../img/baner.jpg");
+    background: rgb(13, 7, 7);
+    background: -moz-linear-gradient(90deg, rgba(13, 7, 7, 1) 0%, rgba(121, 53, 1, 1) 100%, rgba(247, 145, 0, 1) 100%);
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(13, 7, 7, 1) 0%,
+      rgba(121, 53, 1, 1) 100%,
+      rgba(247, 145, 0, 1) 100%
+    );
+    background: linear-gradient(90deg, rgba(13, 7, 7, 1) 0%, rgba(121, 53, 1, 1) 100%, rgba(247, 145, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0707",endColorstr="#f79100",GradientType=1);
+    /*   url("../img/baner.jpg"); */
   }
 }
 @mixin bc-fone-rev {
   & {
     background: rgb(5, 3, 0);
     background: linear-gradient(
-        90deg,
-        rgba(5, 3, 0, 0.6671043417366946) 0%,
-        rgba(249, 128, 7, 0.7987570028011204) 0%,
-        rgba(1, 1, 0, 1) 100%
-      ),
-      url("../img/baner.jpg");
+      90deg,
+      rgba(5, 3, 0, 0.6671043417366946) 0%,
+      rgba(249, 128, 7, 0.7987570028011204) 0%,
+      rgba(1, 1, 0, 1) 100%
+    );
+    /* url('../img/baner.jpg'); */
   }
 }
 
@@ -144,7 +148,7 @@ $time: 0.3s;
   width: $width;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
+  background-image: url('../img/fonforlittelelem.jpg');
   background-size: contain;
   background: rgb(0, 0, 0);
   color: $color-light;
@@ -173,7 +177,7 @@ $time: 0.3s;
   height: $height;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
+  background-image: url('../img/fonforlittelelem.jpg');
   background-size: contain;
   background: rgb(0, 0, 0);
   color: $color-light;
