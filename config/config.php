@@ -26,7 +26,7 @@ return [
         'Db' => [
             'class' => app\engine\Db::class,
             'driver' => 'mysql',
-            'host' => 'localhost:3307',
+            'host' => 'localhost:3306',
             'login' => 'lotos',
             'password' => 'XrTA2B2Igm3AzBPR',
             'database' => 'my_portfolio',
