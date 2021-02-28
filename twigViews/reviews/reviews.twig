@@ -60,7 +60,7 @@
 									<img src="{{review.img_small}}" alt="user-image"/>
 									<a href="{{review.link_to_sosial_network}}">{{ review.user }}</a>
 								</div>
-								<p class="review" data-rev="{{review.id}}">{{review.review|e('js')}}</p>
+								<p class="review" data-rev="{{review.id}}">{{review.review}}</p>
 								<textarea class="edit_review hiden" type="text" name="edit_review" v-model="review.review" data-text="{{review.id}}">{{review.review}}</textarea>
 								<div class="date">{{review.date}}</div>
 							</div>
