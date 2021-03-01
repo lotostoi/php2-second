@@ -2441,6 +2441,59 @@ body {
   color: white;
 }
 
+.resume__block > .technologyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 10px 5px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.resume__block > .technologyes > .technology {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  max-width: 250px;
+  padding: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resume__block > .technologyes > .technology > .content-technology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.resume__block > .technologyes > .technology > .content-technology > img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.resume__block > .technologyes > .technology > .content-technology > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .resume__cont {
   width: 100%;
   -webkit-box-orient: vertical;
@@ -2589,7 +2642,7 @@ body {
   color: #bd4d03;
 }
 
-.resume__allInformation .content > .technology {
+.resume__allInformation .content > .technologyes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2605,7 +2658,7 @@ body {
       flex-wrap: wrap;
 }
 
-.resume__allInformation .content > .technology > li {
+.resume__allInformation .content > .technologyes > .technology {
   margin: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2621,12 +2674,18 @@ body {
           justify-content: center;
 }
 
-.resume__allInformation .content > .technology > li > img {
+.resume__allInformation .content > .technologyes > .technology > .content-technology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.resume__allInformation .content > .technologyes > .technology > .content-technology > img {
   height: 30px;
   margin-right: 10px;
 }
 
-.resume__allInformation .content > .technology > li > span {
+.resume__allInformation .content > .technologyes > .technology > .content-technology > span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
