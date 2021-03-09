@@ -71,6 +71,7 @@
     flex-direction: column;
     align-items: flex-end;
     position: relative;
+    box-sizing: border-box;
     & .title {
       width: 100%;
       display: flex;
@@ -102,6 +103,7 @@
       color: $color-dark-hover;
     }
     & .content {
+      display: flex;
       overflow: hidden;
       height: 0;
       width: calc(100% - 20px);
@@ -110,7 +112,7 @@
       font-weight: 400;
       line-height: 30px;
       color: $color-dark;
-      box-sizing: content-box;
+      box-sizing: border-box;
       opacity: 0;
       flex-direction: column;
       border: 1px solid rgb(233, 232, 232);
@@ -144,27 +146,31 @@
         padding: 10px 5px;
         flex-direction: row;
         flex-wrap: wrap;
+        box-sizing: border-box;
         & > li {
-          // width: auto;
+         // width: 270px;
           margin: 5px;
           display: flex;
           align-items: center;
           background-color: white;
-          max-width: 250px;
           padding: 10px;
           justify-content: center;
+          box-sizing: border-box;
         }
         & > li > img {
           // width: 30px;
           height: 30px;
           margin-right: 10px;
+          box-sizing: border-box;
         }
         & > li > span {
           display: flex;
+          box-sizing: border-box;
         }
       }
     }
     & .content.active {
+      display: flex;
       opacity: 1;
     }
     & .content.measuring {
@@ -172,6 +178,7 @@
       position: absolute;
       visibility: hidden;
       display: flex;
+      box-sizing: border-box;
     }
   }
 }
