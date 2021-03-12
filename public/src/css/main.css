@@ -199,6 +199,7 @@ body {
 .work__linkToEdit {
   position: absolute;
   right: 20px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,9 +214,6 @@ body {
   height: 30px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;
@@ -270,6 +268,7 @@ body {
 }
 
 .work__deleteWork > a {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,9 +283,6 @@ body {
   height: 30px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;
@@ -566,9 +562,6 @@ body {
   width: 100px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 20px;
@@ -646,9 +639,6 @@ body {
   width: 100px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 20px;
@@ -1287,6 +1277,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.4rem;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1295,9 +1286,6 @@ body {
   height: 30px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;
@@ -2439,6 +2427,93 @@ body {
   color: white;
 }
 
+.resume__block > .add-technology {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.resume__block > .add-technology > input {
+  outline: none;
+  min-height: 15px;
+  padding: 5px;
+  font-size: 0.8rem;
+  color: #333232;
+  border-radius: 5px;
+  border: 1px solid rgba(199, 198, 198, 0.685);
+  color: #676464;
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+.resume__block > .add-technology > input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .add-technology > input:-moz-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .add-technology > input::-moz-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .add-technology > input:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .add-technology > button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  width: 120px;
+  height: 30px;
+  outline: none;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.resume__block > .add-technology > button {
+  -webkit-box-shadow: 0px 0px 5px 0px #505050;
+  box-shadow: 0px 0px 5px 0px #505050;
+}
+
+.resume__block > .add-technology > button {
+  background: #0d0b0b;
+  background: -webkit-gradient(linear, left top, right top, from(#0d0b0b), color-stop(50%, #343331), to(#454545));
+  background: linear-gradient(90deg, #0d0b0b 0%, #343331 50%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0b0b",endColorstr="#454545",GradientType=1);
+}
+
+.resume__block > .add-technology > button:hover {
+  background: #343331;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #343331), color-stop(100%, #0d0b0b), to(#454545));
+  background: linear-gradient(90deg, #343331 50%, #0d0b0b 100%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#343331",endColorstr="#454545",GradientType=1);
+}
+
+.resume__block > .add-technology > button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
 .resume__block > .technologyes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2460,9 +2535,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: white;
   max-width: 250px;
   padding: 10px;
@@ -2473,12 +2548,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 1px solid rgba(224, 224, 224, 0.685);
+  border-radius: 5px;
+}
+
+.resume__block > .technologyes > .technology {
+  -webkit-box-shadow: 0px 0px 5px 0px #505050;
+  box-shadow: 0px 0px 5px 0px #505050;
 }
 
 .resume__block > .technologyes > .technology > .content-technology {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .resume__block > .technologyes > .technology > .content-technology > img {
@@ -2490,6 +2575,192 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.resume__block > .technologyes > .technology > .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: rgba(199, 198, 198, 0.485);
+}
+
+.resume__block > .technologyes > .technology > .edit > input {
+  outline: none;
+  min-height: 15px;
+  padding: 5px;
+  font-size: 0.8rem;
+  color: #333232;
+  border-radius: 5px;
+  border: 1px solid rgba(199, 198, 198, 0.685);
+  color: #676464;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.resume__block > .technologyes > .technology > .edit > input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .technologyes > .technology > .edit > input:-moz-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .technologyes > .technology > .edit > input::-moz-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .technologyes > .technology > .edit > input:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.resume__block > .technologyes > .technology > .edit > button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  width: 120px;
+  height: 30px;
+  outline: none;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.resume__block > .technologyes > .technology > .edit > button {
+  -webkit-box-shadow: 0px 0px 5px 0px #505050;
+  box-shadow: 0px 0px 5px 0px #505050;
+}
+
+.resume__block > .technologyes > .technology > .edit > button {
+  background: #0d0b0b;
+  background: -webkit-gradient(linear, left top, right top, from(#0d0b0b), color-stop(50%, #343331), to(#454545));
+  background: linear-gradient(90deg, #0d0b0b 0%, #343331 50%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0b0b",endColorstr="#454545",GradientType=1);
+}
+
+.resume__block > .technologyes > .technology > .edit > button:hover {
+  background: #343331;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #343331), color-stop(100%, #0d0b0b), to(#454545));
+  background: linear-gradient(90deg, #343331 50%, #0d0b0b 100%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#343331",endColorstr="#454545",GradientType=1);
+}
+
+.resume__block > .technologyes > .technology > .edit > button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.resume__block > .technologyes > .technology > .delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: rgba(199, 198, 198, 0.485);
+}
+
+.resume__block > .technologyes > .technology > .delete > .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.resume__block > .technologyes > .technology > .delete > .check > p {
+  margin-left: 10px;
+}
+
+.resume__block > .technologyes > .technology > .delete > button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  width: 120px;
+  height: 30px;
+  outline: none;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 10px 0 0 0;
+  font-size: 0.9rem;
+}
+
+.resume__block > .technologyes > .technology > .delete > button {
+  -webkit-box-shadow: 0px 0px 5px 0px #505050;
+  box-shadow: 0px 0px 5px 0px #505050;
+}
+
+.resume__block > .technologyes > .technology > .delete > button {
+  background: #0d0b0b;
+  background: -webkit-gradient(linear, left top, right top, from(#0d0b0b), color-stop(50%, #343331), to(#454545));
+  background: linear-gradient(90deg, #0d0b0b 0%, #343331 50%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0b0b",endColorstr="#454545",GradientType=1);
+}
+
+.resume__block > .technologyes > .technology > .delete > button:hover {
+  background: #343331;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #343331), color-stop(100%, #0d0b0b), to(#454545));
+  background: linear-gradient(90deg, #343331 50%, #0d0b0b 100%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#343331",endColorstr="#454545",GradientType=1);
+}
+
+.resume__block > .technologyes > .technology > .delete > button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.resume__block > .technologyes > .technology > .delete > button.block {
+  cursor: not-allowed;
+  background: #9a9797;
+}
+
+.resume__block > .technologyes > .technology > .delete > button.block:hover {
+  background: #9a9797;
+}
+
+.resume__block > .technologyes > .technology > .delete > button.block:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .resume__cont {
@@ -3545,6 +3816,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.4rem;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3553,9 +3825,6 @@ body {
   height: 30px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;
@@ -3773,6 +4042,7 @@ body {
   position: absolute;
   top: -35px;
   right: 20px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3787,9 +4057,6 @@ body {
   height: 30px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;
@@ -3827,6 +4094,7 @@ body {
   position: absolute;
   top: -35px;
   right: 240px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3841,9 +4109,6 @@ body {
   height: 30px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;

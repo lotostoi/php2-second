@@ -154,9 +154,6 @@ $time: 0.3s;
   width: $width;
   outline: none;
   padding: 10px;
-  background-image: url('../img/fonforlittelelem.jpg');
-  background-size: contain;
-  background: rgb(0, 0, 0);
   color: $color-light;
   border: none;
   @include grayShadow;
@@ -174,7 +171,8 @@ $time: 0.3s;
   }
 }
 
-@mixin but($width: 200px, $height: 30px) {
+@mixin but($width: 200px, $height: 30px, $padding: 10px) {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,13 +180,9 @@ $time: 0.3s;
   width: $width;
   height: $height;
   outline: none;
-  padding: 10px;
-  background-image: url('../img/fonforlittelelem.jpg');
-  background-size: contain;
-  background: rgb(0, 0, 0);
+  padding: $padding;
   color: $color-light;
   border: none;
-
   @include grayShadow;
   border-radius: 3px;
   font-size: 1rem;
@@ -203,8 +197,17 @@ $time: 0.3s;
     transform: scale(0.99);
   }
 }
+@mixin but-blocked {
+  cursor: not-allowed;
+  background: lighten($color-dark, 40%);
 
-// links
+  &:hover {
+    background: lighten($color-dark, 40%);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
 
 @mixin link {
   display: flex;
@@ -219,5 +222,18 @@ $time: 0.3s;
   }
   &:active {
     background-color: $color-light-active;
+  }
+}
+
+@mixin app-input($height: 20px, $padding: 5px, $fs: 1.2rem) {
+  outline: none;
+  min-height: $height;
+  padding: $padding;
+  font-size: $fs;
+  color: $color-dark;
+  border-radius: 5px;
+  border: 1px solid $color-light-grey;
+  @include placeholder {
+    font-size: 1.2rem;
   }
 }
