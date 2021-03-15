@@ -2,31 +2,35 @@ $hover-off: 1024px;
 
 $max-width: 1400px;
 $ff: Roboto Mono, monospace;
+
 $color-light: white;
+
+$color-theme: rgb(0, 217, 255);
+
+$color-bright: $color-theme;
+
 $color-light-hover: rgba(255, 255, 255, 0.863);
-$color-light-active: rgba(245, 163, 11, 0.863);
+$color-light-active: lighten($color-theme, 20%);
 $color-dark: rgb(51, 50, 50);
-$color-dark-hover: rgb(189, 77, 3);
-$color-dark-active: rgba(245, 163, 11, 0.979);
+$color-dark-hover: darken($color-theme, 5%);
+$color-dark-active: darken($color-theme, 30%);
 $color-light-grey: rgba(199, 198, 198, 0.685);
-$color-bright: rgba(249, 128, 7, 0.7987570028011204);
-$color-bright-strong: rgb(245, 100, 4);
-$color-fone-light: rgba(216, 216, 216, 0.335);
-$color-fone-hover: rgba(245, 126, 16, 0.986);
+
+$color-bright-strong: darken($color-theme, 20%);
+$color-fone-light: lighten($color-theme, 48%);
+$color-fone-hover: $color-theme; // rgba(245, 126, 16, 0.986);
 
 :root {
-    --padding:20px;  
+    --padding: 20px;
 }
 
 @include mq(1450px, max) {
     :root {
         --padding: 50px;
-     
     }
-  }
+}
 @include mq(700px, max) {
     :root {
         --padding: 20px;
-     
     }
-  }
+}

@@ -41,6 +41,7 @@
     & h1 {
       font-size: 2.2rem;
       font-weight: 700;
+      color: $color-theme;
     }
     & .status {
       font-size: 1rem;
@@ -71,9 +72,8 @@
       margin-top: 50px;
       display: flex;
       & > a {
-        opacity: 0.4;
         margin: 10px;
-        color: $color-light;
+        color: $color-theme;
         font-size: 1.5rem;
         -o-transition: transform 0.3s ease-in-out;
         -moz-transition: transform 0.3s ease-in-out;
@@ -83,7 +83,8 @@
         z-index: 100;
         & > i {
           position: relative;
-          z-index: 50;
+          z-index: 100;
+          color: $color-theme;
         }
       }
       & > a:hover {

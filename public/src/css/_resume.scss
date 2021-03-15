@@ -43,7 +43,7 @@
       padding: 0 5px;
       text-decoration: none;
       background-color: rgb(54, 53, 51);
-      color: rgb(255, 115, 0);
+      color: $color-theme;
       border-radius: 0 5px 5px 0;
       &:hover {
         background-color: $color-dark;

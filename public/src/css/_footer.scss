@@ -76,7 +76,7 @@ input:-internal-autofill-selected {
   &__title {
     font-size: 2rem;
     font-weight: 400;
-    color: $color-light;
+    color: $color-theme;
     margin-bottom: 70px;
   }
   &__body {
@@ -132,7 +132,7 @@ input:-internal-autofill-selected {
       }
       & > a:hover::after {
         position: absolute;
-        content: '_';
+        content: "_";
         display: flex;
         right: -10px;
         top: 0;
@@ -140,7 +140,7 @@ input:-internal-autofill-selected {
       }
       & > a:active::after {
         position: absolute;
-        content: '_';
+        content: "_";
         display: flex;
         right: -10px;
         top: 0;
@@ -168,11 +168,11 @@ input:-internal-autofill-selected {
     & input {
       margin-top: 20px;
       width: 100%;
-      background-color: transparent;
+      background-color: white;
       border-radius: 3px;
       border: 1px solid #fff;
       padding: 10px;
-      color: #fff;
+      color: $color-dark;
       font-size: 16px;
       line-height: 24px;
       display: flex;
@@ -183,26 +183,26 @@ input:-internal-autofill-selected {
       }
     }
     & input.error:-internal-autofill-selected {
-      background-color: rgba(255, 0, 0, 0.356);
+      background-color: rgb(134, 89, 89) !important;
     }
     & input.success:-internal-autofill-selected {
-      background-color: transparent;
+      background-color: white;
     }
     & input.error {
-      background-color: rgba(255, 0, 0, 0.356);
+      background-color: rgb(134, 89, 89) !important;
     }
     & input.success {
-      background-color: transparent;
+      background-color: white;
     }
     & textarea {
       width: 100%;
       margin-top: 20px;
-      background-color: transparent;
+      background-color: white;
       border-radius: 3px;
       border: 1px solid #fff;
       padding: 10px;
       height: 115px;
-      color: #fff;
+      color: $color-dark;
       font-size: 16px;
       line-height: 24px;
       display: flex;
@@ -213,12 +213,13 @@ input:-internal-autofill-selected {
       }
     }
     & textarea.error {
-      background: rgba(255, 0, 0, 0.356) !important;
+      background-color: rgb(134, 89, 89) !important;
     }
     & textarea.success {
-      background: transparent !important;
+      background: white !important;
     }
     & .sendMessage {
+      cursor: pointer;
       width: 100%;
       margin-top: 20px;
       background-color: transparent;
@@ -250,7 +251,7 @@ input:-internal-autofill-selected {
       }
     }
     & > .errorMessage {
-      color: rgba(255, 0, 0, 0.561);
+      color: $color-theme;
       font-style: italic;
       margin-top: 10px;
       margin-left: 5px;
@@ -280,7 +281,6 @@ input:-internal-autofill-selected {
     top: 10px;
     right: 10px;
     width: 50%;
-    // height: 50px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -389,7 +389,7 @@ input:-internal-autofill-selected {
         }
         & > a:hover::after {
           position: absolute;
-          content: '_';
+          content: "_";
           display: flex;
           right: -10px;
           top: 0;
@@ -397,7 +397,7 @@ input:-internal-autofill-selected {
         }
         & > a:active::after {
           position: absolute;
-          content: '_';
+          content: "_";
           display: flex;
           right: -10px;
           top: 0;

@@ -25,14 +25,14 @@
     justify-content: space-between;
     box-sizing: border-box;
     flex-wrap: wrap;
-    padding: 10px var(--padding);
+    padding: 25px var(--padding) 10px;
+    align-items: center;
   }
   &__cont.active {
-    padding: 10px var(--padding) 25px;
+    padding: 10px var(--padding) 10px;
   }
   &__nav {
     order: 1;
-   /*  min-width: 60%; */
     display: flex;
     height: auto;
     align-items: center;
@@ -52,43 +52,31 @@
       display: flex;
       justify-content: flex-start;
       & > a {
-        @include firstLetter($text-size: 1.1rem, $color: $color-bright);
+        @include firstLetter($text-size: 1.2rem, $color: $color-bright);
         cursor: pointer;
         margin-right: 20px;
         position: relative;
         list-style-type: none;
         font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
         line-height: 20px;
         font-family: $ff;
         font-weight: 500;
-
+        border-bottom: 1px solid transparent;
         letter-spacing: 1.1px;
         text-decoration: none;
         color: $color-light;
+        padding: 5px;
       }
       & > a:hover {
         color: $color-light-hover;
-        animation: rotate 1.5s linear infinite;
+        border-bottom: 1px solid $color-theme;
       }
       & > a:active {
         color: $color-light-active;
       }
-      & > a:hover::after {
-        position: absolute;
-        content: '_';
-        display: flex;
-        right: -10px;
-        top: 0;
-        color: $color-light-hover;
-      }
-      & > a:active::after {
-        position: absolute;
-        content: '_';
-        display: flex;
-        right: -10px;
-        top: 0;
-        color: $color-light-active;
-      }
+
       & > a.active {
         cursor: pointer;
         position: relative;
@@ -103,57 +91,15 @@
       }
       & > a.active:hover {
         color: $color-light-hover;
-        animation: rotate 1.5s linear infinite;
       }
       & > a.active:active {
         color: $color-light-active;
       }
-      & > a.active:hover::after {
-        position: absolute;
-        content: '_';
-        display: flex;
-        right: -10px;
-        top: 0;
-        color: $color-light-hover;
-      }
-      & > a.active:active::after {
-        position: absolute;
-        content: '_';
-        display: flex;
-        right: -10px;
-        top: 0;
-        color: $color-light-active;
-      }
     }
   }
-  &__search {
-    order:2;
-    min-height: 20px;
-    display: flex;
-    & input {
-      display: flex;
-      outline: none;
-      border: none;
-      border-radius: 3px 0 0 3px;
-      padding: 0 5px;
-    }
-    & input.active {
-      border: 1px solid rgba(128, 128, 128, 0.212);
-      border-right: none;
-    }
-    & button {
-      width: 30px;
-      height: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      outline: none;
-      border: none;
-      border-radius: 0 3px 3px 0;
-    }
-  }
+
   &__login {
-    order:3;
+    order: 3;
     display: flex;
     & > a {
       text-decoration: none;
@@ -214,22 +160,7 @@
         & > a:active {
           color: $color-light-active;
         }
-        & > a:hover::after {
-          position: absolute;
-          content: '_';
-          display: flex;
-          right: -10px;
-          top: 0;
-          color: transparent;
-        }
-        & > a:active::after {
-          position: absolute;
-          content: '_';
-          display: flex;
-          right: -10px;
-          top: 0;
-          color: transparent;
-        }
+
         & > a.active {
           cursor: pointer;
           position: relative;
@@ -249,32 +180,13 @@
         & > a.active:active {
           color: $color-light-active;
         }
-        & > a.active:hover::after {
-          position: absolute;
-          content: '_';
-          display: flex;
-          right: -10px;
-          top: 0;
-          color: transparent;
-        }
-        & > a.active:active::after {
-          position: absolute;
-          content: '_';
-          display: flex;
-          right: -10px;
-          top: 0;
-          color: transparent;
-        }
       }
     }
   }
 }
 
-
 @include mq(900px, max) {
-
   .header {
- 
     &__cont {
       padding: 25px var(--padding) 25px;
     }
@@ -286,17 +198,15 @@
     }
 
     &__login {
-      order:2
+      order: 2;
     }
     &__search {
       margin-top: 20px;
-      order:3
+      order: 3;
     }
   }
-
 }
 @include mq(700px, max) {
-
   .header {
     background-color: rgb(26, 25, 25);
 
@@ -308,7 +218,7 @@
       box-sizing: border-box;
       justify-content: start;
 
-      top:0;
+      top: 0;
       left: 0;
       & > div.on-of {
         display: flex;
@@ -321,23 +231,22 @@
         flex-direction: column;
         width: 100%;
         box-sizing: border-box;
-        padding: 10px 0;
+        padding: 20px 0;
         transform: scaleY(0);
         transform-origin: 0 0;
-        transition: transform .3s ;
+        transition: transform 0.3s;
         & > a {
           width: 100%;
           margin-right: 0px;
           display: flex;
           justify-content: center;
-          padding: 5px;
+          padding: 10px 0;
           box-sizing: border-box;
         }
 
         & > a:not(:last-child) {
           border-bottom: 1px solid $color-dark;
         }
-
       }
       & > div.menu.active {
         transform: scaleY(1);
@@ -345,20 +254,19 @@
     }
 
     &__login {
-      
       position: absolute;
       margin-top: 5px;
       top: 20px;
       right: 25px;
-      order:2
+      order: 2;
     }
     &__search {
-     width: 45%;
+      width: 45%;
       margin-top: 5px;
       position: absolute;
       top: 20px;
       left: 25%;
-      & > input  {
+      & > input {
         width: 100%;
       }
     }
