@@ -81,7 +81,6 @@
         cursor: pointer;
         position: relative;
         list-style-type: none;
-        font-size: 14px;
         font-size: 1.1rem;
         line-height: 20px;
         font-family: $ff;
@@ -103,18 +102,22 @@
     display: flex;
     & > a {
       text-decoration: none;
+      @include firstLetter($text-size: 1.2rem, $color: $color-bright);
       cursor: pointer;
+      font-size: 1.1rem;
       position: relative;
       list-style-type: none;
-      font-size: 14px;
+      letter-spacing: 0.3px;
       line-height: 20px;
       font-family: $ff;
-      text-transform: uppercase;
       font-weight: 700;
       color: $color-light;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
     }
     & > a:hover {
       color: $color-light-hover;
+      border-bottom: 1px solid $color-theme;
     }
     & > a:active {
       color: $color-light-active;
@@ -122,7 +125,7 @@
     & > a.hide {
       display: none;
     }
-    & > a.active {
+/*     & > a.active {
       text-decoration: none;
       cursor: pointer;
       position: relative;
@@ -136,13 +139,14 @@
     }
     & > a.active:hover {
       color: $color-light-hover;
+      border-bottom: 1px solid $color-theme;
     }
     & > a.active:active {
       color: $color-light-active;
     }
     & > a.active.hide {
       display: none;
-    }
+    } */
   }
 }
 

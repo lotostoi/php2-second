@@ -458,7 +458,7 @@ body {
 }
 
 .work__a:hover {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .work__a:active {
@@ -808,6 +808,7 @@ body {
 
 .person-area > form.site > a.exit,
 .person-area > form.site button {
+  cursor: pointer;
   width: 100%;
   text-decoration: none;
   display: -webkit-box;
@@ -822,7 +823,6 @@ body {
   max-width: 250px;
   outline: none;
   padding: 15px;
-  background-image: url("@/img/fonforlittelelem.jpg");
   background-size: contain;
   background: black;
   border: none;
@@ -840,6 +840,14 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#0d0b0b), color-stop(50%, #343331), to(#454545));
   background: linear-gradient(90deg, #0d0b0b 0%, #343331 50%, #454545 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0b0b",endColorstr="#454545",GradientType=1);
+}
+
+.person-area > form.site > a.exit:hover,
+.person-area > form.site button:hover {
+  background: #343331;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #343331), color-stop(100%, #0d0b0b), to(#454545));
+  background: linear-gradient(90deg, #343331 50%, #0d0b0b 100%, #454545 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#343331",endColorstr="#454545",GradientType=1);
 }
 
 .person-area > form.site > a.exit:active,
@@ -948,7 +956,7 @@ body {
 }
 
 .social-network > .list > form > button > i:hover {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .social-network > .list > form > button > i:active {
@@ -1534,7 +1542,6 @@ body {
   cursor: pointer;
   position: relative;
   list-style-type: none;
-  font-size: 14px;
   font-size: 1.1rem;
   line-height: 20px;
   font-family: Roboto Mono, monospace;
@@ -1558,23 +1565,54 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /*     & > a.active {
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      list-style-type: none;
+      font-size: 14px;
+      line-height: 20px;
+      font-family: $ff;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $color-light;
+    }
+    & > a.active:hover {
+      color: $color-light-hover;
+      border-bottom: 1px solid $color-theme;
+    }
+    & > a.active:active {
+      color: $color-light-active;
+    }
+    & > a.active.hide {
+      display: none;
+    } */
 }
 
 .header__login > a {
   text-decoration: none;
   cursor: pointer;
+  font-size: 1.1rem;
   position: relative;
   list-style-type: none;
-  font-size: 14px;
+  letter-spacing: 0.3px;
   line-height: 20px;
   font-family: Roboto Mono, monospace;
-  text-transform: uppercase;
   font-weight: 700;
   color: white;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+}
+
+.header__login > a:first-letter {
+  font-size: 1.2rem;
+  color: #00d9ff;
+  font-weight: 700;
 }
 
 .header__login > a:hover {
   color: rgba(255, 255, 255, 0.863);
+  border-bottom: 1px solid #00d9ff;
 }
 
 .header__login > a:active {
@@ -1582,31 +1620,6 @@ body {
 }
 
 .header__login > a.hide {
-  display: none;
-}
-
-.header__login > a.active {
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  list-style-type: none;
-  font-size: 14px;
-  line-height: 20px;
-  font-family: Roboto Mono, monospace;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: white;
-}
-
-.header__login > a.active:hover {
-  color: rgba(255, 255, 255, 0.863);
-}
-
-.header__login > a.active:active {
-  color: #66e8ff;
-}
-
-.header__login > a.active.hide {
   display: none;
 }
 
@@ -1857,7 +1870,6 @@ body {
 }
 
 .aboutMe__desc .contacts > div .title {
-  opacity: 0.4;
   font-weight: 700;
   width: 100px;
   display: -webkit-box;
@@ -1951,6 +1963,7 @@ body {
     margin: 130px 0 0 30px;
   }
   .aboutMe__desc h1 {
+    margin-top: 20px;
     font-size: 1.5rem;
     font-weight: 700;
   }
@@ -1982,7 +1995,6 @@ body {
             align-items: center;
   }
   .aboutMe__desc .contacts > div .title {
-    opacity: 0.4;
     font-weight: 700;
     width: 100px;
     display: -webkit-box;
@@ -2079,7 +2091,6 @@ body {
             align-items: center;
   }
   .aboutMe__desc .contacts > div .title {
-    opacity: 0.4;
     font-weight: 700;
     width: 100px;
     display: -webkit-box;
@@ -2095,7 +2106,6 @@ body {
     margin-top: 10px;
   }
   .aboutMe__desc .sotsseti > a {
-    opacity: 0.4;
     margin: 0px 20px 10px 0;
     color: white;
     font-size: 1.5rem;
@@ -2727,7 +2737,7 @@ body {
 
 .resume__allInformation .title:hover > h4,
 .resume__allInformation .title:hover > i {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .resume__allInformation .content {
@@ -2737,7 +2747,7 @@ body {
   overflow: hidden;
   height: 0;
   width: calc(100% - 20px);
-  background-color: white;
+  background-color: rgba(216, 227, 230, 0.383);
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
@@ -2750,7 +2760,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   border: 1px solid #e9e8e8;
-  background-color: rgba(246, 216, 187, 0.335);
 }
 
 .resume__allInformation .content {
@@ -2791,7 +2800,7 @@ body {
 }
 
 .resume__allInformation .content ol > li > a:hover {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .resume__allInformation .content > .technologyes {
@@ -2938,7 +2947,7 @@ body {
 }
 
 .reviews-body__enter > .social-network > .list > a > i:hover {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .reviews-body__enter > .social-network > .list > a > i:active {
@@ -3197,7 +3206,7 @@ body {
 }
 
 .reviews-body__review > .user > .nick > a:hover {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .reviews-body__review > .user > .nick > a:active {
@@ -3918,7 +3927,7 @@ body {
 
 .portfolio-catalog__outside-work {
   position: absolute;
-  top: -35px;
+  top: -6px;
   right: 20px;
   cursor: pointer;
   display: -webkit-box;
@@ -3970,7 +3979,7 @@ body {
 
 .portfolio-catalog__outside-filters {
   position: absolute;
-  top: -35px;
+  top: -6px;
   right: 240px;
   cursor: pointer;
   display: -webkit-box;
@@ -4120,7 +4129,7 @@ body {
 }
 
 .portfolio-catalog__cont > .product > .link:hover {
-  color: #00c3e6;
+  color: #008299;
 }
 
 .portfolio-catalog__cont > .product > .link:active {
@@ -4235,16 +4244,33 @@ input:-internal-autofill-selected {
           flex-direction: column;
 }
 
-.footer__cont > p.rights {
+.footer__cont > div.rights {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 40px 0 10px;
   font-size: 1.3rem;
-  color: rgba(199, 198, 198, 0.685);
+  color: #00d9ff;
+  font-weight: 300;
+}
+
+.footer__cont > div.rights > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
+.footer__cont > div.rights > p {
+  font-size: 1rem;
 }
 
 .footer__title {
@@ -4343,7 +4369,7 @@ input:-internal-autofill-selected {
 
 .footer__contacts .social > a:hover::after {
   position: absolute;
-  content: "_";
+  content: '_';
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4354,7 +4380,7 @@ input:-internal-autofill-selected {
 
 .footer__contacts .social > a:active::after {
   position: absolute;
-  content: "_";
+  content: '_';
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4404,6 +4430,7 @@ input:-internal-autofill-selected {
   display: flex;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
 }
 
 .footer__form input:focus {
@@ -4624,7 +4651,7 @@ input:-internal-autofill-selected {
   .footer__title {
     font-size: 2rem;
     font-weight: 400;
-    color: white;
+    color: #00d9ff;
     margin-bottom: 40px;
   }
   .footer__body {
@@ -4720,7 +4747,7 @@ input:-internal-autofill-selected {
   }
   .footer__contacts > .social > a:hover::after {
     position: absolute;
-    content: "_";
+    content: '_';
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4730,7 +4757,7 @@ input:-internal-autofill-selected {
   }
   .footer__contacts > .social > a:active::after {
     position: absolute;
-    content: "_";
+    content: '_';
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

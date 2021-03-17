@@ -100,13 +100,13 @@
     position: relative;
     &__outside-work {
       position: absolute;
-      top: -35px;
+      top: -6px;
       right: 20px;
       @include but; 
     }
     &__outside-filters {
       position: absolute;
-      top: -35px;
+      top: -6px;
       right: 240px;
       @include but; 
     }

@@ -22,6 +22,7 @@ class Controller
         $this->user = $this->authModel->getUser();
         $this->params['user'] = App::call()->Session->getSession('user')['login'] ?: null;
         $this->params['admin'] = App::call()->Session->getSession('user')['admin'] ?: null;
+        $this->params['year'] = Date('Y');
         $this->renderer = $renderer;
     }
     public function runAction($action = null)

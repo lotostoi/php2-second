@@ -194,7 +194,7 @@
       overflow: hidden;
       height: 0;
       width: calc(100% - 20px);
-      background-color: white;
+      background-color: rgba(216, 227, 230, 0.383);
       font-size: 18px;
       font-weight: 400;
       line-height: 30px;
@@ -204,7 +204,6 @@
       flex-direction: column;
       border: 1px solid rgb(233, 232, 232);
       @include shadow-bot;
-      background-color: rgba(246, 216, 187, 0.335);
       & > h4 {
         color: $color-dark;
         margin: 10px 0;

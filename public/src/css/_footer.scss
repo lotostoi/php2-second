@@ -65,12 +65,23 @@ input:-internal-autofill-selected {
     box-sizing: border-box;
     padding: 100px var(--padding) 30px;
     flex-direction: column;
-    & > p.rights {
+    & > div.rights {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       margin: 40px 0 10px;
       font-size: 1.3rem;
-      color: $color-light-grey;
+      color: $color-theme;
+      font-weight: 300;
+      & > span {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        margin-right: 5px;
+        font-size: 1rem;
+      }
+      & > p {
+        font-size: 1rem;
+      }
     }
   }
   &__title {
@@ -132,7 +143,7 @@ input:-internal-autofill-selected {
       }
       & > a:hover::after {
         position: absolute;
-        content: "_";
+        content: '_';
         display: flex;
         right: -10px;
         top: 0;
@@ -140,7 +151,7 @@ input:-internal-autofill-selected {
       }
       & > a:active::after {
         position: absolute;
-        content: "_";
+        content: '_';
         display: flex;
         right: -10px;
         top: 0;
@@ -177,6 +188,7 @@ input:-internal-autofill-selected {
       line-height: 24px;
       display: flex;
       box-sizing: border-box;
+      outline: none;
       &:focus {
         box-shadow: inset 0 0 5px 0 #fff;
         border: 1px solid #fff;
@@ -329,7 +341,7 @@ input:-internal-autofill-selected {
     &__title {
       font-size: 2rem;
       font-weight: 400;
-      color: $color-light;
+      color: $color-theme;
       margin-bottom: 40px;
     }
     &__body {
@@ -389,7 +401,7 @@ input:-internal-autofill-selected {
         }
         & > a:hover::after {
           position: absolute;
-          content: "_";
+          content: '_';
           display: flex;
           right: -10px;
           top: 0;
@@ -397,7 +409,7 @@ input:-internal-autofill-selected {
         }
         & > a:active::after {
           position: absolute;
-          content: "_";
+          content: '_';
           display: flex;
           right: -10px;
           top: 0;

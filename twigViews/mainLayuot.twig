@@ -77,9 +77,14 @@
 						</button>
 					</form>
 				</div>
-				<p class="rights">©<?= date('Y') ?>Александр Плотников. Все права защищены.</p>
+				<div class="rights">
+					<span>&copy;</span>
+					<p>
+						{{year}}
+						Александр Плотников. Все права защищены.
+					</p>
+				</div>
 			</div>
-		</div>
-		<script src="/src/js/form.js"></script>
-	</footer>
-{% endblock %}
+			<script src="/src/js/form.js"></script>
+		</footer>
+	{% endblock %}

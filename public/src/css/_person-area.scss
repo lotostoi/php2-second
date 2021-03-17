@@ -84,6 +84,7 @@
 
     & > a.exit,
     button {
+      cursor: pointer;
       width: 100%;
       text-decoration: none;
       display: flex;
@@ -92,7 +93,6 @@
       max-width: 250px;
       outline: none;
       padding: 15px;
-      background-image: url("@/img/fonforlittelelem.jpg");
       background-size: contain;
       background: rgb(0, 0, 0);
       border: none;
@@ -102,6 +102,9 @@
       @include bc-fone;
       color: $color-light;
       margin: 10px 0;
+      &:hover {
+        @include bc-fone-rev;
+      }
       &:active {
         transform: scale(0.99);
       }

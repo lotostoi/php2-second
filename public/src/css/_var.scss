@@ -12,7 +12,7 @@ $color-bright: $color-theme;
 $color-light-hover: rgba(255, 255, 255, 0.863);
 $color-light-active: lighten($color-theme, 20%);
 $color-dark: rgb(51, 50, 50);
-$color-dark-hover: darken($color-theme, 5%);
+$color-dark-hover: darken($color-theme, 20%);
 $color-dark-active: darken($color-theme, 30%);
 $color-light-grey: rgba(199, 198, 198, 0.685);
 
