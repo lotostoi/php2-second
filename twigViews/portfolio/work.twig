@@ -22,16 +22,16 @@
 					<img src="/{{img_big}}" width="720" height="476" alt="name" class="big-picture__img">
 				</div>
 				<div class="work__tags">
-							<span class="title">Tехнологии:
-							</span>
-							{% for tag in tagsForInput %}
-								<span>{{tag}}</span>
-							{% endfor %}
-						</div>
+					<span class="title">Tехнологии:
+					</span>
+					{% for tag in tagsForInput %}
+						<span>{{tag}}</span>
+					{% endfor %}
+				</div>
 				<p class="work__description">{{description}}</p>
-				<a href="{{project}}" class="work__a">Посмотреть проект...</a>
+				<a href="{{project}}" class="work__a" target="_blank">Посмотреть проект...</a>
 				{%  if git != "noaccess" %}
-					<a href="{{git}}" class="work__a">Посмотреть код..
+					<a href="{{git}}" class="work__a" target="_blank">Посмотреть код..
 					</a>
 				{% else %}
 					<p class="work__noAccess">Код закрыт по просьбе заказчика..</p>
@@ -45,6 +45,6 @@
 		<script src="/src/js/header.js"></script>
 		<script src="/src/js/work.js"></script>
 		<script src="/src/js/server.js"></script>
-	
+
 	</section>
 {% endblock %}

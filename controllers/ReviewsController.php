@@ -7,7 +7,7 @@ use app\engine\App;
 
 class ReviewsController extends Controller
 {
- 
+
     public function actionMain()
     {
         $this->params['reviews'] = App::call()->ReviewsRepository->getLimitRevert(0, App::call()->config['AMOUNT_REVIEVS']);
@@ -47,6 +47,7 @@ class ReviewsController extends Controller
 
             App::call()->ReviewsRepository->save($review);
 
+            App::call()->Email->reviewWasAdded('lotos_toi@mail.ru', $review->review, $review->user);
             echo json_encode([
                 "result" => 'ok',
                 'img_small' => $review->img_small,
@@ -58,6 +59,8 @@ class ReviewsController extends Controller
                 'accessForEdit' => $this->user['login'] ===  $review->user,
                 'admin' => $review->admin
             ]);
+           
+           
             die();
         } else {
             echo json_encode(['error' => "Review is empty!"]);

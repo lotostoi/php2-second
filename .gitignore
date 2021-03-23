@@ -3,3 +3,4 @@ composer.phar
 /config/pass.txt
 /cache
 /node_modules
+config.php

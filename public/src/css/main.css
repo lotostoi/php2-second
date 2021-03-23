@@ -948,6 +948,7 @@ body {
   display: flex;
   text-decoration: none;
   outline: none;
+  cursor: pointer;
 }
 
 .social-network > .list > form > button > i {
@@ -1486,7 +1487,7 @@ body {
 
 .header__nav > div.on-of > i {
   font-size: 2rem;
-  color: white;
+  color: #00d9ff;
 }
 
 .header__nav > div.on-of.of {
@@ -1565,28 +1566,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /*     & > a.active {
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      list-style-type: none;
-      font-size: 14px;
-      line-height: 20px;
-      font-family: $ff;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: $color-light;
-    }
-    & > a.active:hover {
-      color: $color-light-hover;
-      border-bottom: 1px solid $color-theme;
-    }
-    & > a.active:active {
-      color: $color-light-active;
-    }
-    & > a.active.hide {
-      display: none;
-    } */
 }
 
 .header__login > a {
@@ -1716,7 +1695,7 @@ body {
     width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 20px 0;
+    padding: 20px 0 0;
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
     -webkit-transform-origin: 0 0;
@@ -1738,6 +1717,9 @@ body {
     padding: 10px 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+  .header__nav > div.menu > a:active {
+    color: #00d9ff;
   }
   .header__nav > div.menu > a:not(:last-child) {
     border-bottom: 1px solid #333232;
@@ -2897,6 +2879,12 @@ body {
           box-sizing: border-box;
 }
 
+@media only screen and (max-width: 769px) {
+  .reviews-body__enter {
+    padding: 20px 0;
+  }
+}
+
 .reviews-body__enter > p.title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3070,6 +3058,7 @@ body {
 }
 
 .reviews-body__form > button {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3083,9 +3072,6 @@ body {
   width: 200px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 3px;
@@ -3130,6 +3116,12 @@ body {
           flex-direction: column;
   background-color: transparent;
   padding: 20px;
+}
+
+@media only screen and (max-width: 769px) {
+  .reviews-body__wrapper {
+    padding: 20px 0;
+  }
 }
 
 .reviews-body__review {
@@ -3308,12 +3300,10 @@ body {
 }
 
 .reviews-body__review > .edit > button {
+  cursor: pointer;
   width: 50px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
   color: white;
   border: none;
   border-radius: 20px;
@@ -3365,9 +3355,7 @@ body {
   width: 200px;
   outline: none;
   padding: 10px;
-  background-image: url("../img/fonforlittelelem.jpg");
-  background-size: contain;
-  background: black;
+  cursor: pointer;
   color: white;
   border: none;
   border-radius: 3px;
@@ -3387,6 +3375,12 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#0d0b0b), color-stop(50%, #343331), to(#454545));
   background: linear-gradient(90deg, #0d0b0b 0%, #343331 50%, #454545 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0b0b",endColorstr="#454545",GradientType=1);
+}
+
+@media only screen and (max-width: 769px) {
+  .reviews > .loadMore {
+    margin: 0 0;
+  }
 }
 
 .reviews > .loadMore:hover {

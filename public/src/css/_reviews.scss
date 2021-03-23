@@ -12,6 +12,9 @@
     justify-content: center;
     border-bottom: 1px solid rgb(207, 207, 207);
     padding: 20px;
+    @include mq(770px, max) {
+      padding: 20px 0;
+    }
     box-sizing: border-box;
     & > p.title {
       display: flex;
@@ -107,6 +110,7 @@
       color: red;
     }
     & > button {
+      cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -114,9 +118,6 @@
       width: 200px;
       outline: none;
       padding: 10px;
-      background-image: url("../img/fonforlittelelem.jpg");
-      background-size: contain;
-      background: rgb(0, 0, 0);
       color: $color-light;
       border: none;
 
@@ -141,6 +142,9 @@
     flex-direction: column;
     background-color: transparent;
     padding: 20px;
+    @include mq(770px, max) {
+      padding: 20px 0;
+    }
   }
   &-body__review {
     padding: 10px;
@@ -228,7 +232,6 @@
         }
       }
       & > .date {
-       
         color: gray;
         font-style: italic;
       }
@@ -240,12 +243,10 @@
         flex-direction: row;
       }
       & > button {
+        cursor: pointer;
         width: 50px;
         outline: none;
         padding: 10px;
-        background-image: url("../img/fonforlittelelem.jpg");
-        background-size: contain;
-        background: rgb(0, 0, 0);
         color: $color-light;
         border: none;
         @include grayShadow;
@@ -275,18 +276,18 @@
     width: 200px;
     outline: none;
     padding: 10px;
-    background-image: url("../img/fonforlittelelem.jpg");
-    background-size: contain;
-    background: rgb(0, 0, 0);
+    cursor: pointer;
     color: $color-light;
     border: none;
-
     @include grayShadow;
     border-radius: 3px;
     font-size: 1rem;
     @include bc-fone;
     margin: 0 20px;
     box-sizing: border-box;
+    @include mq(770px, max) {
+      margin: 0 0;
+    }
 
     &:hover {
       @include bc-fone-rev;

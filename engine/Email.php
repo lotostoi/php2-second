@@ -6,6 +6,7 @@ use app\engine\App;
 
 class Email
 {
+
     public function send()
     {
         $headers = "Content-type: text/html; charset=utf-8";
@@ -43,6 +44,25 @@ class Email
         } else {
             $reply = array('result' => false);
             echo json_encode($reply);
+        }
+    }
+
+    public function reviewWasAdded($to, $name, $message)
+    {
+        $headers = "Content-type: text/html; charset=utf-8";
+        $theme = "Новый отзыв";
+        $msg = "<!DOCTYPE html><body style='font-family:Arial,sans-serif;'>";
+        $msg .= "<h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Текст отзыва:</h2>\r\n";
+        $msg .= "<p>" . $message . "</p>\r\n";
+        $msg .= "<p><strong>Автор отзыва:</strong> " . $name . "</p>\r\n";
+        $msg .= "</body></html>";
+
+        $sendToMe = mail($to, $theme, $msg, $headers);
+
+        if ($sendToMe) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

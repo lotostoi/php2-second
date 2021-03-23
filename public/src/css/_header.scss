@@ -41,7 +41,7 @@
       display: none;
       & > i {
         font-size: 2rem;
-        color: $color-light;
+        color: $color-theme;
       }
     }
     & > div.on-of.of {
@@ -125,28 +125,6 @@
     & > a.hide {
       display: none;
     }
-/*     & > a.active {
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      list-style-type: none;
-      font-size: 14px;
-      line-height: 20px;
-      font-family: $ff;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: $color-light;
-    }
-    & > a.active:hover {
-      color: $color-light-hover;
-      border-bottom: 1px solid $color-theme;
-    }
-    & > a.active:active {
-      color: $color-light-active;
-    }
-    & > a.active.hide {
-      display: none;
-    } */
   }
 }
 
@@ -235,7 +213,7 @@
         flex-direction: column;
         width: 100%;
         box-sizing: border-box;
-        padding: 20px 0;
+        padding: 20px 0 0;
         transform: scaleY(0);
         transform-origin: 0 0;
         transition: transform 0.3s;
@@ -246,6 +224,10 @@
           justify-content: center;
           padding: 10px 0;
           box-sizing: border-box;
+        }
+
+        & > a:active {
+          color: $color-theme;
         }
 
         & > a:not(:last-child) {
