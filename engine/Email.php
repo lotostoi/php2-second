@@ -47,7 +47,7 @@ class Email
         }
     }
 
-    public function reviewWasAdded($to, $name, $message)
+    public function reviewWasAdded($to, $message, $name)
     {
         $headers = "Content-type: text/html; charset=utf-8";
         $theme = "Новый отзыв";

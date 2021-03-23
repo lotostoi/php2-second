@@ -2408,7 +2408,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background-color: white;
+  background-color: #f5fdff;
   max-width: 250px;
   padding: 10px;
   -webkit-box-pack: center;
@@ -2422,11 +2422,6 @@ body {
   border-radius: 5px;
 }
 
-.resume__block > .technologyes > .technology {
-  -webkit-box-shadow: 0px 0px 5px 0px #505050;
-  box-shadow: 0px 0px 5px 0px #505050;
-}
-
 .resume__block > .technologyes > .technology > .content-technology {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2437,7 +2432,7 @@ body {
 }
 
 .resume__block > .technologyes > .technology > .content-technology > img {
-  height: 30px;
+  height: 50px;
   margin-right: 10px;
 }
 
@@ -2445,6 +2440,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 5px;
+  font-size: 1.2rem;
 }
 
 .resume__block > .technologyes > .technology > .edit {
@@ -2631,6 +2628,11 @@ body {
 .resume__block > .technologyes > .technology > .delete > button.block:active {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.resume__block > .technologyes > .technology:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px #505050;
+  box-shadow: 0px 0px 5px 0px #505050;
 }
 
 .resume__cont {

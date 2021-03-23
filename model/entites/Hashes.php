@@ -15,6 +15,4 @@ class Hashes extends Model
         $this->id_user = $id_user;
         $this->hash = $hash;
     }
-
-
 }

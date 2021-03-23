@@ -18,7 +18,7 @@ $color-light-grey: rgba(199, 198, 198, 0.685);
 
 $color-bright-strong: darken($color-theme, 20%);
 $color-fone-light: lighten($color-theme, 48%);
-$color-fone-hover: $color-theme; // rgba(245, 126, 16, 0.986);
+$color-fone-hover: $color-theme; 
 
 :root {
     --padding: 20px;

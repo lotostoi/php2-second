@@ -4,17 +4,16 @@ const loadMore = document.querySelector('.loadMore')
 
 let amountReviews = 0
 let step = +document.querySelector(`[name ="amount"]`).value
-loadMore.addEventListener('click', async e => {
+loadMore.addEventListener('click', async (e) => {
   e.preventDefault()
   const review = await http.get(`reviews/limit?limit=${(amountReviews += step)}`)
-  review.forEach(rev => {
+  review.forEach((rev) => {
     const _review = renderReview(rev)
     insertReviewInEnd(wrapperForReviews, _review)
   })
 })
 
-reviews.addEventListener('click', async e => {
-
+reviews.addEventListener('click', async (e) => {
   if (e.target.id) {
     e.preventDefault()
     let body = new FormData(document.getElementById('add-reviews'))
@@ -24,6 +23,7 @@ reviews.addEventListener('click', async e => {
         document.querySelector('.message').classList.add('hiden')
         const rev = renderReview(review)
         insertReview(wrapperForReviews, rev)
+        document.getElementById('add-reviews').reset()
       } else {
         document.querySelector('.message').classList.remove('hiden')
       }
@@ -36,16 +36,16 @@ reviews.addEventListener('click', async e => {
     e.preventDefault()
     const el = e.target
     const id = e.target.dataset.edit
-    const parenet = el.parentNode
-    parenet.querySelector('.review_save').classList.toggle('hiden')
-    parenet.querySelector('.review_edit').classList.toggle('hiden')
+    const parent = el.parentNode
+    parent.querySelector('.review_save').classList.toggle('hiden')
+    parent.querySelector('.review_edit').classList.toggle('hiden')
     reviews.querySelector(`textarea[data-text="${id}"]`).classList.toggle('hiden')
   }
   if (e.target.dataset.save) {
     e.preventDefault()
     const el = e.target
     const id = e.target.dataset.save
-    const parenet = el.parentNode
+    const parent = el.parentNode
     const text = reviews.querySelector(`textarea[data-text="${id}"]`)
     const rev = reviews.querySelector(`p[data-rev="${id}"]`)
     let body = new FormData()
@@ -56,7 +56,7 @@ reviews.addEventListener('click', async e => {
       rev.innerHTML = text.value
       el.classList.toggle('hiden')
       text.classList.toggle('hiden')
-      parenet.querySelector('.review_edit').classList.toggle('hiden')
+      parent.querySelector('.review_edit').classList.toggle('hiden')
     } catch (e) {
       console.log(e)
     }
@@ -113,8 +113,7 @@ function renderReview({ img_small, link_network, user, review, id, date, accessF
           `
 }
 
-
-const  mainLink = "http://localhost:3000/"
+const mainLink = 'http://localhost:3000/'
 
 function getPath(path) {
   return mainLink + path
