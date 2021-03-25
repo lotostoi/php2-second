@@ -102,6 +102,8 @@
           padding: 5px;
           margin-top: 10px;
           background-color: transparentize($color-light-grey, 0.2);
+          width: 100%;
+          box-sizing: border-box;
           & > input {
             @include app-input(15px, 5px, 0.8rem);
             color: lighten($color-dark, 20%);

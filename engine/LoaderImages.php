@@ -40,20 +40,23 @@ class LoaderImages
         $this->Resize->save($linkToSmallFolder . $name);
         $folder = App::call()->config['STOR_FOR_IMG'];
         App::call()->LoaderImages->cleanDir($folder);
-        return $name; 
+        return $name;
     }
-    
-    public function resImage($img, $folder, $width) {
+
+    public function resImage($img, $folder, $width)
+    {
         $name = explode('/', $img)[count(explode('/', $img)) - 1];
         $this->Resize->load($img);
         $this->Resize->resizeToWidth($width);
         $this->Resize->save($folder . $name);
     }
 
-    public function loadImage($img, $folder)
+    public function loadImage($img, $folder, $notClear = false)
     {
         $name = uniqid() . "." . explode('.', $img['name'])[1];
-        App::call()->LoaderImages->cleanDir($folder);
+        if (!$notClear) {
+            App::call()->LoaderImages->cleanDir($folder);
+        }
         move_uploaded_file($img['tmp_name'], $folder . $name);
         return $folder . $name;
     }

@@ -36,6 +36,13 @@ abstract class Repository implements IModel
         $sql = $fieldName && $value ? "SELECT * FROM {$tableName} WHERE `{$fieldName}`={$value}" : "SELECT * FROM {$tableName}";
         return App::call()->Db->queryAll($sql);
     }
+    public  function getAllByField($field = "id")
+    {
+      
+        $tableName = $this->getTableName();
+        $sql = "SELECT * FROM {$tableName} ORDER BY `{$field}`";
+        return App::call()->Db->queryAll($sql);
+    }
     public function getAllRevert($fieldName = null, $value = null)
     {
         $tableName = $this->getTableName();

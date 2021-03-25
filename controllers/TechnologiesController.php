@@ -12,15 +12,17 @@ class TechnologiesController extends Controller
     public function actionAdd()
     {
         $title = App::call()->Request->getParams()['title'];
-        $linkToImg = App::call()->Request->getParams()['linkToImg'];
-        $folder = App::call()->config['TECHNOLOGIES'] . $title . '.png';
+        $order = App::call()->Request->getParams()['order'];
 
-        file_put_contents($folder, $this->file_get_contents_curl($linkToImg));
+        $file = $_FILES['file'];
+        $folder = App::call()->config['TECHNOLOGIES'];
+        $link = App::call()->LoaderImages->loadImage($file, $folder, true);
 
-        if ($title !== '' &&  $linkToImg !== '') {
+        if ($title !== '' &&  !empty($_FILES['file'])) {
             $technology = new Technologies(
                 $title,
-                $folder
+                $link,
+                $order
             );
 
             App::call()->TechnologiesRepository->save($technology);
@@ -28,7 +30,8 @@ class TechnologiesController extends Controller
             echo json_encode([
                 "result" => 'ok',
                 'title' =>  $title,
-                'linkToImg' =>  $folder,
+                'linkToImg' =>  $link,
+                'order' => $order,
                 'admin' => $this->user['admin'],
                 'id' => $technology->id,
             ]);
@@ -39,30 +42,39 @@ class TechnologiesController extends Controller
         }
     }
 
+    public function actionEdit()
+    {
+        $id = App::call()->Request->getParams()['id'];
+        $title = App::call()->Request->getParams()['title'];
+        $order = App::call()->Request->getParams()['order'];
+
+
+        $technology = App::call()->TechnologiesRepository->getOne($id);
+        $technology->title = $title;
+        $technology->order = $order;
+        if (!empty($_FILES['file']['name'][0])) {
+            $file = $_FILES['file'];
+            unlink($technology->linkToImg);
+            $folder = App::call()->config['TECHNOLOGIES'];
+            $link = App::call()->LoaderImages->loadImage($file, $folder, true);
+            $technology->linkToImg = $link;
+        }
+        App::call()->TechnologiesRepository->save($technology);
+        $newList = App::call()->TechnologiesRepository->getAllByField("order");
+        echo json_encode($newList);
+        die();
+    }
+
 
     public function actionDel()
     {
         $id = App::call()->Request->getParams()['id'];
         $technology = App::call()->TechnologiesRepository->getOne($id);
         App::call()->TechnologiesRepository->delete($technology);
+        if (file_exists($technology->linkToImg)) {
+            unlink($technology->linkToImg);
+        }
         echo json_encode(['result' => true]);
         die();
-    }
-
-    public function file_get_contents_curl($url)
-    {
-
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-
-        $data = curl_exec($ch);
-        curl_close($ch);
-
-        return $data;
     }
 }

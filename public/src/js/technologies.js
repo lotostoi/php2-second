@@ -10,9 +10,10 @@ addForm.addEventListener('submit', async (e) => {
 })
 
 wrapper.addEventListener('click', async (e) => {
-  const button = wrapper.querySelector(`button[data-id="${e.target.dataset.id}"]`)
+  const button = wrapper.querySelector(`button.del-tec[data-id="${e.target.dataset.id}"]`)
   const id = +e.target.dataset.id
-  if (e.target.tagName === 'INPUT') {
+
+  if (e.target.type === 'checkbox') {
     if (button.classList.contains('block')) {
       button.classList.remove('block')
       button.removeAttribute('disabled')
@@ -22,22 +23,43 @@ wrapper.addEventListener('click', async (e) => {
     }
   }
 
-  if (e.target.tagName === 'BUTTON') {
-    e.preventDefault(addForm)
+  if (e.target.classList.contains('del-tec')) {
+    e.preventDefault()
     const { result } = await http.post('technologies/del', { id: id })
     if (result) {
       wrapper.querySelector(`div[data-wrapp="${id}"]`).remove()
     }
   }
+
+  if (e.target.classList.contains('edit')) {
+    e.preventDefault()
+    const result = await http.post('technologies/edit', new FormData(e.target.parentNode))
+    if (result.length) {
+      console.log(result);
+      wrapper.innerHTML = ''
+      const newList = result.map((tec) => renderElem(tec)).join('')
+      console.log(newList);
+      wrapper.insertAdjacentHTML('afterbegin', newList) 
+    }
+  }
 })
 
-function renderElem({ id, title, linkToImg }) {
+function renderElem({ id, title, linkToImg, order }) {
   return `
             <div class="technology" data-wrapp="${id}">
 				<div class="content-technology">
 				    <img src="${linkToImg}" alt="html">
 					<span>${title}</span>
-				</div>
+        </div>
+        <form class="edit" id="edit_technology" data-edit-from="${id}">
+            <input type="hidden" name="id" value="${id}">
+						<span class="name-field">Название:</span>
+						<input type="text" name="title" value ="${title}">
+						<span class="name-field">Порядок:</span>
+						<input type="text" name="order" value="${order}">
+						<input type="file" name="file" id="file">
+						<button class = "edit" data-id="${id}">Редактировать</button>
+				</form>
 				<form class="delete" id="del_technology">
 					<div class="check">
 					    <input type="checkbox" name="sure" data-id="${id}">

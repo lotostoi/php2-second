@@ -2456,6 +2456,9 @@ body {
   padding: 5px;
   margin-top: 10px;
   background-color: rgba(199, 198, 198, 0.485);
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .resume__block > .technologyes > .technology > .edit > input {

@@ -71,12 +71,13 @@
 				<h2 class="title">Технологии, с которыми имел опыт работать_</h2>
 				{% if admin %}
 					<form class="add-technology" id="add_technology">
-						<input type="text" name="linkToImg" placeholder="link to img">
 						<input type="text" name="title" placeholder="name">
+						<input type="number" name="order" id="order" placeholder="order" min="0">
+						<input type="file" name="file" id="file">
 						<button>Добавить</button>
 					</form>
 				{% endif %}
-				<div class="technologyes" >
+				<div class="technologyes">
 					{% for technologe in technologies %}
 						<div class="technology" data-wrapp="{{technologe.id}}">
 							<div class="content-technology">
@@ -84,6 +85,15 @@
 								<span>{{technologe.title}}</span>
 							</div>
 							{% if admin %}
+								<form class="edit" id="edit_technology" data-edit-from="{{technologe.id}}">
+									<input type="hidden" name="id" value="{{technologe.id}}">
+									<span class="name-field">Название:</span>
+									<input type="text" name="title" value ="{{technologe.title}}">
+									<span class="name-field">Порядок:</span>
+									<input type="text" name="order" value="{{technologe.order}}">
+									<input type="file" name="file" id="file">
+									<button class = "edit" data-id="{{technologe.id}}">Редактировать</button>
+								</form>
 								<form class="delete" id="del_technology">
 									<div class="check">
 										<input type="checkbox" name="sure" data-id="{{technologe.id}}">
